@@ -1,0 +1,32 @@
+{
+    "format_version": 3,
+    "header": {
+        "description": "pack.description",
+        "name": "Foundries BP",
+        "uuid": "ded9882a-45e7-435b-9251-54faf6ec22aa",
+        "min_engine_version": "1.26.10",
+        "version": [
+            1,
+            0,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "data",
+            "uuid": "e499f16a-0c53-46a0-b266-deed93749f80",
+            "version": [
+                1,
+                0,
+                0
+            ]
+        },
+        {
+            "type": "javascript",
+            "language": "javascript",
+            "entry": "scripts/main.js",
+            "version": "2.6.0",
+            "uuid": "a1125fc0-bad4-4eb4-bb8e-9d3b702f5487"
+        }
+    ]
+}
