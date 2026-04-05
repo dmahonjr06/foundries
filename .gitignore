@@ -1,0 +1,3 @@
+# gitignore file for foundries project
+# Ignore node_modules
+/foundries BP/node_modules/
