@@ -1,0 +1,14 @@
+{
+  "name": "foundries-bp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@minecraft/server": "^2.8.0-beta.1.26.20-preview.23",
+    "install": "^0.13.0",
+    "npm": "^11.12.1"
+  }
+}
