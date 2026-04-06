@@ -7,3 +7,20 @@ Block states for the Foundry block:
 - 0-10 "layers" for material liquids in the foundry.
 
 Total block states/permutations: 5,280
+
+
+Metals that can go into the foundry:
+- Iron,
+- Gold,
+- Copper,
+- Aluminium,
+- Steel,
+- Coal,
+- Cobalt,
+- Tin,
+- Bronze,
+- Nickel,
+- Silver,
+- Zinc,
+- Rose Gold,
+- Emerald

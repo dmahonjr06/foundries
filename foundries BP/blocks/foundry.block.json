@@ -2,68 +2,12 @@
     "format_version": "1.26.0",
     "minecraft:block": {
         "description": {
-            "identifier": "foundry:foundry_block",
-            "states": {
-                "foundry:lava_level": {
-                    "values": {
-                        "min": 0,
-                        "max": 4
-                    }
-                },
-                "foundry:materials1": {
-                    "values": {
-                        "min": 0,
-                        "max": 15
-                    }
-                },
-                "foundry:materials2": {
-                    "values": {
-                        "min": 0,
-                        "max": 2
-                    }
-                },
-                "foundry:layers": {
-                    "values": {
-                        "min": 0,
-                        "max": 10
-                    }
-                }
-            },
-            "traits": {
-                "minecraft:multi_block": {
-                    "enabled_states": [
-                        "minecraft:multi_block_part"
-                    ],
-                    "direction": "up",
-                    "parts": 2
-                }
-            }
+            "identifier": "foundry:foundry_block"
         },
         "components": {
-            "minecraft:movable": {
-                "movement_type": "immovable"
-            },
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "minecraft:geometry": {
                 "identifier": "geometry.foundry",
-                "bone_visibility": {
-                    "base": true,
-                    "lava_level1": "query.block_state('foundry:lava_level') == 1",
-                    "lava_level2": "query.block_state('foundry:lava_level') >= 2",
-                    "lava_level3": "query.block_state('foundry:lava_level') >= 3",
-                    "lava_level4": "query.block_state('foundry:lava_level') >= 4",
-                    "lava_level5": "query.block_state('foundry:lava_level') >= 5",
-                    "lava_level6": "query.block_state('foundry:lava_level') >= 6",
-                    "lava_level7": "query.block_state('foundry:lava_level') >= 7",
-                    "lava_level8": "query.block_state('foundry:lava_level') >= 8",
-                    "lava_level9": "query.block_state('foundry:lava_level') >= 9",
-                    "lava_level10": "query.block_state('foundry:lava_level') >= 10",
-                    "lava_level11": "query.block_state('foundry:lava_level') >= 11",
-                    "lava_level12": "query.block_state('foundry:lava_level') >= 12",
-                    "lava_level13": "query.block_state('foundry:lava_level') >= 13",
-                    "lava_level14": "query.block_state('foundry:lava_level') >= 14",
-                    "lava_level15": "query.block_state('foundry:lava_level') >= 15"
-                },
                 "culling_shape": "minecraft:unit_cube"
             },
             "minecraft:material_instances": {
@@ -72,59 +16,6 @@
                     "render_method": "alpha_test"
                 }
             }
-        },
-        "permutations": [
-            {
-                "condition": "q.block_state('minecraft:multi_block_part') == 1",
-                "components": {
-                    "minecraft:geometry": {
-                        "identifier": "geometry.foundry_multiblock2",
-                        "bone_visibility": {
-                            "lava1": "query.block_state('foundry:material_type1') == 1"
-                        }
-                    },
-                    "minecraft:material_instances": {
-                        "*": {
-                            "texture": "glass",
-                            "render_method": "alpha_test"
-                        },
-                        "liquid": {
-                            "texture": "foundry_liquids",
-                            "render_method": "alpha_test"
-                        }
-                    }
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 1",
-                "components": {
-                    "minecraft:material_instances": {
-                        "*": {
-                            "texture": "foundry_base",
-                            "render_method": "alpha_test"
-                        }
-                    },
-                    "minecraft:light_emission": 1
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 2",
-                "components": {
-                    "minecraft:light_emission": 2
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 3",
-                "components": {
-                    "minecraft:light_emission": 3
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 4",
-                "components": {
-                    "minecraft:light_emission": 4
-                }
-            }
-        ]
+        }
     }
 }
