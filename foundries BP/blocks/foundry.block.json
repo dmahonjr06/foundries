@@ -7,16 +7,16 @@
                 "foundry:lava_level": {
                     "values": {
                         "min": 0,
-                        "max": 15
+                        "max": 4
                     }
                 },
-                "foundry:material_type1": {
+                "foundry:materials1": {
                     "values": {
                         "min": 0,
                         "max": 15
                     }
                 },
-                "foundry:material_type2": {
+                "foundry:materials2": {
                     "values": {
                         "min": 0,
                         "max": 2
@@ -25,7 +25,7 @@
                 "foundry:layers": {
                     "values": {
                         "min": 0,
-                        "max": 15
+                        "max": 10
                     }
                 }
             },
@@ -36,12 +36,6 @@
                     ],
                     "direction": "up",
                     "parts": 2
-                },
-                "minecraft:placement_direction": {
-                    "y_rotation_offset": 180,
-                    "enabled_states": [
-                        "minecraft:cardinal_direction"
-                    ]
                 }
             }
         },
@@ -86,7 +80,7 @@
                     "minecraft:geometry": {
                         "identifier": "geometry.foundry_multiblock2",
                         "bone_visibility": {
-                            "lava1": "query.block_state('foundry:material_type') == 'lava'"
+                            "lava1": "query.block_state('foundry:material_type1') == 1"
                         }
                     },
                     "minecraft:material_instances": {
@@ -102,32 +96,14 @@
                 }
             },
             {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
-                "components": {
-                    "minecraft:transformation": { "rotation": [0, 0, 0] }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
-                "components": {
-                    "minecraft:transformation": { "rotation": [0, 90, 0] }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
-                "components": {
-                    "minecraft:transformation": { "rotation": [0, 180, 0] }
-                }
-            },
-            {
-                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
-                "components": {
-                    "minecraft:transformation": { "rotation": [0, -90, 0] }
-                }
-            },
-            {
                 "condition": "query.block_state('foundry:lava_level') == 1",
                 "components": {
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "foundry_base",
+                            "render_method": "alpha_test"
+                        }
+                    },
                     "minecraft:light_emission": 1
                 }
             },
@@ -147,72 +123,6 @@
                 "condition": "query.block_state('foundry:lava_level') == 4",
                 "components": {
                     "minecraft:light_emission": 4
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 5",
-                "components": {
-                    "minecraft:light_emission": 5
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 6",
-                "components": {
-                    "minecraft:light_emission": 6
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 7",
-                "components": {
-                    "minecraft:light_emission": 7
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 8",
-                "components": {
-                    "minecraft:light_emission": 8
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 9",
-                "components": {
-                    "minecraft:light_emission": 9
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 10",
-                "components": {
-                    "minecraft:light_emission": 10
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 11",
-                "components": {
-                    "minecraft:light_emission": 11
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 12",
-                "components": {
-                    "minecraft:light_emission": 12
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 13",
-                "components": {
-                    "minecraft:light_emission": 13
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 14",
-                "components": {
-                    "minecraft:light_emission": 14
-                }
-            },
-            {
-                "condition": "query.block_state('foundry:lava_level') == 15",
-                "components": {
-                    "minecraft:light_emission": 15
                 }
             }
         ]
