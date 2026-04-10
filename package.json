@@ -1,14 +1,27 @@
 {
   "name": "foundries-bp",
   "version": "1.0.0",
-  "description": "",
+  "description": "Added the basic foundry block. Will add functionality later",
   "main": "index.js",
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@minecraft/server": "^2.8.0-beta.1.26.20-preview.23",
+    "@minecraft/server-ui": "^2.1.0-beta.1.26.10-stable",
+    "@minecraft/vanilla-data": "^1.26.10",
     "install": "^0.13.0",
     "npm": "^11.12.1"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmahonjr06/foundries.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmahonjr06/foundries/issues"
+  },
+  "homepage": "https://github.com/dmahonjr06/foundries#readme",
+  "type": "module"
 }

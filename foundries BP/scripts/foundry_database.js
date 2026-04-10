@@ -1,1 +1,1 @@
-export const foundryDatabase = new Map([]);
+"use strict";

@@ -3,9 +3,9 @@
         "module": "ES2020",
         "target": "ES2021",
         "allowSyntheticDefaultImports": true,
-        "rootDir": "./tsc",
-        "outDir": "./scripts"
+        "rootDir": "tsc",
+        "outDir": "./foundries BP/scripts"
     },
     "exclude": ["node_modules"],
     "include": ["tsc"]
-}
+}   
