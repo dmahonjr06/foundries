@@ -1,3 +1,4 @@
 pack.name=Foundries RP
 pack.description=pack.description
-tile.foundry:foundry_controller.name=Foundry
+tile.foundry:foundry_controller.name=Foundry Controller
+tile.foundry:lava_tank.name=Foundry Lava Tank

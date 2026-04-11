@@ -1,54 +1,111 @@
 import { Block, BlockPermutation, BlockStates, Player, system, Vector3 } from "@minecraft/server";
-import { BlockStateSuperset } from "@minecraft/vanilla-data";
+import {foundryMaxHeight, foundryLayerOffset, FoundryLayer, FoundryVariant, getFoundryLayer, foundryVariants, foundryLavaTankConfigs } from './foundry_statics';
 
-const foundryStructure = [
-                                  {x: -1, y: 0, z: -3},  {x:0, y: 0, z:-3},
-            {x: -2, y: 0, z: -2}, {x: -1, y: -1,z: -2},  {x:0, y:-1, z:-2}, {x:1,y:0,z:-2},
-            {x: -2, y: 0, z: -1}, {x: -1, y: -1,z: -1},  {x:0, y:-1, z:-1}, {x:1,y:0,z:-1},
-                                  {x: -1, y: 0, z: 0}
-]
-function foundryLayoutCheck(direction: string) {
-    return foundryStructure.map(pos => {
-        switch (direction) {
-            case "west": return { x: pos.z, y: pos.y, z: -pos.x };
-            case "south": return { x: -pos.x, y: pos.y, z: -pos.z };
-            case "east": return { x: -pos.z, y: pos.y, z: pos.x };
-            default: return pos;
+export function transformFoundryOffsetByDirection(pos: foundryLayerOffset, direction: string)
+{
+    switch (direction) {
+        case "west": return { x: pos.z, y: pos.y, z: -pos.x };
+        case "south": return { x: -pos.x, y: pos.y, z: -pos.z };
+        case "east": return { x: -pos.z, y: pos.y, z: pos.x };
+        default: return pos;
+    }
+}
+
+interface VariantResult {
+    valid: boolean,
+    validLayers: number,
+    firstMissingPosition?: Vector3 | null
+}
+
+// Left or right variant of the foundry structure, which checks for the different block offsets based on the controller's cardinal direction and the variant of the structure being checked.
+function tryVariant(
+    controllerBlock: Block,
+    direction: string,
+    foundryBrickTypeID: string,
+    variant: FoundryVariant
+): VariantResult {
+    let validLayers = 0;
+    const { lavaTankOffset, lavaTankBlockId } = foundryLavaTankConfigs[variant];
+
+    // Validate lava tank exists before checking any layers
+    const rotatedTankOffset = transformFoundryOffsetByDirection(lavaTankOffset, direction);
+    const tankBlock = controllerBlock.offset(rotatedTankOffset);
+    if (tankBlock?.typeId !== lavaTankBlockId) {
+        return {
+            valid: false,
+            validLayers: 0,
+            firstMissingPosition: tankBlock?.location,
+        };
+    }
+
+    for (let i = 0; i < foundryMaxHeight; i++) {
+        const layer = getFoundryLayer(i, variant);
+        const rotated = layer.offsetHeight.map(pos => transformFoundryOffsetByDirection(pos, direction));
+
+        const presentCount = rotated.filter(o =>
+            controllerBlock.offset(o)?.typeId === foundryBrickTypeID
+        ).length;
+
+    // Debug logging for each layer and variant
+    {
+        console.log(`Tank block at offset: ${tankBlock?.typeId ?? "undefined"}`);
+        console.log(`Layer ${i} | variant: ${variant} | mandatory: ${layer.mandatory} | present: ${presentCount}/${rotated.length}`);
+        rotated.forEach(o => {
+            const b = controllerBlock.offset(o);
+            console.log(`  offset ${o.x},${o.y},${o.z} => ${b?.typeId ?? "undefined"}`);
+        });
+    }
+        const missingCount = rotated.length - presentCount;
+
+        if (presentCount === 0 && !layer.mandatory) {
+            break; // player hasn't built this high, stop here
         }
-    });
+
+        if (missingCount > 0) {
+            const firstMissing = rotated.find(o =>
+                controllerBlock.offset(o)?.typeId !== foundryBrickTypeID
+            )!;
+            return {
+                valid: false,
+                validLayers,
+                firstMissingPosition: controllerBlock.offset(firstMissing)?.location,
+            };
+        }
+
+        validLayers++;
+    }
+
+    return { valid: true, validLayers };
 }
 
 export class FoundryStructureValidation {
-    static isValidFoundryStructure(controllerBlock: Block, player: Player | undefined, foundryBrickTypeID: string): boolean {
-        const controllerFacingDirection = controllerBlock.permutation.getState("minecraft:cardinal_direction") as string;
-        // const controllerValidationState = controllerBlock.permutation.getState("foundries:valid_foundry" as keyof BlockStateSuperset) as boolean;
-        const foundryRotations = foundryLayoutCheck(controllerFacingDirection);
+    static isValidFoundryStructure(
+        controllerBlock: Block,
+        player: Player | undefined,
+        foundryBrickTypeID: string
+    ): number {
+        const direction = controllerBlock.permutation.getState("minecraft:cardinal_direction") as string;
 
-        for (const check of foundryRotations)
-        {
-            const blockPosition = {x: check.x, y: check.y, z: check.z};
-            const block = controllerBlock.offset(blockPosition)
+        let fallbackResult: VariantResult | undefined;
 
-            if (block?.typeId !== foundryBrickTypeID)
-            {
-                // Updates the block state "foundries:valid_foundry" to false if there is no match
-                controllerBlock.setPermutation(
-                    BlockPermutation.resolve(
-                        controllerBlock.typeId, {"minecraft:cardinal_direction": controllerFacingDirection, "foundries:valid_foundry": false}
-                    )
-                )
-                player?.onScreenDisplay.setActionBar(`                          Foundry Invalid...\nMissing Deepslate Brick at ${block?.location.x}, ${block?.location.y}, ${block?.location.z}. Found: ${block?.typeId}`)
-                return false;
+        for (const variant of foundryVariants) {
+            const result = tryVariant(controllerBlock, direction, foundryBrickTypeID, variant);
+
+            if (result.valid) {
+                player?.onScreenDisplay.setActionBar(
+                    `FOUNDRY IS RUNNING (${result.validLayers} LAYER${result.validLayers !== 1 ? "S" : ""})`
+                );
+                return result.validLayers;
             }
+
+            if (!fallbackResult) fallbackResult = result;
         }
-        
-        controllerBlock.setPermutation(
-            BlockPermutation.resolve(
-                controllerBlock.typeId, {"minecraft:cardinal_direction": controllerFacingDirection, "foundries:valid_foundry": true}
-            )
-        )
-        player?.onScreenDisplay.setActionBar("FOUNDRY IS RUNNING")
-        return true;
-        
+
+
+        player?.onScreenDisplay.setActionBar(
+            `                         Layer ${fallbackResult?.validLayers}\n` +
+            `Missing ${foundryBrickTypeID} at ${fallbackResult?.firstMissingPosition?.x}, ${fallbackResult?.firstMissingPosition?.y}, ${fallbackResult?.firstMissingPosition?.z}`
+        );
+        return 0;
     }
 }

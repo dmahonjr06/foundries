@@ -1,61 +1,105 @@
-import { Block, BlockPermutation } from "@minecraft/server";
+import { Block, BlockPermutation, Vector3 } from "@minecraft/server";
 
-type foundryLayerOffset = {x: number, y: number, z: number}
-const foundryMaxHeight: number = 10
+export type foundryLayerOffset = Vector3
 
+export type FoundryVariant = "left" | "right";
 
 export interface FoundryLayer {
     offsetHeight: foundryLayerOffset[],
     mandatory: boolean
 }
 
-export function foundryLayoutCheck(pos: foundryLayerOffset, direction: string)
-{
-        switch (direction) {
-            case "west": return { x: pos.z, y: pos.y, z: -pos.x };
-            case "south": return { x: -pos.x, y: pos.y, z: -pos.z };
-            case "east": return { x: -pos.z, y: pos.y, z: pos.x };
-            default: return pos;
-        }
+export interface LavaTankConfig {
+    lavaTankOffset: Vector3;
+    lavaTankBlockId: string;
 }
 
-console.log(`X: ${foundryLayoutCheck({x: 0, y: 0, z: 0}, "minecraft:cardinal_direction").x}, test`);
+export const foundryLavaTankConfigs: Record<FoundryVariant, LavaTankConfig> = {
+    right: { lavaTankOffset: { x: -1, y: 0, z: 0 }, lavaTankBlockId: "foundry:lava_tank" },
+    left:  { lavaTankOffset: { x: 1, y: 0, z: 0 }, lavaTankBlockId: "foundry:lava_tank" },
+};
 
-export function foundryStructure(){ 
-    const structure = new Map<number, FoundryLayer>([
-    [0, {
-        mandatory: true,
-        offsetHeight: [
-                    {x: -1, y: -1,z: -2},  {x:0, y:-1, z:-2},
-                    {x: -1, y: -1,z: -1},  {x:0, y:-1, z:-1}
-        ]
-    }],
-    [1, {
-        mandatory: true,
-        offsetHeight: [
-
-                                  {x: -1, y: 0, z: -3},  {x:0, y: 0, z:-3},
-            {x: -2, y: 0, z: -2},                                           {x:1,y:0,z:-2},
-            {x: -2, y: 0, z: -1},                                           {x:1,y:0,z:-1},
-                                  {x: -1, y: 0, z: 0}
-        ]
-    }]
-]);
-
-    // Dynamic addition of all layers past layer 1 to "structure" as they will be all the same.
-    for (let layer = 2; layer < foundryMaxHeight; layer++) {
-        const y: number = layer - 1
-        structure.set(layer, {
+export const foundryMaxHeight = 10;
+export function getFoundryLayer(layer: number, variant: FoundryVariant): FoundryLayer {
+    const LayerY: number = layer - 1;
+    if (layer === 0 && variant === "right")
+    {
+        return {
             mandatory: true,
             offsetHeight: [
-
-                                      {x: -1, y: y, z: -3},  {x: 0, y: y, z:-3},
-                {x: -2, y: y, z: -2},                                           {x: 1,y: y, z: -2},
-                {x: -2, y: y, z: -1},                                           {x: 1,y: y, z: -1},
-                                      {x: -1, y: y, z: 0},   {x: 0, y: y, z: 0}
+                        {x: -1, y: -1,z: -2},  {x: 0, y: -1, z:-2},
+                        {x: -1, y: -1,z: -1},  {x: 0, y: -1, z:-1}
             ]
-        })
+        };
+    };
+    if (layer === 0 && variant === "left")
+    {
+        return {
+            mandatory: true,
+            offsetHeight: [
+                        {x: 0, y: LayerY,z: -2},  {x: 1, y:LayerY, z:-2},
+                        {x: 0, y: LayerY,z: -1},  {x: 1, y:LayerY, z:-1}
+            ]
+        };
     }
-    return console.log(structure.size)
+    if (variant === "right")
+    {
+        // Fix for checks for the lava tank
+        if (layer === 1) {
+            return {
+                mandatory: false,
+                offsetHeight: [
+                                            {x:-1, y: LayerY, z:-3}, {x:0, y:LayerY, z:-3},
+                    {x:-2, y: LayerY, z:-2},                                               {x:1, y: LayerY, z:-2},
+                    {x:-2, y: LayerY, z:-1},                                               {x:1, y: LayerY, z:-1}
+                ]
+            };
+        }
+
+        
+        return {
+            mandatory: false,
+            offsetHeight: [
+                                        {x:-1, y: LayerY, z:-3}, {x:0, y: LayerY, z:-3},  
+                {x:-2, y: LayerY, z:-2},                                                {x:1, y: LayerY, z:-2},
+                {x:-2, y: LayerY, z:-1},                                                {x:1, y: LayerY, z:-1},
+                                        {x:-1, y: LayerY, z: 0}, {x:0, y: LayerY, z: 0},
+            ]
+        };
+    };
+
+    if (variant === "left") {
+        if (layer === 1) {
+            return {
+                mandatory: false,
+                offsetHeight: [
+                                  {x:0, y:LayerY, z:-3}, {x:1, y:LayerY, z:-3},
+                    {x:-1, y:LayerY, z:-2},                                     {x:2, y:LayerY, z:-2},
+                    {x:-1, y:LayerY, z:-1},                                     {x:2, y:LayerY, z:-1},
+                ]
+            };
+        }
+        return {
+            mandatory: false,
+            offsetHeight: [
+                                        {x:0, y:LayerY, z:-3}, {x:1, y:LayerY, z:-3},
+                {x:-1, y:LayerY, z:-2},                                               {x:2, y:LayerY, z:-2},
+                {x:-1, y:LayerY, z:-1},                                               {x:2, y:LayerY, z:-1},
+                                        {x:0, y:LayerY, z: 0}, {x:1, y:LayerY, z: 0},
+            ]
+        };
+    }
+
+    return {
+        mandatory: false,
+        offsetHeight: [
+
+                                      {x: 0, y: LayerY, z: -3},  {x: 1, y: LayerY, z:-3},
+            {x: -1, y: LayerY, z: -2},                                               {x:2,y: LayerY,z:-2},
+            {x: -1, y: LayerY, z: -1},                                               {x:2,y: LayerY,z:-1},
+                                      {x: 0, y: LayerY, z: 0}, {x: 1, y: LayerY, z: 0}
+        ]
+    }
 
 }
+export const foundryVariants: FoundryVariant[] = ["left", "right"];

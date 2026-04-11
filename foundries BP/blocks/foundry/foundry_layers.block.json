@@ -1,0 +1,17 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:foundry_layers",
+            "states": {
+                "foundry:layer_1": [false, true],
+                "foundry:layer_2": [false, true],
+                "foundry:layer_3": [false, true],
+                "foundry:layer_4": [false, true]
+            }
+        },
+        "components": {
+
+        }
+    }
+}

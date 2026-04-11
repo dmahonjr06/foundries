@@ -4,8 +4,8 @@
     "resource_pack_name": "foundries RP",
     "texture_name": "atlas.terrain",
     "texture_data": {
-        "foundry_base": {
-            "textures": "textures/blocks/foundry/foundry_base"
+        "foundry_lava_tank": {
+            "textures": "textures/blocks/foundry/foundry_lava_tank"
         },
         "foundry_liquids": {
             "textures": "textures/blocks/foundry/foundry_smelted_liquids"

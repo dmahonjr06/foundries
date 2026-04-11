@@ -6,9 +6,6 @@
             "menu_category": {
                 "category": "construction"
             },
-            "states": {
-                "foundries:valid_foundry": [false, true]
-            },
             "traits": {
                 "minecraft:placement_direction": {
                     "enabled_states": [
@@ -21,11 +18,11 @@
             "foundry:structure_controller_validation": {},
             "tag:minecraft:is_pickaxe_item_destructible": {},
             "minecraft:geometry": {
-                "identifier": "geometry.foundry"
+                "identifier": "minecraft:geometry.full_block"
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "foundry_base",
+                    "texture": "foundry_lava_tank",
                     "render_method": "alpha_test"
                 }
             }
