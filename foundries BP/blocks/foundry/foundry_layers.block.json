@@ -7,7 +7,19 @@
                 "foundry:layer_1": [false, true],
                 "foundry:layer_2": [false, true],
                 "foundry:layer_3": [false, true],
-                "foundry:layer_4": [false, true]
+                "foundry:layer_4": [false, true],
+                "foundry:resource_type_1": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                },
+                "foundr:resource_type_2": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                }
             }
         },
         "components": {
