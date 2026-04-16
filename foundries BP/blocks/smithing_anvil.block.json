@@ -1,0 +1,120 @@
+{
+	"format_version": "1.26.10",
+	"minecraft:block": {
+		"description": {
+			"identifier": "foundry:smithing_anvil",
+			"menu_category": {
+				"category": "items",
+				"group": "minecraft:itemGroup.name.anvil"
+			},
+			"states": {
+				"smithing_anvil:hammered_times": {
+					"values": {
+						"min": 0,
+						"max": 2
+					}
+				},
+				"smithing_anvil:parts1": {
+					"values": {
+						"min": 0,
+						"max": 15
+					}
+				},
+				"smithing_anvil:parts2": {
+					"values": {
+						"min": 0,
+						"max": 1
+					}
+				},
+				"foundry:material_types1": {
+					"values": {
+						"min": 0,
+						"max": 15
+					}
+				},
+				"foundry:material_types2": {
+					"values": {
+						"min": 0,
+						"max": 1
+					}
+				}
+			},
+			"traits": {
+				"minecraft:placement_direction": {
+					"enabled_states": ["minecraft:cardinal_direction"]
+				}
+			}
+		},
+		"components": {
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 4
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 130
+			},
+			"minecraft:geometry": {
+				"identifier": "geometry.smithing_anvil",
+				"bone_visibility": {
+					"anvil": true,
+					"steel_ingot": false,
+					"steel_plate": false,
+					"smelted_titanium": false,
+					"titanium_ingot": false,
+					"hot_axe_head_hammered_0": "q.block_state('smithing_anvil:parts1') == 1 && q.block_state('smithing_anvil:parts2') == 0 && q.block_state('smithing_anvil:hammered_times') == 0",
+					"hot_axe_head_hammered_1": "q.block_state('smithing_anvil:parts1') == 1 && q.block_state('smithing_anvil:parts2') == 0 && q.block_state('smithing_anvil:hammered_times') == 1",
+					"diamond_axe_head": true,
+					"iron_axe_head": false,
+					"gold_axe_head": false,
+					"copper_axe_head": false
+				}
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "smithing_anvil"
+				},
+				"parts": {
+					"texture": "smithing_anvil_tools"
+				}
+			},
+			"minecraft:map_color": "#303030",
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:minecraft:iron_tier_destructible": {}
+		},
+		"permutations": [
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [0, 180, 0]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [0, 0, 0]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [0, 90, 0]
+					}
+				}
+			},
+			{
+				"condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+				"components": {
+					"minecraft:transformation": {
+						"rotation": [0, 270, 0]
+					}
+				}
+			}
+		]
+	}
+}

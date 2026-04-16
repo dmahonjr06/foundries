@@ -1,0 +1,21 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:kiln_brick"
+        },
+        "components": {
+            "minecraft:geometry": {
+                "identifier": "geometry.kiln",
+                "bone_visibility": {
+                    "fire_pit": true
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "kiln"
+                }
+            }
+        }
+    }
+}

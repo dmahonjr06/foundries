@@ -2,7 +2,7 @@
     "format_version": 3,
     "header": {
         "description": "pack.description",
-        "name": "Foundries BP",
+        "name": "Foundries and Forges BP",
         "uuid": "22e54883-53e2-4d21-ae2a-9a0f6673e2ae",
         "min_engine_version": "1.26.10",
         "version": "1.0.0"

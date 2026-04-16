@@ -1,0 +1,37 @@
+{
+	"format_version": "1.26.0",
+	"minecraft:block": {
+		"description": {
+			"identifier": "dma:steel_block",
+			"menu_category": {
+				"category": "construction"
+			}
+		},
+		"components": {
+			"tag:dma:steel_block": {},
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 6
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 200
+			},
+			"minecraft:geometry": {
+				"identifier": "minecraft:geometry.full_block"
+			},
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "steel_block",
+					"render_method": "alpha_test"
+				}
+			},
+			"minecraft:map_color": "#2b2b2b",
+			"tag:minecraft:is_pickaxe_item_destructible": {},
+			"tag:minecraft:diamond_tier_destructible": {},
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			}
+		}
+	}
+}

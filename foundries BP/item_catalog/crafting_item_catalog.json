@@ -1,0 +1,24 @@
+// mc-disable behaviorpack.items.missing
+{
+    "format_version": "1.26.0",
+    "minecraft:crafting_items_catalog": {
+        "categories": [
+            {
+                "category_name": "items",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "foundry:obsidian_bucket",
+                            "name": "foundry:itemGroup.name.buckets"
+                        },
+                        "items": [
+                            "foundry:obsidian_bucket",
+                            "foundry:molten_steel_obsidian_bucket",
+                            "foundry:3_quarter_full_molten_steel_obsidian_bucket"
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+}

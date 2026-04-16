@@ -9,6 +9,24 @@
         },
         "foundry_liquids": {
             "textures": "textures/blocks/foundry/foundry_smelted_liquids"
+        },
+        // Ores
+        "titanium_ore_end": {
+            "textures": "textures/blocks/ores/end/titanium_ore_endstone"
+        },
+        // Resource Blocks
+        "steel_block": {
+            "textures": "textures/blocks/resource_blocks/steel_block.png"
+        },
+        // Functional Blocks
+        "smithing_anvil": {
+            "textures": "textures/blocks/smithing_anvil/smithing_anvil"
+        },
+        "smithing_anvil_tools": {
+            "textures": "textures/blocks/smithing_anvil/smithing_table_tools"
+        },
+        "kiln": {
+            "textures": "textures/blocks/kiln/kiln_furnace"
         }
     }
 }

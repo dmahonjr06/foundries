@@ -1,0 +1,47 @@
+{
+   "content" : [
+      {
+         "path" : "blocks/kiln_brick.block.json"
+      },
+      {
+         "path" : "blocks/smithing_anvil.block.json"
+      },
+      {
+         "path" : "blocks/steel_block.block.json"
+      },
+      {
+         "path" : "blocks/titanium_ore_end.block.json"
+      },
+      {
+         "path" : "contents.json"
+      },
+      {
+         "path" : "item_catalog/crafting_item_catalog.json"
+      },
+      {
+         "path" : "items/obsidian_buckets/obsidian_bucket.item.json"
+      },
+      {
+         "path" : "items/obsidian_buckets/steel/3quarter_molten_steel_obsidian_bucket.item.json"
+      },
+      {
+         "path" : "items/obsidian_buckets/steel/molten_steel_obsidian_bucket.item.json"
+      },
+      {
+         "path" : "items/titanium/titanium_axe.item.json"
+      },
+      {
+         "path" : "manifest.json"
+      },
+      {
+         "path" : "scripts/kiln_structure.js"
+      },
+      {
+         "path" : "scripts/main.js"
+      },
+      {
+         "path" : "scripts/smithing_anvil_database.js"
+      }
+   ],
+   "version" : 1
+}

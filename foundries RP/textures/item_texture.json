@@ -1,0 +1,94 @@
+{
+    "texture_name": "atlas.items",
+    "resource_pack_name": "foundries RP",
+    "texture_data": {
+        // Root
+        "dragon_scale": {
+            "textures": "textures/items/dragon_scale"
+        },
+        "dragon_star": {
+            "textures": "textures/items/dragon_star"
+        },
+        "foundry_gem_mold": {
+            "textures": "textures/items/foundry_gem_mold"
+        },
+        "foundry_ingot_mold": {
+            "textures": "textures/items/foundry_ingot_mold"
+        },
+        "obsidian_brush": {
+            "textures": "textures/items/obsidian_brush"
+        },
+        "smelted_titanium": {
+            "textures": "textures/items/smelted_titanium"
+        },
+
+        // Axes
+        "lead_axe": {
+            "textures": "textures/items/axes/lead_axe"
+        },
+        "titanium_axe": {
+            "textures": "textures/items/axes/titanium_axe"
+        },
+
+        // Buckets
+        "obsidian_bucket": {
+            "textures": "textures/items/buckets/obsidian_bucket"
+        },
+
+        // Buckets / molten steel
+        "3_quarter_full_molten_steel_obsidian_bucket": {
+            "textures": "textures/items/buckets/molten_steel/3_quarter_full_molten_steel_obsidian_bucket"
+        },
+        "half_full_molten_steel_obsidian_bucket": {
+            "textures": "textures/items/buckets/molten_steel/half_full_molten_steel_obsidian_bucket"
+        },
+        "molten_steel_obsidian_bucket": {
+            "textures": "textures/items/buckets/molten_steel/molten_steel_obsidian_bucket"
+        },
+        "quarter_full_molten_steel_obsidian_bucket": {
+            "textures": "textures/items/buckets/molten_steel/quarter_full_molten_steel_obsidian_bucket"
+        },
+
+        // Hammers
+        "dragon_scale_hammer": {
+            "textures": "textures/items/hammers/dragon_scale_hammer"
+        },
+        "hammer": {
+            "textures": "textures/items/hammers/hammer"
+        },
+
+        // Ingots
+        "steel_ingot": {
+            "textures": "textures/items/ingots/steel_ingot"
+        },
+        "titanium_ingot": {
+            "textures": "textures/items/ingots/titanium_ingot"
+        },
+        "uranium_ingot": {
+            "textures": "textures/items/ingots/uranium_ingot"
+        },
+
+        // Pickaxes
+        "lead_pickaxe": {
+            "textures": "textures/items/pickaxes/lead_pickaxe"
+        },
+        "titanium_pickaxe": {
+            "textures": "textures/items/pickaxes/titanium_pickaxe"
+        },
+
+        // Plates
+        "steel_plate": {
+            "textures": "textures/items/plates/steel_plate"
+        },
+
+        // Powder
+        "steel_powder": {
+            "textures": "textures/items/powder/steel_powder"
+        },
+
+        // Rods
+        "steel_rod": {
+            "textures": "textures/items/rods/steel_rod"
+        }
+    }
+}

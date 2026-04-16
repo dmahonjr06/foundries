@@ -1,0 +1,137 @@
+{
+   "content" : [
+      {
+         "path" : "blocks.json"
+      },
+      {
+         "path" : "contents.json"
+      },
+      {
+         "path" : "manifest.json"
+      },
+      {
+         "path" : "models/blocks/kiln.geo.json"
+      },
+      {
+         "path" : "models/blocks/smithing_anvil.geo.json"
+      },
+      {
+         "path" : "texts/en_US.lang"
+      },
+      {
+         "path" : "texts/languages.json"
+      },
+      {
+         "path" : "textures/blocks/foundry/foundry_lava_tank.png"
+      },
+      {
+         "path" : "textures/blocks/foundry/foundry_smelted_liquids.png"
+      },
+      {
+         "path" : "textures/blocks/kiln/kiln_furnace.png"
+      },
+      {
+         "path" : "textures/blocks/ores/end/titanium_ore_endstone.png"
+      },
+      {
+         "path" : "textures/blocks/ores/overworld/aluminium_ore.png"
+      },
+      {
+         "path" : "textures/blocks/ores/overworld/lead_ore.png"
+      },
+      {
+         "path" : "textures/blocks/ores/overworld/silver_ore.png"
+      },
+      {
+         "path" : "textures/blocks/ores/overworld/titanium_ore.png"
+      },
+      {
+         "path" : "textures/blocks/resource_blocks/steel_block.png"
+      },
+      {
+         "path" : "textures/blocks/smithing_anvil/axe_heads.png"
+      },
+      {
+         "path" : "textures/blocks/smithing_anvil/smithing_anvil.png"
+      },
+      {
+         "path" : "textures/blocks/smithing_anvil/smithing_table_tools.png"
+      },
+      {
+         "path" : "textures/item_texture.json"
+      },
+      {
+         "path" : "textures/items/axes/lead_axe.png"
+      },
+      {
+         "path" : "textures/items/axes/titanium_axe.png"
+      },
+      {
+         "path" : "textures/items/buckets/molten_steel/3_quarter_full_molten_steel_obsidian_bucket.png"
+      },
+      {
+         "path" : "textures/items/buckets/molten_steel/half_full_molten_steel_obsidian_bucket.png"
+      },
+      {
+         "path" : "textures/items/buckets/molten_steel/molten_steel_obsidian_bucket.png"
+      },
+      {
+         "path" : "textures/items/buckets/molten_steel/quarter_full_molten_steel_obsidian_bucket.png"
+      },
+      {
+         "path" : "textures/items/buckets/obsidian_bucket.png"
+      },
+      {
+         "path" : "textures/items/dragon_scale.png"
+      },
+      {
+         "path" : "textures/items/dragon_star.png"
+      },
+      {
+         "path" : "textures/items/foundry_gem_mold.png"
+      },
+      {
+         "path" : "textures/items/foundry_ingot_mold.png"
+      },
+      {
+         "path" : "textures/items/hammers/dragon_scale_hammer.png"
+      },
+      {
+         "path" : "textures/items/hammers/hammer.png"
+      },
+      {
+         "path" : "textures/items/ingots/steel_ingot.png"
+      },
+      {
+         "path" : "textures/items/ingots/titanium_ingot.png"
+      },
+      {
+         "path" : "textures/items/ingots/uranium_ingot.png"
+      },
+      {
+         "path" : "textures/items/obsidian_brush.png"
+      },
+      {
+         "path" : "textures/items/pickaxes/lead_pickaxe.png"
+      },
+      {
+         "path" : "textures/items/pickaxes/titanium_pickaxe.png"
+      },
+      {
+         "path" : "textures/items/plates/steel_plate.png"
+      },
+      {
+         "path" : "textures/items/powder/steel_powder.png"
+      },
+      {
+         "path" : "textures/items/rods/steel_rod.png"
+      },
+      {
+         "path" : "textures/items/smelted_titanium.png"
+      },
+      {
+         "path" : "textures/terrain_texture.json"
+      }
+   ],
+   "version" : 1
+}
