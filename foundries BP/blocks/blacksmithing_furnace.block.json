@@ -1,0 +1,45 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:blacksmithing_furnace",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "foundry:material_types1": {
+					"values": {
+						"min": 0,
+						"max": 15
+					}
+				},
+				"foundry:material_types2": {
+					"values": {
+						"min": 0,
+						"max": 1
+					}
+				},
+				"smithing_anvil:parts1": {
+					"values": {
+						"min": 0,
+						"max": 15
+					}
+				},
+				"smithing_anvil:parts2": {
+					"values": {
+						"min": 0,
+						"max": 1
+					}
+				}
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            }
+        },
+        "components": {}
+    }
+}

@@ -28,7 +28,13 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 [The parts2 state allows for 16*5 parts to be used, aka 80 parts reserved to be hammered] (Will most likely be lowered with the "material_types2" increased)
 
 
-Craftable items:
+### Blacksmithing Furnace
+- 
+
+
+
+
+## Craftable items:
 (The Rods iron and above might be made using the anvil method if states are available)
 - Stone rod,
 - Iron rod
@@ -63,7 +69,7 @@ Craftable items:
 
 
 
-
+# States and What some of them mean
 
 
 ## Material Types and their block state "foundry:material_types1" & "foundry:material_types2" number
@@ -79,6 +85,9 @@ Craftable items:
 10|0 - Titanium
 11|0 - Lead
 12|0 - Silver
+13|0 - Brass
+14|0 - Steel
+15|0 - Dragon Steel (Dragon Scale and Steel mixture)
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
