@@ -40,6 +40,13 @@
                 }
             }
         },
-        "components": {}
+        "components": {
+			"minecraft:geometry": "geometry.blacksmithing_furnace",
+			"minecraft:material_instances": {
+				"*": {
+					"texture": "blacksmithing_furnace"
+				}
+			}
+		}
     }
 }

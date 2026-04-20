@@ -29,7 +29,9 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 
 
 ### Blacksmithing Furnace
-- 
+- Will be a big bucket with a base having an interchangeable cast
+- The block will be based on the "geometry.blacksmithing_furnace"
+- Will make use of an entity version to compensate for the states and visual changes.
 
 
 

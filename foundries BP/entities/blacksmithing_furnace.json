@@ -1,0 +1,35 @@
+{
+    "format_version": "1.16.10",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "foundry:blacksmithing_furnace",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "components": {
+            
+            "minecraft:variant": {
+                "value": 0
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:collision_box": {
+                "height": 1,
+                "width": 1
+            },
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:renders_when_invisible": {},
+            "minecraft:spell_effects": {
+                "add_effects": [
+                    {
+                        "duration": "infinite",
+                        "effect": "invisibility",
+                        "visible": false
+                    }
+                ]
+            }
+        },
+        "component_groups": {},
+        "events": {}
+    }
+}

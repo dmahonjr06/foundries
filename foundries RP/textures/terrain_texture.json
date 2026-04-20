@@ -27,6 +27,9 @@
         },
         "kiln": {
             "textures": "textures/blocks/kiln/kiln_furnace"
+        },
+        "blacksmithing_furnace": {
+            "textures": "textures/blocks/kiln/blacksmithing_furnace"
         }
     }
 }

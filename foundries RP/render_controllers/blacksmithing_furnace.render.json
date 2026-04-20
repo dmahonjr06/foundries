@@ -1,0 +1,23 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.blacksmithing_furnace": {
+            "geometry": "geometry.blacksmithing_furnace",
+            "materials": [
+                {
+                    "*": "material.blacksmithing_furnace"
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "Array.blacksmithing_furnace": [
+                        "texture.blacksmithing_furnace"
+                    ]
+                }
+            },
+            "textures": [
+                "Array.blacksmithing_furnace"
+            ]
+        }
+    }
+}
