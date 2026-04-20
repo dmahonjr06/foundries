@@ -1,5 +1,5 @@
 import { system, world } from "@minecraft/server";
-import { FoundryStructureValidation } from "./foundry_structure";
+import { FoundryStructure } from "./foundry_structure";
 
 system.beforeEvents.startup.subscribe(({blockComponentRegistry}) => {
     blockComponentRegistry.registerCustomComponent(
@@ -10,7 +10,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry}) => {
 
 export const foundryStructureValidation: import("@minecraft/server").BlockCustomComponent = {
     onPlayerInteract({ block, player}){
-        FoundryStructureValidation.isValidFoundryStructure(block, player, "minecraft:deepslate_bricks");
+        FoundryStructure.isValidFoundryStructure(block, player, "minecraft:deepslate_bricks");
     }    
 }
 

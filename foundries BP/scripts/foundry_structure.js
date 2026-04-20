@@ -57,7 +57,8 @@ export class FoundryStructureValidation {
         for (const variant of foundryVariants) {
             const result = tryVariant(controllerBlock, direction, foundryBrickTypeID, variant);
             if (result.valid) {
-                player?.onScreenDisplay.setActionBar(`FOUNDRY IS RUNNING (${result.validLayers} LAYER${result.validLayers !== 1 ? "S" : ""})`);
+                // Structure starts at layer 0 and not one, so we subtract 1 from the valid layer count for display purposes
+                player?.onScreenDisplay.setActionBar(`FOUNDRY IS RUNNING (${result.validLayers - 1} LAYER${result.validLayers - 1 !== 1 ? "S" : ""})`);
                 return result.validLayers;
             }
             if (!fallbackResult)

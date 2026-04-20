@@ -78,7 +78,7 @@ function tryVariant(
     return { valid: true, validLayers };
 }
 
-export class FoundryStructureValidation {
+export class FoundryStructure {
     static isValidFoundryStructure(
         controllerBlock: Block,
         player: Player | undefined,
@@ -92,8 +92,9 @@ export class FoundryStructureValidation {
             const result = tryVariant(controllerBlock, direction, foundryBrickTypeID, variant);
 
             if (result.valid) {
+                // Structure starts at layer 0 and not one, so we subtract 1 from the valid layer count for display purposes
                 player?.onScreenDisplay.setActionBar(
-                    `FOUNDRY IS RUNNING (${result.validLayers} LAYER${result.validLayers !== 1 ? "S" : ""})`
+                    `FOUNDRY IS RUNNING (${result.validLayers-1} LAYER${result.validLayers-1 !== 1 ? "S" : ""})`
                 );
                 return result.validLayers;
             }
