@@ -1,5 +1,11 @@
 # A blacksmithing add-on.
 
+## 2 BLOCK MULTIBLOCK Furnace called a "Foundry"
+- The bottom block will be a directional based block with 2 output sides and 1 lava tank side.
+- The top block will be a glass tank where the the 16 liquid layers will be displayed through a property system with an entity inside the tank.
+- The output sides will be able to connect to a "tap" block that can pour
+
+
 ## Using a custom anvil, interact with the anvil to place hot, unhammered pieces that need to be hammered into their correct shape.
 ### Unhammered part types
 - Axe head,
@@ -73,23 +79,23 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 
 # States and What some of them mean
 
-
 ## Material Types and their block state "foundry:material_types1" & "foundry:material_types2" number
-1|0 - Iron
-2|0 - Gold
-3|0 - Copper
-4|0 - Diamond
-5|0 - Netherite
-6|0 - Obsidian
-7|0 - Aluminium
-8|0 - Zinc
-9|0 - Osmium
-10|0 - Titanium
-11|0 - Lead
-12|0 - Silver
-13|0 - Brass
-14|0 - Steel
-15|0 - Dragon Steel (Dragon Scale and Steel mixture)
+1|0 Iron
+2|0 - Iron
+3|0 - Gold
+4|0 - Copper
+5|0 - Diamond
+6|0 - Netherite
+7|0 - Obsidian
+8|0 - Aluminium
+9|0 - Zinc
+10|0 - Osmium
+11|0 - Titanium
+12|0 - Lead
+13|0 - Silver
+14|0 - Brass
+15|0 - Steel
+16|0 - Dragon Steel (Dragon Scale and Steel mixture)
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head

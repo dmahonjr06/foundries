@@ -2,13 +2,13 @@
 	"format_version": "1.26.0",
 	"minecraft:block": {
 		"description": {
-			"identifier": "dma:steel_block",
+			"identifier": "foundry:steel_block",
 			"menu_category": {
 				"category": "construction"
 			}
 		},
 		"components": {
-			"tag:dma:steel_block": {},
+			"minecraft:light_dampening": 15,
 			"minecraft:collision_box": true,
 			"minecraft:selection_box": true,
 			"minecraft:destructible_by_mining": {
@@ -16,15 +16,6 @@
 			},
 			"minecraft:destructible_by_explosion": {
 				"explosion_resistance": 200
-			},
-			"minecraft:geometry": {
-				"identifier": "minecraft:geometry.full_block"
-			},
-			"minecraft:material_instances": {
-				"*": {
-					"texture": "steel_block",
-					"render_method": "alpha_test"
-				}
 			},
 			"minecraft:map_color": "#2b2b2b",
 			"tag:minecraft:is_pickaxe_item_destructible": {},

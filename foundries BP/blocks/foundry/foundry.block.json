@@ -1,0 +1,105 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:foundry",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "foundry:lava_level": {
+                    "values": {
+                        "min": 0,
+                        "max": 12
+                    }
+                }
+            },
+            "traits": {
+                "minecraft:multi_block": {
+                    "direction": "up",
+                    "enabled_states": [
+                        "minecraft:multi_block_part"
+                    ],
+                    "parts": 2
+                },
+                "minecraft:placement_direction": {
+                    "y_rotation_offset": 180,
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "foundry:player_interact_with_foundry": {},
+            "foundry:spawn_foundry_entity": {},
+            "foundry:lava_tank_interact": {},
+            "minecraft:movable": {
+                "movement_type": "immovable"
+            },
+            "minecraft:geometry": {
+                "identifier": "geometry.foundry_bottom",
+                "bone_visibility": {
+                    "lava1": "query.block_state('foundry:lava_level') == 1",
+                    "lava2": "query.block_state('foundry:lava_level') == 2",
+                    "lava3": "query.block_state('foundry:lava_level') == 3",
+                    "lava4": "query.block_state('foundry:lava_level') == 4",
+                    "lava5": "query.block_state('foundry:lava_level') == 5",
+                    "lava6": "query.block_state('foundry:lava_level') == 6",
+                    "lava7": "query.block_state('foundry:lava_level') == 7",
+                    "lava8": "query.block_state('foundry:lava_level') == 8",
+                    "lava9": "query.block_state('foundry:lava_level') == 9",
+                    "lava10": "query.block_state('foundry:lava_level') == 10",
+                    "lava11": "query.block_state('foundry:lava_level') == 11",
+                    "lava12": "query.block_state('foundry:lava_level') == 12"
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "foundry_lava_tank",
+                    "render_method": "alpha_test"
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:multi_block_part') == 1",
+                "components": {
+                    "minecraft:geometry": {
+                        "identifier": "geometry.foundry_top"
+                    },
+                    "minecraft:material_instances": {
+                        "*": {
+                            "texture": "glass",
+                            "render_method": "alpha_test"
+                        }
+                    }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 90, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 180, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, -90, 0] }
+                }
+            }
+        ]
+    }
+}

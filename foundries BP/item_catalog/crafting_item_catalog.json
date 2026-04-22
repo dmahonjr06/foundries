@@ -12,9 +12,6 @@
                             "name": "foundry:itemGroup.name.buckets"
                         },
                         "items": [
-                            "foundry:obsidian_bucket",
-                            "foundry:molten_steel_obsidian_bucket",
-                            "foundry:3_quarter_full_molten_steel_obsidian_bucket"
                         ]
                     }
                 ]

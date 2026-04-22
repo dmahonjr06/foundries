@@ -1,35 +1,70 @@
 {
-    "num_mip_levels": 4,
-    "padding": 4,
-    "resource_pack_name": "foundries RP",
     "texture_name": "atlas.terrain",
+    "resource_pack_name": "foundries RP",
     "texture_data": {
+        // Foundry
         "foundry_lava_tank": {
             "textures": "textures/blocks/foundry/foundry_lava_tank"
         },
-        "foundry_liquids": {
+        "foundry_smelted_liquids": {
             "textures": "textures/blocks/foundry/foundry_smelted_liquids"
         },
-        // Ores
-        "titanium_ore_end": {
+
+        // Kiln
+        "blacksmithing_furnace": {
+            "textures": "textures/blocks/kiln/blacksmithing_furnace"
+        },
+        "kiln_furnace": {
+            "textures": "textures/blocks/kiln/kiln_furnace"
+        },
+
+        // Ores / end
+        "titanium_ore_endstone": {
             "textures": "textures/blocks/ores/end/titanium_ore_endstone"
         },
-        // Resource Blocks
-        "steel_block": {
-            "textures": "textures/blocks/resource_blocks/steel_block.png"
+
+        // Ores / overworld
+        "aluminium_ore": {
+            "textures": "textures/blocks/ores/overworld/aluminium_ore"
         },
-        // Functional Blocks
+        "lead_ore": {
+            "textures": "textures/blocks/ores/overworld/lead_ore"
+        },
+        "silver_ore": {
+            "textures": "textures/blocks/ores/overworld/silver_ore"
+        },
+        "titanium_ore": {
+            "textures": "textures/blocks/ores/overworld/titanium_ore"
+        },
+        "titanium_ore_deepslate": {
+            "textures": "textures/blocks/ores/overworld/titanium_ore_deepslate"
+        },
+
+        // Ores / raw resource block
+        "raw_rose_gold_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_rose_gold_block"
+        },
+        "raw_steel_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_steel_block"
+        },
+        "raw_titanium_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_titanium_block"
+        },
+
+        // Ores / resource block
+        "steel_block": {
+            "textures": "textures/blocks/ores/resource_block/steel_block"
+        },
+
+        // Smithing anvil
+        "axe_heads": {
+            "textures": "textures/blocks/smithing_anvil/axe_heads"
+        },
         "smithing_anvil": {
             "textures": "textures/blocks/smithing_anvil/smithing_anvil"
         },
-        "smithing_anvil_tools": {
+        "smithing_table_tools": {
             "textures": "textures/blocks/smithing_anvil/smithing_table_tools"
-        },
-        "kiln": {
-            "textures": "textures/blocks/kiln/kiln_furnace"
-        },
-        "blacksmithing_furnace": {
-            "textures": "textures/blocks/kiln/blacksmithing_furnace"
         }
     }
 }

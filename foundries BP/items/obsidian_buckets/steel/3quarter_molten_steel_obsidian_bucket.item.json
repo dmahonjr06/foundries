@@ -2,14 +2,14 @@
     "format_version": "1.26.10",
     "minecraft:item": {
         "description": {
-            "identifier": "foundry:3_quarter_full_molten_steel_obsidian_bucket",
+            "identifier": "foundry:3_quarter_molten_steel_obsidian_bucket",
             "menu_category": {
                 "category": "items",
                 "group": "foundry:itemGroup.name.buckets"
             }
         },
         "components": {
-            "minecraft:icon": "3_quarter_full_molten_steel_obsidian_bucket",
+            "minecraft:icon": "3_quarter_molten_steel_obsidian_bucket",
             "minecraft:max_stack_size": 1
         }
     }

@@ -1,6 +1,9 @@
 {
     "format_version": "1.21.40",
     "foundry:titanium_end_ore": {
-        "textures": "titanium_ore_end"
+        "textures": "titanium_ore_endstone"
+    },
+    "foundry:steel_block": {
+        "textures": "steel_block"
     }
 }
