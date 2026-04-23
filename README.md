@@ -80,7 +80,7 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 # States and What some of them mean
 
 ## Material Types and their block state "foundry:material_types1" & "foundry:material_types2" number
-1|0 Iron
+1|0 - Lava
 2|0 - Iron
 3|0 - Gold
 4|0 - Copper
@@ -96,7 +96,7 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 14|0 - Brass
 15|0 - Steel
 16|0 - Dragon Steel (Dragon Scale and Steel mixture)
-
+17|0 - Redstone
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
 2 - Pickaxe head

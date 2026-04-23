@@ -99,6 +99,79 @@
                 "components": {
                     "minecraft:transformation": { "rotation": [0, -90, 0] }
                 }
+            },
+            // Adds light to each lava level
+            {
+                "condition": "query.block_state('foundry:lava_level') == 1",
+                "components": {
+                    "minecraft:light_emission": 1
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 2",
+                "components": {
+                    "minecraft:light_emission": 2
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 3",
+                "components": {
+                    "minecraft:light_emission": 3
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 4",
+                "components": {
+                    "minecraft:light_emission": 4
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 5",
+                "components": {
+                    "minecraft:light_emission": 5
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 6",
+                "components": {
+                    "minecraft:light_emission": 6
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 7",
+                "components": {
+                    "minecraft:light_emission": 7
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 8",
+                "components": {
+                    "minecraft:light_emission": 8
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 9",
+                "components": {
+                    "minecraft:light_emission": 9
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 10",
+                "components": {
+                    "minecraft:light_emission": 10
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 11",
+                "components": {
+                    "minecraft:light_emission": 11
+                }
+            },
+            {
+                "condition": "query.block_state('foundry:lava_level') == 12",
+                "components": {
+                    "minecraft:light_emission": 12
+                }
             }
         ]
     }

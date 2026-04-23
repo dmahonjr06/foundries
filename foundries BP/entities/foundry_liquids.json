@@ -192,10 +192,6 @@
             }
         },
         "components": {
-            
-            "minecraft:variant": {
-                "value": 0
-            },
             "minecraft:is_collidable": {},
             "minecraft:collision_box": {
                 "height": 0.9,
