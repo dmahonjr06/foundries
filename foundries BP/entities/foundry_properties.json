@@ -2,9 +2,16 @@
     "format_version": "1.20.80",
     "minecraft:entity": {
         "description": {
-            "identifier": "foundry:properties",
+            "identifier": "foundry:foundry_properties",
             "is_spawnable": false,
-            "is_summonable": true
+            "is_summonable": true,
+            "properties": {
+                "foundry:direction": {
+                    "type": "enum",
+                    "values": ["north", "east", "south", "west"],
+                    "default": "north"
+                }
+            }
         },
         "component_groups": {
             "foundry:despawn": {
@@ -16,8 +23,8 @@
         "components": {
             "minecraft:is_collidable": {},
             "minecraft:collision_box": {
-                "height": 0.9,
-                "width": 0.9
+                "height": 0.4,
+                "width": 0.4
             },
             "minecraft:body_rotation_blocked": {},
             "minecraft:rotation_axis_aligned": {},
