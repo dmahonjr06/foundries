@@ -73,9 +73,6 @@
 			"minecraft:material_instances": {
 				"*": {
 					"texture": "smithing_anvil"
-				},
-				"parts": {
-					"texture": "smithing_anvil_tools"
 				}
 			},
 			"minecraft:map_color": "#303030",

@@ -1,5 +1,5 @@
 import { BlockPermutation, EquipmentSlot, ItemStack } from "@minecraft/server";
-import { FoundryCheckItemsPlayerInterractsWith } from "./foundry_liquid_layers_database";
+import { FoundryCheckItemsPlayerInterractsWith } from "./liquid_layers_database";
 // Can only put lava in, can't take out yet. (Just for testing)
 //  TODO: Make the tank accept a database of bucket types and returns.
 export const lava_tank_component = {

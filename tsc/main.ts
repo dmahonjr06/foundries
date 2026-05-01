@@ -1,6 +1,6 @@
 import { EntityQueryPropertyOptions, system, world } from "@minecraft/server";
-import { lava_tank_component, player_interact_with_foundry } from "./foundry/foundry_bottom_lava_tank";
-import { spawn_foundry_block_entity } from "./foundry/foundry_top_tank";
+import { lava_tank_component, player_interact_with_foundry } from "./foundry/lava_tank";
+import { spawn_foundry_block_entity } from "./foundry/spawn_foundry_entities";
 
 
 system.beforeEvents.startup.subscribe(({blockComponentRegistry}) => {
@@ -8,6 +8,7 @@ system.beforeEvents.startup.subscribe(({blockComponentRegistry}) => {
     blockComponentRegistry.registerCustomComponent("foundry:spawn_foundry_entity", spawn_foundry_block_entity);
     blockComponentRegistry.registerCustomComponent("foundry:player_interact_with_foundry", player_interact_with_foundry)
 })
+
 
 // State Debugging
 world.afterEvents.playerInteractWithBlock.subscribe(({block}) => {

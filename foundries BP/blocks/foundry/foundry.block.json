@@ -58,6 +58,10 @@
                 "*": {
                     "texture": "foundry_lava_tank",
                     "render_method": "alpha_test"
+                },
+                "west": {
+                    "texture": "oak_planks",
+                    "render_method": "alpha_test"
                 }
             }
         },

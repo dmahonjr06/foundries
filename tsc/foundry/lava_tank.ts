@@ -1,6 +1,6 @@
 import { BlockStateSuperset } from "@minecraft/vanilla-data";
 import { BlockPermutation, EquipmentSlot, ItemStack, Player, Vector3 } from "@minecraft/server";
-import { FoundryCheckItemsPlayerInterractsWith, playerInputItemsIntoFoundry } from "./foundry_liquid_layers_database";
+import { FoundryCheckItemsPlayerInterractsWith, playerInputItemsIntoFoundry } from "./liquid_layers_database";
 
 
 // Can only put lava in, can't take out yet. (Just for testing)
@@ -62,6 +62,7 @@ export const player_interact_with_foundry: import("@minecraft/server").BlockCust
         if (bucketInHand) return; // Only works if the player doesn't have a bucket.
         const FoundryTopBlock = block.above(1) as Vector3 
         const FoundryEntityProperties = FoundryCheckItemsPlayerInterractsWith(block, player as Player)
+        
         
         return;
     }

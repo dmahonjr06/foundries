@@ -14,8 +14,61 @@
         "blacksmithing_furnace": {
             "textures": "textures/blocks/kiln/blacksmithing_furnace"
         },
-        "kiln_furnace": {
-            "textures": "textures/blocks/kiln/kiln_furnace"
+
+        // Liquid
+        "adamantium": {
+            "textures": "textures/blocks/liquid/adamantium"
+        },
+        "aluminium": {
+            "textures": "textures/blocks/liquid/aluminium"
+        },
+        "brass": {
+            "textures": "textures/blocks/liquid/brass"
+        },
+        "copper": {
+            "textures": "textures/blocks/liquid/copper"
+        },
+        "diamond": {
+            "textures": "textures/blocks/liquid/diamond"
+        },
+        "dragon_steel": {
+            "textures": "textures/blocks/liquid/dragon_steel"
+        },
+        "gold": {
+            "textures": "textures/blocks/liquid/gold"
+        },
+        "iron": {
+            "textures": "textures/blocks/liquid/iron"
+        },
+        "lead": {
+            "textures": "textures/blocks/liquid/lead"
+        },
+        "netherite": {
+            "textures": "textures/blocks/liquid/netherite"
+        },
+        "obsidian": {
+            "textures": "textures/blocks/liquid/obsidian"
+        },
+        "osmium": {
+            "textures": "textures/blocks/liquid/osmium"
+        },
+        "palladium": {
+            "textures": "textures/blocks/liquid/palladium"
+        },
+        "redstone": {
+            "textures": "textures/blocks/liquid/redstone"
+        },
+        "silver": {
+            "textures": "textures/blocks/liquid/silver"
+        },
+        "steel": {
+            "textures": "textures/blocks/liquid/steel"
+        },
+        "titanium": {
+            "textures": "textures/blocks/liquid/titanium"
+        },
+        "zinc": {
+            "textures": "textures/blocks/liquid/zinc"
         },
 
         // Ores / end

@@ -21,7 +21,9 @@
                 "liquid_brass": "textures/blocks/liquid/brass",
                 "liquid_steel": "textures/blocks/liquid/steel",
                 "liquid_dragon_steel": "textures/blocks/liquid/dragon_steel",
-                "liquid_redstone": "textures/blocks/liquid/redstone"
+                "liquid_redstone": "textures/blocks/liquid/redstone",
+                "liquid_palladium": "textures/blocks/liquid/palladium",
+                "liquid_adamantium": "textures/blocks/liquid/adamantium"
             },
             "materials": {
                 "default": "entity_alphatest" 

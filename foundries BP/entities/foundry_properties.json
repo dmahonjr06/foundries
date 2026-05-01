@@ -1,0 +1,48 @@
+{
+    "format_version": "1.20.80",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "foundry:properties",
+            "is_spawnable": false,
+            "is_summonable": true
+        },
+        "component_groups": {
+            "foundry:despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_collidable": {},
+            "minecraft:collision_box": {
+                "height": 0.9,
+                "width": 0.9
+            },
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:inside_block_notifier": {
+                "block_list": [
+                    {
+                        "block": {
+                            "name": "minecraft:air"
+                        },
+                        "entered_block_event": {
+                            "event": "foundry:despawn",
+                            "target": "self"
+                        }
+                    }
+                ]
+            }
+        },
+        "events": {
+            "foundry:despawn": {
+                "add": {
+                    "component_groups": [
+                        "foundry:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

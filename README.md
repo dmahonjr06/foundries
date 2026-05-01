@@ -50,7 +50,7 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 - Iron hammer (3 sticks, 2 iron)
 - Diamond hammer (3 sticks, 2 iron)
 - Different Arrow heads will be combined with different rods/sticks
-
+- cogs
 
 
 
@@ -97,6 +97,9 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 15|0 - Steel
 16|0 - Dragon Steel (Dragon Scale and Steel mixture)
 17|0 - Redstone
+18|0 - Palladium
+19|0 - Adamantium
+
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
 2 - Pickaxe head
