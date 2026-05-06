@@ -2,7 +2,7 @@ import { Block, EquipmentSlot, Player } from "@minecraft/server";
 import { foundryEntry } from "../definitions/typedef";
 import { layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14, layer15, layer16 } from "../definitions/consts";
 
-export const playerInputItemsIntoFoundry = new Map([
+export const playerInputItemsIntoFoundry = new Map<string, foundryEntry>([
     // Layer 1 Items
     ["minecraft:iron_ingot|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false",
         {

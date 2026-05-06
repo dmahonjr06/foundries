@@ -3,11 +3,11 @@
     "resource_pack_name": "foundries RP",
     "texture_data": {
         // Foundry
-        "foundry_lava_tank": {
-            "textures": "textures/blocks/foundry/foundry_lava_tank"
+        "lava_tank": {
+            "textures": "textures/blocks/foundry/lava_tank"
         },
-        "foundry_smelted_liquids": {
-            "textures": "textures/blocks/foundry/foundry_smelted_liquids"
+        "smelted_liquids": {
+            "textures": "textures/blocks/foundry/smelted_liquids"
         },
 
         // Kiln
@@ -16,59 +16,59 @@
         },
 
         // Liquid
-        "adamantium": {
-            "textures": "textures/blocks/liquid/adamantium"
+        "molten_adamantium": {
+            "textures": "textures/blocks/liquid/molten_adamantium"
         },
-        "aluminium": {
-            "textures": "textures/blocks/liquid/aluminium"
+        "molten_aluminium": {
+            "textures": "textures/blocks/liquid/molten_aluminium"
         },
-        "brass": {
-            "textures": "textures/blocks/liquid/brass"
+        "molten_brass": {
+            "textures": "textures/blocks/liquid/molten_brass"
         },
-        "copper": {
-            "textures": "textures/blocks/liquid/copper"
+        "molten_copper": {
+            "textures": "textures/blocks/liquid/molten_copper"
         },
-        "diamond": {
-            "textures": "textures/blocks/liquid/diamond"
+        "molten_diamond": {
+            "textures": "textures/blocks/liquid/molten_diamond"
         },
-        "dragon_steel": {
-            "textures": "textures/blocks/liquid/dragon_steel"
+        "molten_dragon_steel": {
+            "textures": "textures/blocks/liquid/molten_dragon_steel"
         },
-        "gold": {
-            "textures": "textures/blocks/liquid/gold"
+        "molten_gold": {
+            "textures": "textures/blocks/liquid/molten_gold"
         },
-        "iron": {
-            "textures": "textures/blocks/liquid/iron"
+        "molten_iron": {
+            "textures": "textures/blocks/liquid/molten_iron"
         },
-        "lead": {
-            "textures": "textures/blocks/liquid/lead"
+        "molten_lead": {
+            "textures": "textures/blocks/liquid/molten_lead"
         },
-        "netherite": {
-            "textures": "textures/blocks/liquid/netherite"
+        "molten_netherite": {
+            "textures": "textures/blocks/liquid/molten_netherite"
         },
-        "obsidian": {
-            "textures": "textures/blocks/liquid/obsidian"
+        "molten_obsidian": {
+            "textures": "textures/blocks/liquid/molten_obsidian"
         },
-        "osmium": {
-            "textures": "textures/blocks/liquid/osmium"
+        "molten_osmium": {
+            "textures": "textures/blocks/liquid/molten_osmium"
         },
-        "palladium": {
-            "textures": "textures/blocks/liquid/palladium"
+        "molten_palladium": {
+            "textures": "textures/blocks/liquid/molten_palladium"
         },
-        "redstone": {
-            "textures": "textures/blocks/liquid/redstone"
+        "molten_redstone": {
+            "textures": "textures/blocks/liquid/molten_redstone"
         },
-        "silver": {
-            "textures": "textures/blocks/liquid/silver"
+        "molten_silver": {
+            "textures": "textures/blocks/liquid/molten_silver"
         },
-        "steel": {
-            "textures": "textures/blocks/liquid/steel"
+        "molten_steel": {
+            "textures": "textures/blocks/liquid/molten_steel"
         },
-        "titanium": {
-            "textures": "textures/blocks/liquid/titanium"
+        "molten_titanium": {
+            "textures": "textures/blocks/liquid/molten_titanium"
         },
-        "zinc": {
-            "textures": "textures/blocks/liquid/zinc"
+        "molten_zinc": {
+            "textures": "textures/blocks/liquid/molten_zinc"
         },
 
         // Ores / end

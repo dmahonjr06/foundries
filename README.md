@@ -22,26 +22,6 @@
 
 
 
-
-## Block States used/reserved currently (Bound to change)
-### Smithing Anvil
-- "smithing_anvil:hammered_times": 3 states,
-- "smithing_anvil:parts1": 16 states,
-- "smithing_anvil:parts2": 5 states,
-- "foundry:material_types1": 16 states,
-- "foundry:material_types2": 2 states,
-TOTAL: 3x16x2x16x2 = 3,072 reserved states.
-[The parts2 state allows for 16*5 parts to be used, aka 80 parts reserved to be hammered] (Will most likely be lowered with the "material_types2" increased)
-
-
-### Blacksmithing Furnace
-- Will be a big bucket with a base having an interchangeable cast
-- The block will be based on the "geometry.blacksmithing_furnace"
-- Will make use of an entity version to compensate for the states and visual changes.
-
-
-
-
 ## Craftable items:
 (The Rods iron and above might be made using the anvil method if states are available)
 - Stone rod,
@@ -62,7 +42,7 @@ TOTAL: 3x16x2x16x2 = 3,072 reserved states.
 - Interactable to put items inside of, (Like the Mixer from my old Foundries add-on)
 - Has an inputtable "mold" state to allow pouring into different tool part molds (by left click and by redstone input)
 - The furnace will have a fire and soul fire heating element.
-- Fire will be able to burn more basic things,
+- Soul Fire will be able to burn more basic things,
 - Soul Fire version will be able to burn everything and at a faster rate.
 - Possibly other versions?
 

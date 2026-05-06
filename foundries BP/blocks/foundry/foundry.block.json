@@ -57,11 +57,7 @@
             },
             "minecraft:material_instances": {
                 "*": {
-                    "texture": "foundry_lava_tank",
-                    "render_method": "alpha_test"
-                },
-                "west": {
-                    "texture": "oak_planks",
+                    "texture": "lava_tank",
                     "render_method": "alpha_test"
                 }
             }

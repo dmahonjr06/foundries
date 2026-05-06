@@ -7,11 +7,11 @@ export const direction: import("@minecraft/server").BlockCustomComponent = {
         const blockState = block.permutation.getState("minecraft:cardinal_direction") as string;
         console.log(blockState);
         
-    system.run(() => {
-        const entities = dimension.getEntitiesAtBlockLocation(block.location)
-        entities.forEach(entity => {
-            entity.setProperty("foundry:direction", blockState);
+        system.run(() => {
+            const entities = dimension.getEntitiesAtBlockLocation(block.location)
+            entities.forEach(entity => {
+                entity.setProperty("foundry:direction", blockState);
+            })
         })
-    })
     }
-} 
+}

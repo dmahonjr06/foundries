@@ -1,0 +1,33 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:basin"
+        },
+        "components": {
+            "minecraft:geometry": {
+                "identifier": "geometry.basin",
+                "bone_visibility": {
+                    "lava": false,
+                    "molten_steel": false,
+                    "molten_iron": false
+                    
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "cauldron_side"
+                },
+                "molten_steel": {
+                    "texture": "molten_steel"
+                },
+                "lava": {
+                    "texture": "still_lava"
+                },
+                "molten_iron": {
+                    "texture": "molten_iron"
+                }
+            }
+        }
+    }
+}

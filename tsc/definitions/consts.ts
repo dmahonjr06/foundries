@@ -14,3 +14,4 @@ export const layer13 = "foundry:layer13";
 export const layer14 = "foundry:layer14";
 export const layer15 = "foundry:layer15";
 export const layer16 = "foundry:layer16";
+export const cardinal_direction = new Set(["North", "East", "South", "West"])
