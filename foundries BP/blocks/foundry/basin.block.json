@@ -18,6 +18,9 @@
                 "*": {
                     "texture": "cauldron_side"
                 },
+                "down": {
+                    "texture": "cauldron_bottom"
+                },
                 "molten_steel": {
                     "texture": "molten_steel"
                 },

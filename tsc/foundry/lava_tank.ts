@@ -1,6 +1,6 @@
 import { BlockStateSuperset } from "@minecraft/vanilla-data";
 import { BlockPermutation, EquipmentSlot, ItemStack, Player, Vector3 } from "@minecraft/server";
-import { FoundryCheckItemsPlayerInterractsWith, playerInputItemsIntoFoundry } from "./liquid_layers_database";
+import { FoundryCheckItemsPlayerInterractsWith } from "./liquid_layers_database";
 
 
 // Can only put lava in, can't take out yet. (Just for testing)

@@ -10,6 +10,11 @@
             "textures": "textures/blocks/foundry/smelted_liquids"
         },
 
+        // Foundry / casts
+        "ingot_cast": {
+            "textures": "textures/blocks/foundry/casts/ingot_cast"
+        },
+
         // Kiln
         "blacksmithing_furnace": {
             "textures": "textures/blocks/kiln/blacksmithing_furnace"

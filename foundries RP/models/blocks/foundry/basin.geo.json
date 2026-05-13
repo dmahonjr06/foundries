@@ -122,7 +122,7 @@
 					"pivot": [0, 0, 0],
 					"cubes": [
 						{
-							"origin": [-7.5, 14, -7.5],
+							"origin": [-7.5, 15.5, -7.5],
 							"size": [15, 0, 15],
 							"uv": {
 								"up": {"uv": [16, 16], "uv_size": [-16, -16]}
@@ -132,10 +132,10 @@
 				},
 				{
 					"name": "molten_steel",
-					"pivot": [0, 0, 0],
+					"pivot": [0, 15.5, 0],
 					"cubes": [
 						{
-							"origin": [-7.5, 14, -7.5],
+							"origin": [-7.5, 15.5, -7.5],
 							"size": [15, 0, 15],
 							"uv": {
 								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "molten_steel"}
@@ -145,10 +145,10 @@
 				},
 				{
 					"name": "molten_iron",
-					"pivot": [0, 0, 0],
+					"pivot": [0, 15.5, 0],
 					"cubes": [
 						{
-							"origin": [-7.5, 14, -7.5],
+							"origin": [-7.5, 15.5, -7.5],
 							"size": [15, 0, 15],
 							"uv": {
 								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "molten_iron"}

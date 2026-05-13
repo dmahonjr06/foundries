@@ -37,15 +37,20 @@
 
 
 
-# CONCEPTS/TODO:
-## Blacksmithing Furnace
-- Interactable to put items inside of, (Like the Mixer from my old Foundries add-on)
-- Has an inputtable "mold" state to allow pouring into different tool part molds (by left click and by redstone input)
-- The furnace will have a fire and soul fire heating element.
-- Soul Fire will be able to burn more basic things,
-- Soul Fire version will be able to burn everything and at a faster rate.
-- Possibly other versions?
+## CONCEPTS/TODO:
+# Using a faucet and basin
+When clicking on a faucet, the basin underneath is filled in 9 layers.
+Faucet will have an "on/off" state, which when turned on will check the first layer of the "foundry:foundry_liquids" entity. 
 
+
+# Optimise the "liquid_layers_database.ts" database.
+Could make it under 1KB possibly.
+maybe have a map that says 
+```ts
+new Map<string, object[]>([
+    {"layer1", {undefined}}
+])
+```
 
 
 
@@ -79,6 +84,7 @@
 17|0 - Redstone
 18|0 - Palladium
 19|0 - Adamantium
+20|0 - Lapis **NEED TO ADD**
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head

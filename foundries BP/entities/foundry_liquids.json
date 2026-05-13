@@ -195,7 +195,7 @@
             "minecraft:is_collidable": {},
             "minecraft:collision_box": {
                 "height": 0.9,
-                "width": 0.9
+                "width": 0.8
             },
             "minecraft:body_rotation_blocked": {},
             "minecraft:rotation_axis_aligned": {},

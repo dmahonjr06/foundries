@@ -1,3 +1,5 @@
+import { Block, Direction } from "@minecraft/server";
+
 export const layer1 = "foundry:layer1";
 export const layer2 = "foundry:layer2";
 export const layer3 = "foundry:layer3";
@@ -14,4 +16,3 @@ export const layer13 = "foundry:layer13";
 export const layer14 = "foundry:layer14";
 export const layer15 = "foundry:layer15";
 export const layer16 = "foundry:layer16";
-export const cardinal_direction = new Set(["North", "East", "South", "West"])

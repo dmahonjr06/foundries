@@ -34,7 +34,6 @@
             "foundry:player_interact_with_foundry": {},
             "foundry:spawn_foundry_entity": {},
             "foundry:lava_tank_interact": {},
-            "foundry:set_direction_property": {},
             "minecraft:movable": {
                 "movement_type": "immovable"
             },
@@ -101,7 +100,6 @@
                     "minecraft:transformation": { "rotation": [0, -90, 0] }
                 }
             },
-            // Adds light to each lava level
             {
                 "condition": "query.block_state('foundry:lava_level') == 1",
                 "components": {
@@ -159,19 +157,19 @@
             {
                 "condition": "query.block_state('foundry:lava_level') == 10",
                 "components": {
-                    "minecraft:light_emission": 10
+                    "minecraft:light_emission": 11
                 }
             },
             {
                 "condition": "query.block_state('foundry:lava_level') == 11",
                 "components": {
-                    "minecraft:light_emission": 11
+                    "minecraft:light_emission": 13
                 }
             },
             {
                 "condition": "query.block_state('foundry:lava_level') == 12",
                 "components": {
-                    "minecraft:light_emission": 12
+                    "minecraft:light_emission": 15
                 }
             }
         ]

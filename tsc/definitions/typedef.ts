@@ -18,3 +18,12 @@ export type foundryEntry = {
     materialProperty: string;
     materialPropertyNumber: number;
 }
+
+
+export type faucet_validation = {
+    "north": boolean,
+    "west": boolean,
+    "east": boolean,
+    "south": boolean,
+    "basinUnderneath": boolean
+}
