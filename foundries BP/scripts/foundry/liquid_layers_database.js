@@ -1,5 +1,4 @@
 import { EquipmentSlot } from "@minecraft/server";
-import { layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14, layer15, layer16 } from "../definitions/consts";
 export const playerInputItemsIntoFoundry = new Map([
     // Layer 1 Items
     ["minecraft:iron_ingot|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false",
@@ -2039,41 +2038,17 @@ export function FoundryCheckItemsPlayerInterractsWith(block, player) {
     const FoundryTopBlock = block.above(1);
     if (FoundryTopBlock) {
         block.dimension.getEntitiesAtBlockLocation(FoundryTopBlock.location).forEach(foundryEntity => {
-            const fetchLayer1 = foundryEntity.getProperty("foundry:layer1");
-            const fetchLayer2 = foundryEntity.getProperty("foundry:layer2");
-            const fetchLayer3 = foundryEntity.getProperty("foundry:layer3");
-            const fetchLayer4 = foundryEntity.getProperty("foundry:layer4");
-            const fetchLayer5 = foundryEntity.getProperty("foundry:layer5");
-            const fetchLayer6 = foundryEntity.getProperty("foundry:layer6");
-            const fetchLayer7 = foundryEntity.getProperty("foundry:layer7");
-            const fetchLayer8 = foundryEntity.getProperty("foundry:layer8");
-            const fetchLayer9 = foundryEntity.getProperty("foundry:layer9");
-            const fetchLayer10 = foundryEntity.getProperty("foundry:layer10");
-            const fetchLayer11 = foundryEntity.getProperty("foundry:layer11");
-            const fetchLayer12 = foundryEntity.getProperty("foundry:layer12");
-            const fetchLayer13 = foundryEntity.getProperty("foundry:layer13");
-            const fetchLayer14 = foundryEntity.getProperty("foundry:layer14");
-            const fetchLayer15 = foundryEntity.getProperty("foundry:layer15");
-            const fetchLayer16 = foundryEntity.getProperty("foundry:layer16");
-            const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayer1}|${fetchLayer2}|${fetchLayer3}|${fetchLayer4}|${fetchLayer5}|${fetchLayer6}|${fetchLayer7}|${fetchLayer8}|${fetchLayer9}|${fetchLayer10}|${fetchLayer11}|${fetchLayer12}|${fetchLayer13}|${fetchLayer14}|${fetchLayer15}|${fetchLayer16}`);
+            const fetchLayer = [];
+            for (let i = 1; i < 16; i++) {
+                const layerPush = foundryEntity.getProperty(`foundry:layer${i + 1}`);
+                fetchLayer.push(!!layerPush);
+            }
+            const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayer.map(value => String(value)).join("|")}`);
             if (foundryEntityProperties) {
-                foundryEntity.setProperty(layer1, foundryEntityProperties.layer1);
-                foundryEntity.setProperty(layer2, foundryEntityProperties.layer2);
-                foundryEntity.setProperty(layer3, foundryEntityProperties.layer3);
-                foundryEntity.setProperty(layer4, foundryEntityProperties.layer4);
-                foundryEntity.setProperty(layer5, foundryEntityProperties.layer5);
-                foundryEntity.setProperty(layer6, foundryEntityProperties.layer6);
-                foundryEntity.setProperty(layer7, foundryEntityProperties.layer7);
-                foundryEntity.setProperty(layer8, foundryEntityProperties.layer8);
-                foundryEntity.setProperty(layer9, foundryEntityProperties.layer9);
-                foundryEntity.setProperty(layer10, foundryEntityProperties.layer10);
-                foundryEntity.setProperty(layer11, foundryEntityProperties.layer11);
-                foundryEntity.setProperty(layer12, foundryEntityProperties.layer12);
-                foundryEntity.setProperty(layer13, foundryEntityProperties.layer13);
-                foundryEntity.setProperty(layer14, foundryEntityProperties.layer14);
-                foundryEntity.setProperty(layer15, foundryEntityProperties.layer15);
-                foundryEntity.setProperty(layer16, foundryEntityProperties.layer16);
-                foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber);
+                for (let i = 1; i < 16; i++) {
+                    foundryEntity.setProperty(`layer${i}`, `${foundryEntityProperties}.layer${i}`);
+                    foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber);
+                }
                 return foundryEntityProperties;
             }
         });

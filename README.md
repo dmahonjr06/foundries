@@ -48,7 +48,7 @@ Could make it under 1KB possibly.
 maybe have a map that says 
 ```ts
 new Map<string, object[]>([
-    {"layer1", {undefined}}
+    {"layer1", {/*List of liquid types that can be set here. Default is "undefined". If the object is undefined, then the texture that will be used is texture.empty.*/}}
 ])
 ```
 
