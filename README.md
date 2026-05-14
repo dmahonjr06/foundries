@@ -39,18 +39,13 @@
 
 ## CONCEPTS/TODO:
 # Using a faucet and basin
-When clicking on a faucet, the basin underneath is filled in 9 layers.
+When clicking on a faucet, the basin underneath is filled in 9 sections.
+Using an ore on the 
 Faucet will have an "on/off" state, which when turned on will check the first layer of the "foundry:foundry_liquids" entity. 
 
 
 # Optimise the "liquid_layers_database.ts" database.
-Could make it under 1KB possibly.
-maybe have a map that says 
-```ts
-new Map<string, object[]>([
-    {"layer1", {/*List of liquid types that can be set here. Default is "undefined". If the object is undefined, then the texture that will be used is texture.empty.*/}}
-])
-```
+Could try make it under 1KB possibly.
 
 
 

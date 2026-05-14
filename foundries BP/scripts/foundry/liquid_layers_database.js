@@ -1,4 +1,5 @@
 import { EquipmentSlot } from "@minecraft/server";
+import { layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14, layer15, layer16 } from "../definitions/consts";
 export const playerInputItemsIntoFoundry = new Map([
     // Layer 1 Items
     ["minecraft:iron_ingot|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false|false",
@@ -2033,25 +2034,40 @@ export const playerInputItemsIntoFoundry = new Map([
         }
     ]
 ]);
+// Don't need to touch ever again. This handles putting items into the foundry ONLY
+// Only need to touch if needs optimisation or more readability
 export function FoundryCheckItemsPlayerInterractsWith(block, player) {
     const itemID = player?.getComponent("equippable")?.getEquipment(EquipmentSlot.Mainhand)?.typeId;
     const FoundryTopBlock = block.above(1);
-    if (FoundryTopBlock) {
-        block.dimension.getEntitiesAtBlockLocation(FoundryTopBlock.location).forEach(foundryEntity => {
-            const fetchLayer = [];
-            for (let i = 1; i < 16; i++) {
-                const layerPush = foundryEntity.getProperty(`foundry:layer${i + 1}`);
-                fetchLayer.push(!!layerPush);
+    if (!FoundryTopBlock)
+        return;
+    const foundryLiquidEntity = block.dimension.getEntitiesAtBlockLocation(FoundryTopBlock.location);
+    for (const foundryEntity of foundryLiquidEntity) {
+        // Stop if the foundry is already full
+        if (foundryEntity.getProperty("foundry:layer16") === true)
+            return;
+        const fetchLayers = Array.from({ length: 16 }, (_, index) => foundryEntity.getProperty(`foundry:layer${index + 1}`));
+        const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayers.join("|")}`);
+        // Stop if it's not a registered `playerInputItemsIntoFoundry` input
+        if (!foundryEntityProperties)
+            continue;
+        const layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14, layer15, layer16];
+        for (let index = 0; index < layers.length; index++) {
+            const layerKey = `layer${index + 1}`;
+            foundryEntity.setProperty(layers[index], foundryEntityProperties[layerKey]);
+        }
+        foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber);
+        const equippable = player.getComponent("equippable");
+        if (equippable) {
+            const slot = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (slot && slot.amount > 1) {
+                slot.amount -= 1;
             }
-            const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayer.map(value => String(value)).join("|")}`);
-            if (foundryEntityProperties) {
-                for (let i = 1; i < 16; i++) {
-                    foundryEntity.setProperty(`layer${i}`, `${foundryEntityProperties}.layer${i}`);
-                    foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber);
-                }
-                return foundryEntityProperties;
+            if (slot && slot.amount === 1) {
+                equippable.setEquipment(EquipmentSlot.Mainhand, undefined);
             }
-        });
+        }
+        return foundryEntityProperties;
     }
     return undefined;
 }

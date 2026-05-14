@@ -2037,30 +2037,43 @@ export const playerInputItemsIntoFoundry = new Map<string, foundryEntry>([
     ]
 ])
 
+
+// Don't need to touch ever again. This handles putting items into the foundry ONLY
+// Only need to touch if needs optimisation or more readability
 export function FoundryCheckItemsPlayerInterractsWith(block: Block, player: Player): foundryEntry | undefined {
     const itemID = player?.getComponent("equippable")?.getEquipment(EquipmentSlot.Mainhand)?.typeId
     const FoundryTopBlock = block.above(1);
+    if (!FoundryTopBlock) return;
+    
+    const foundryLiquidEntity = block.dimension.getEntitiesAtBlockLocation(FoundryTopBlock.location)
+    for (const foundryEntity of foundryLiquidEntity) {
+        // Stop if the foundry is already full
+        if (foundryEntity.getProperty("foundry:layer16") === true) return;
 
 
-    if (FoundryTopBlock) {
-        block.dimension.getEntitiesAtBlockLocation(FoundryTopBlock.location).forEach(foundryEntity => {
-            const fetchLayer: boolean[] = []
-            for (let i = 1; i < 16; i++) {
-                const layerPush = foundryEntity.getProperty(`foundry:layer${i + 1}`)
-                fetchLayer.push(!!layerPush)
+        const fetchLayers = Array.from({ length: 16 }, (_, index) => foundryEntity.getProperty(`foundry:layer${index + 1}`))
+        const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayers.join("|")}`)
+        // Stop if it's not a registered `playerInputItemsIntoFoundry` input
+        if (!foundryEntityProperties) continue;
+
+        const layers = [layer1, layer2, layer3, layer4, layer5, layer6, layer7, layer8, layer9, layer10, layer11, layer12, layer13, layer14, layer15, layer16]
+        for (let index = 0; index < layers.length; index++) {
+            const layerKey = `layer${index + 1}` as keyof foundryEntry
+            foundryEntity.setProperty(layers[index], foundryEntityProperties[layerKey] as boolean)
+        }
+        foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber)
+        const equippable = player.getComponent("equippable");
+        if (equippable) {
+            const slot = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
+            if (slot && slot.amount > 1) {
+                slot.amount -= 1;
             }
-
-            const foundryEntityProperties = playerInputItemsIntoFoundry.get(`${itemID}|${fetchLayer.map(value => String(value)).join("|")}`)
-
-            if (foundryEntityProperties){
-                for (let i = 1; i < 16; i++){
-                    foundryEntity.setProperty(`layer${i}`, `${foundryEntityProperties}.layer${i}`);
-                    foundryEntity.setProperty(foundryEntityProperties.materialProperty, foundryEntityProperties.materialPropertyNumber)
-                }
-
-                return foundryEntityProperties
+            if (slot && slot.amount === 1 )
+            {
+                equippable.setEquipment(EquipmentSlot.Mainhand, undefined)
             }
-        })
+        }
+        return foundryEntityProperties
     }
     return undefined
 }
