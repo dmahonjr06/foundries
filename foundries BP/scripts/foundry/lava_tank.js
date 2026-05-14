@@ -1,5 +1,4 @@
 import { BlockPermutation, EquipmentSlot, ItemStack } from "@minecraft/server";
-import { FoundryCheckItemsPlayerInterractsWith } from "./liquid_layers_database";
 // Can only put lava in, can't take out yet. (Just for testing)
 //  TODO: Make the tank accept a database of bucket types and returns.
 export const lava_tank_component = {
@@ -35,17 +34,13 @@ export const lava_tank_component = {
         }));
     }
 };
-export const player_interact_with_foundry = {
-    onPlayerInteract({ block, player }) {
-        const bucketInHand = player?.getComponent("equippable")?.getEquipment(EquipmentSlot.Mainhand)?.typeId === "minecraft:bucket";
-        const multiBlockPart = block.permutation.getState("minecraft:multi_block_part");
-        if (multiBlockPart !== 0)
-            return;
-        // TODO: Change the check to only be if the player has a valid item in hand.\
-        if (bucketInHand)
-            return; // Only works if the player doesn't have a bucket.
-        const FoundryTopBlock = block.above(1);
-        const FoundryEntityProperties = FoundryCheckItemsPlayerInterractsWith(block, player);
-        return;
-    }
-};
+// export const adding_items_to_foundry: import("@minecraft/server").BlockCustomComponent = {
+//     onPlayerInteract({ block, player }){
+//         const bucketInHand = player?.getComponent("equippable")?.getEquipment(EquipmentSlot.Mainhand)?.typeId === "minecraft:bucket"
+//         const multiBlockPart = block.permutation.getState("minecraft:multi_block_part" as keyof BlockStateSuperset) as number;
+//         if (multiBlockPart !== 1) return;
+//         // TODO: Change the check to only be if the player has a valid item in hand.\
+//         if (bucketInHand) return; // Only works if the player doesn't have a bucket.
+//         return;
+//     }
+// }

@@ -46,6 +46,7 @@ Faucet will have an "on/off" state, which when turned on will check the first la
 
 # Optimise the "liquid_layers_database.ts" database.
 Could try make it under 1KB possibly.
+It's currently at 110KB...
 
 
 

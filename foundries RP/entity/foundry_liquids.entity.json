@@ -5,7 +5,7 @@
             "identifier": "foundry:foundry_liquids",
             "textures": {
                 "empty": "textures/entity/foundry/empty",
-                "lava": "textures/entity/foundry/lava",
+                "lava": "textures/blocks/liquid/lava_foundry",
                 "liquid_iron": "textures/blocks/liquid/molten_iron",
                 "liquid_gold": "textures/blocks/liquid/molten_gold",
                 "liquid_copper": "textures/blocks/liquid/molten_copper",
