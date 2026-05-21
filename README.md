@@ -101,7 +101,8 @@ UPDATE: It is now at 1.2KB
 
 # TODO
 ## Basin:
-- When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
+- When the basin is full but the incoming material is different, we should solidify the basin contents into a block.
+- Add an inventory of 1 slot to the entity (Use Minato's Inventory UI to make the inventory.) Make it a hopperable inventory.
 - Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
 - Add Component to retrieve block from foundry
 - basin.ts
