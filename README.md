@@ -37,27 +37,43 @@
 
 
 
-## CONCEPTS/TODO:
-# Using a faucet and basin
-When clicking on a faucet, the basin underneath is filled in 9 sections.
-Using an ore on the 
-Faucet will have an "on/off" state, which when turned on will check the first layer of the "foundry:foundry_liquids" entity. 
+# CONCEPTS/TODO:
+## Foundry:
+- Remove the bottom foundry's lava tank.
+- Make it just into a tank for resources maybe?
+## Basin:
+- When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour. (Requires the entity to have the inventory property with 1 slot.)
+- Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
+- Add Component to retrieve block from foundry
+- basin.ts
+- basin.block.json permutation.
+## Smeltery:
+- Make a dedicated smeltery smeltery for the 
+
+- Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
+- basin.ts
+
+## MAKE BLOCKS WITH ENTITIES **UNMOVABLE**
+- Make them unmovable so pistons don't mess up the entities within the blocks.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 # Optimise the "liquid_layers_database.ts" database.
 Could try make it under 1KB possibly.
 It's currently at 110KB...
 UPDATE: It is now at 1.2KB
-
-
-
-
-
-
-
-
-
-
 
 # States and What some of them mean
 
@@ -97,18 +113,3 @@ UPDATE: It is now at 1.2KB
 8 - Battle-axe head,
 9 - Hammer head,
 10- Rods
-
-
-# TODO
-## Basin:
-- When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
-- Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
-- Add Component to retrieve block from foundry
-- basin.ts
-- basin.block.json permutation.
-
-- Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
-- Faucet.ts 162
-
-## MAKE BLOCKS WITH ENTITIES **UNMOVABLE**
-- Make them unmovable so pistons don't mess up the entities within the blocks.
