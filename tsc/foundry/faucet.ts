@@ -92,8 +92,11 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
     );
 
     const basinBlock = block.below();
+    // If there isn't a basin below, return early. This is a safety check; the faucetValidation should have already ensured this.
     if (!basinBlock) return;
-
+    const solidState = basinBlock.permutation.getState("basin:solidify" as keyof BlockStateSuperset) as boolean;
+    // If the basin is already solid, we should not allow pouring more liquid into it, as that would be unrealistic. The player would need to break the solid block and reset the basin before pouring more liquid.
+    if (solidState) return;
     const basinLiquidEntities = dimension.getEntitiesAtBlockLocation(basinBlock.location);
 
     // Read current basin state
@@ -122,13 +125,18 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
         return;
     }
 
-    // Stop if basin is already full
-    if (basinCurrentFill >= 9) {
+    // Stop if basin is already full and has a solid state
+    
+    if (basinCurrentFill >= 9 && !solidState) {
         console.log("Pour blocked - basin is full");
+        // Use the basin block's permutation and avoid incorrect casting; coerce state key if needed
+        basinBlock.setPermutation(
+            basinBlock.permutation.withState("basin:solidify" as keyof BlockStateSuperset, true)
+        );
         return;
     }
     // TODO: when the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
-    // Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
+    // Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials
 
     // Drain the foundry
     foundryLiquidEntities.forEach(entity => {
@@ -156,9 +164,3 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
         });
     }
 };
-
-// TODO: 
-const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { state: string }> = new Map([
-    [1, { state: "minecraft:lava" }],
-    [2, { state: "minecraft:water" }],
-]);

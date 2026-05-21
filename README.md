@@ -82,8 +82,9 @@ UPDATE: It is now at 1.2KB
 18|0 - Palladium
 19|0 - Adamantium
 **BELOW ARE RESOURCES NEEDED TO ADD**
-20|0 - Lapis
-21|0 - Tungsten
+20|0 - Emerald
+21|0 - Lapis
+22|0 - Tungsten
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
@@ -102,7 +103,12 @@ UPDATE: It is now at 1.2KB
 ## Basin:
 - When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
 - Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
-- Faucet.ts 130
+- Add Component to retrieve block from foundry
+- basin.ts
+- basin.block.json permutation.
 
 - Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
 - Faucet.ts 162
+
+## MAKE BLOCKS WITH ENTITIES **UNMOVABLE**
+- Make them unmovable so pistons don't mess up the entities within the blocks.
