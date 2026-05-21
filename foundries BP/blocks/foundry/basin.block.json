@@ -1,0 +1,63 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:basin",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "basin:solidify": [
+                    false, true
+                ],
+                "basin:resource_types1": [
+                    "empty",
+                    "minecraft:iron_block",
+                    "minecraft:gold_block",     
+                    "minecraft:copper_block",   
+                    "minecraft:diamond_block",  
+                    "minecraft:netherite_block",
+                    "minecraft:obsidian_block", 
+                    "foundry:aluminium_block",  
+                    "foundry:zinc_block",       
+                    "foundry:osmium_block",     
+                    "foundry:titanium_block",   
+                    "foundry:lead_block",       
+                    "foundry:silver_block",     
+                    "foundry:brass_block",
+                    "foundry:steel_block",      
+                    "foundry:dragon_steel_block"
+                ]
+            }
+        },
+        "components": {
+            "foundry:spawn_foundry_block_entities": {},
+            "minecraft:geometry": {
+                "identifier": "geometry.basin"
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "cauldron_side"
+                },
+                "down": {
+                    "texture": "cauldron_bottom"
+                }
+            }
+        },
+        "permutations": [
+            {
+                "condition": "query.block_state('basin:solidify')",
+                "components": {
+                    "basin:turn_basin_solid": {},
+                    "minecraft:tick": {
+                        "interval_range": [
+                            30,30
+                        ],
+                        "looping": false
+                    }
+                    // Add Component to retrieve block from foundry
+                }
+            }
+        ]
+    }
+}

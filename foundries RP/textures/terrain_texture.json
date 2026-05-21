@@ -1,14 +1,128 @@
 {
-    "num_mip_levels": 4,
-    "padding": 4,
-    "resource_pack_name": "foundries RP",
     "texture_name": "atlas.terrain",
+    "resource_pack_name": "foundries RP",
     "texture_data": {
-        "foundry_base": {
-            "textures": "textures/blocks/foundry/foundry_base"
+        // Foundry
+        "lava_tank": {
+            "textures": "textures/blocks/foundry/lava_tank"
         },
-        "foundry_liquids": {
-            "textures": "textures/blocks/foundry/foundry_smelted_liquids"
+        "smelted_liquids": {
+            "textures": "textures/blocks/foundry/smelted_liquids"
+        },
+
+        // Foundry / casts
+        "ingot_cast": {
+            "textures": "textures/blocks/foundry/casts/ingot_cast"
+        },
+
+        // Kiln
+        "blacksmithing_furnace": {
+            "textures": "textures/blocks/kiln/blacksmithing_furnace"
+        },
+
+        // Liquid
+        "molten_adamantium": {
+            "textures": "textures/blocks/liquid/molten_adamantium"
+        },
+        "molten_aluminium": {
+            "textures": "textures/blocks/liquid/molten_aluminium"
+        },
+        "molten_brass": {
+            "textures": "textures/blocks/liquid/molten_brass"
+        },
+        "molten_copper": {
+            "textures": "textures/blocks/liquid/molten_copper"
+        },
+        "molten_diamond": {
+            "textures": "textures/blocks/liquid/molten_diamond"
+        },
+        "molten_dragon_steel": {
+            "textures": "textures/blocks/liquid/molten_dragon_steel"
+        },
+        "molten_gold": {
+            "textures": "textures/blocks/liquid/molten_gold"
+        },
+        "molten_iron": {
+            "textures": "textures/blocks/liquid/molten_iron"
+        },
+        "molten_lead": {
+            "textures": "textures/blocks/liquid/molten_lead"
+        },
+        "molten_netherite": {
+            "textures": "textures/blocks/liquid/molten_netherite"
+        },
+        "molten_obsidian": {
+            "textures": "textures/blocks/liquid/molten_obsidian"
+        },
+        "molten_osmium": {
+            "textures": "textures/blocks/liquid/molten_osmium"
+        },
+        "molten_palladium": {
+            "textures": "textures/blocks/liquid/molten_palladium"
+        },
+        "molten_redstone": {
+            "textures": "textures/blocks/liquid/molten_redstone"
+        },
+        "molten_silver": {
+            "textures": "textures/blocks/liquid/molten_silver"
+        },
+        "molten_steel": {
+            "textures": "textures/blocks/liquid/molten_steel"
+        },
+        "molten_titanium": {
+            "textures": "textures/blocks/liquid/molten_titanium"
+        },
+        "molten_zinc": {
+            "textures": "textures/blocks/liquid/molten_zinc"
+        },
+
+        // Ores / end
+        "titanium_ore_endstone": {
+            "textures": "textures/blocks/ores/end/titanium_ore_endstone"
+        },
+
+        // Ores / overworld
+        "aluminium_ore": {
+            "textures": "textures/blocks/ores/overworld/aluminium_ore"
+        },
+        "lead_ore": {
+            "textures": "textures/blocks/ores/overworld/lead_ore"
+        },
+        "silver_ore": {
+            "textures": "textures/blocks/ores/overworld/silver_ore"
+        },
+        "titanium_ore": {
+            "textures": "textures/blocks/ores/overworld/titanium_ore"
+        },
+        "titanium_ore_deepslate": {
+            "textures": "textures/blocks/ores/overworld/titanium_ore_deepslate"
+        },
+
+        // Ores / raw resource block
+        "raw_rose_gold_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_rose_gold_block"
+        },
+        "raw_steel_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_steel_block"
+        },
+        "raw_titanium_block": {
+            "textures": "textures/blocks/ores/raw_resource_block/raw_titanium_block"
+        },
+
+        // Ores / resource block
+        "steel_block": {
+            "textures": "textures/blocks/ores/resource_block/steel_block"
+        },
+
+        // Smithing anvil
+        "axe_heads": {
+            "textures": "textures/blocks/smithing_anvil/axe_heads"
+        },
+        "smithing_anvil": {
+            "textures": "textures/blocks/smithing_anvil/smithing_anvil"
+        },
+        "smithing_table_tools": {
+            "textures": "textures/blocks/smithing_anvil/smithing_table_tools"
         }
     }
 }

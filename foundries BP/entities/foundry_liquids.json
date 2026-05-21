@@ -1,0 +1,226 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "foundry:foundry_liquids",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "foundry:layer1": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer1_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 1,
+                    "range": [0,63]
+                },
+                "foundry:layer2": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer2_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer3": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer3_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer4": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer4_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer5": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer5_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer6": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer6_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer7": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer7_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer8": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer8_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer9": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer9_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer10": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer10_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer11": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer11_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer12": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer12_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer13": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer13_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer14": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer14_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer15": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer15_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                },
+                "foundry:layer16": {
+                    "client_sync": true,
+                    "type": "bool",
+                    "default": false
+                },
+                "foundry:layer16_material": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0,63]
+                }
+            }
+        },
+        "component_groups": {
+            "foundry:despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_collidable": {},
+            "minecraft:collision_box": {
+                "height": 0.9,
+                "width": 0.8
+            },
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:inside_block_notifier": {
+                "block_list": [
+                    {
+                        "block": {
+                            "name": "minecraft:air"
+                        },
+                        "entered_block_event": {
+                            "event": "foundry:despawn",
+                            "target": "self"
+                        }
+                    }
+                ]
+            }
+        },
+        "events": {
+            "foundry:despawn": {
+                "add": {
+                    "component_groups": [
+                        "foundry:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

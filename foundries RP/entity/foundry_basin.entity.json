@@ -1,0 +1,39 @@
+{
+    "format_version": "1.26.0",
+    "minecraft:client_entity": {
+        "description": {
+            "identifier": "foundry:basin",
+            "textures": {
+                "empty": "textures/entity/foundry/empty",
+                "lava": "textures/entity/foundry/lava",
+                "liquid_iron": "textures/blocks/liquid/molten_iron",
+                "liquid_gold": "textures/blocks/liquid/molten_gold",
+                "liquid_copper": "textures/blocks/liquid/molten_copper",
+                "liquid_diamond": "textures/blocks/liquid/molten_diamond",
+                "liquid_netherite": "textures/blocks/liquid/molten_netherite",
+                "liquid_obsidian": "textures/blocks/liquid/molten_obsidian",
+                "liquid_aluminium": "textures/blocks/liquid/molten_aluminium",
+                "liquid_zinc": "textures/blocks/liquid/molten_zinc",
+                "liquid_osmium": "textures/blocks/liquid/molten_osmium",
+                "liquid_titanium": "textures/blocks/liquid/molten_titanium",
+                "liquid_lead": "textures/blocks/liquid/molten_lead",
+                "liquid_silver": "textures/blocks/liquid/molten_silver",
+                "liquid_brass": "textures/blocks/liquid/molten_brass",
+                "liquid_steel": "textures/blocks/liquid/molten_steel",
+                "liquid_dragon_steel": "textures/blocks/liquid/molten_dragon_steel",
+                "liquid_redstone": "textures/blocks/liquid/molten_redstone",
+                "liquid_palladium": "textures/blocks/liquid/molten_palladium",
+                "liquid_adamantium": "textures/blocks/liquid/molten_adamantium"
+            },
+            "materials": {
+                "default": "entity_alphatest"
+            },
+            "geometry": {
+                "basin_layers": "geometry.basin_layers"
+            },
+            "render_controllers": [
+                "controller.render.basin_layers"
+            ]
+        }
+    }
+}

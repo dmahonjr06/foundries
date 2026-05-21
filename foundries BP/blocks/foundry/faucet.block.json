@@ -1,0 +1,84 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:faucet",
+            "menu_category": {
+                "category": "construction"
+            },
+            "traits": {
+                "minecraft:placement_direction": {
+                    "y_rotation_offset": 180,
+                    "enabled_states": [
+                        "minecraft:cardinal_direction"
+                    ]
+                }
+            }
+        },
+        "components": {
+            "foundry:faucet_pour": {},
+            "minecraft:geometry": {
+                "identifier": "geometry.faucet",
+                "bone_visibility": {
+                    "faucet": true,
+                    "lava": false
+                }
+            },
+            "minecraft:material_instances": {
+                "*": {
+                    "texture": "deepslate_bricks"
+                }
+            },
+            "minecraft:collision_box": {
+                "origin": [
+                    -4,
+                    4,
+                    1
+                ],
+                "size": [
+                    8,
+                    3,
+                    7
+                ]
+            },
+            "minecraft:selection_box": {
+                "origin": [
+                    -4,
+                    4,
+                    1
+                ],
+                "size": [
+                    8,
+                    3,
+                    7
+                ]
+            }
+        },
+        "permutations": [
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'north'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 0, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'west'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 90, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'south'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, 180, 0] }
+                }
+            },
+            {
+                "condition": "q.block_state('minecraft:cardinal_direction') == 'east'",
+                "components": {
+                    "minecraft:transformation": { "rotation": [0, -90, 0] }
+                }
+            }
+        ]
+    }
+}

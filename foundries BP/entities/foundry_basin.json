@@ -1,0 +1,62 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "foundry:basin",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "basin:layer": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0, 9]
+                },
+                "basin:material_type": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0, 63]
+                }
+            }
+        },
+        "component_groups": {
+            "foundry:despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:is_collidable": {},
+            "minecraft:collision_box": {
+                "height": 0.9,
+                "width": 0.8
+            },
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:inside_block_notifier": {
+                "block_list": [
+                    {
+                        "block": {
+                            "name": "minecraft:air"
+                        },
+                        "entered_block_event": {
+                            "event": "foundry:despawn",
+                            "target": "self"
+                        }
+                    }
+                ]
+            }
+        },
+        "events": {
+            "foundry:despawn": {
+                "add": {
+                    "component_groups": [
+                        "foundry:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:item": {
+        "description": {
+            "identifier": "foundry:titanium_axe",
+            "menu_category": {
+                "category": "items"
+            }
+        },
+        "components": {
+            "minecraft:icon": "titanium_axe"
+        }
+    }
+}

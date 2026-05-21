@@ -1,0 +1,917 @@
+{
+    "format_version": "1.26.0",
+    "render_controllers": {
+        "controller.render.liquid_layer1": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer1_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": "query.property('foundry:layer1')",
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer2": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer2_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": "query.property('foundry:layer2')",
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer3": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer3_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": "query.property('foundry:layer3')",
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer4": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer4_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": "query.property('foundry:layer4')",
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer5": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer5_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": "query.property('foundry:layer5')",
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer6": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer6_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": "query.property('foundry:layer6')",
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer7": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer7_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": "query.property('foundry:layer7')",
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer8": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer8_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": "query.property('foundry:layer8')",
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer9": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer9_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": "query.property('foundry:layer9')",
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer10": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer10_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": "query.property('foundry:layer10')",
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer11": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer11_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": "query.property('foundry:layer11')",
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer12": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer12_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": "query.property('foundry:layer12')",
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer13": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer13_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": "query.property('foundry:layer13')",
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer14": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer14_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": "query.property('foundry:layer14')",
+                    "layer15": false,
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer15": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer15_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": "query.property('foundry:layer15')",
+                    "layer16": false
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        },
+        "controller.render.liquid_layer16": {
+            "geometry": "geometry.foundry_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('foundry:layer16_material')]"
+            ],
+            "part_visibility": [
+                {
+                    "layer1": false,
+                    "layer2": false,
+                    "layer3": false,
+                    "layer4": false,
+                    "layer5": false,
+                    "layer6": false,
+                    "layer7": false,
+                    "layer8": false,
+                    "layer9": false,
+                    "layer10": false,
+                    "layer11": false,
+                    "layer12": false,
+                    "layer13": false,
+                    "layer14": false,
+                    "layer15": false,
+                    "layer16": "query.property('foundry:layer16')"
+                }
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        }
+    }
+}
