@@ -1,11 +1,13 @@
-import { Block, BlockCustomComponent, Dimension } from "@minecraft/server";
+import { Block, BlockCustomComponent, BlockPermutation, Dimension, Vector3 } from "@minecraft/server";
 import { faucet_validation } from "../definitions/typedef";
+import { BlockStateSuperset } from "@minecraft/vanilla-data";
 
 export const faucet_interaction: BlockCustomComponent = {
-    onPlayerInteract({block , dimension})
+    onPlayerInteract({block, dimension})
     {
-        if(!faucetValidation(block, dimension)) return;
+        if(!faucetValidation(block)) return;
         console.log("Interaction Successful");
+        const direction = block.permutation.getState("minecraft:cardinal_direction")
         
         
         const blockBelow = block.below()?.typeId;
@@ -17,7 +19,8 @@ export const faucet_interaction: BlockCustomComponent = {
         
         if (blockBelow === "foundry:basin")
         {
-            // #TODO: Function for spawning basin handler entity 
+            faucetPourIntoBasin(block, dimension)
+            
         }
         
     }
@@ -27,7 +30,7 @@ export const faucet_interaction: BlockCustomComponent = {
 // there is a "foundry:basin" below the faucet,
 // the faucet is the correct cardinal direction,
 // the "foundry:foundry" block is in the correct position
-function faucetValidation(block:Block, dimension: Dimension): boolean {
+function faucetValidation(block:Block): boolean {
     const cardinal_direction = block.permutation.getState("minecraft:cardinal_direction");
     const blockBelow = block.below()?.typeId;
     const checkUnderFaucet = blockBelow === "foundry:basin" || blockBelow === "foundry:casting_table";
@@ -47,11 +50,11 @@ function faucetValidation(block:Block, dimension: Dimension): boolean {
         "east":  { block: block.west()?.typeId === "foundry:foundry"  && block.west()?.permutation.getState("minecraft:multi_block_part") === 0, direction: ( block.west()?.permutation.getState("minecraft:cardinal_direction") === "north" || block.west()?.permutation.getState("minecraft:cardinal_direction") === "south" ), result: { north: false, south: false, east: false, west: true,  basinUnderneath: true } },
     };
 
-    const check = checks[cardinal_direction as string]
+    const check = checks[cardinal_direction as string];
     if (check?.block && check?.direction) {
         // Debugging directions
         //console.log(`Faucet Validation ${cardinal_direction}, SUCCESSFUL`);
-        return true
+        return true;
     }
     if (!check?.block && !check?.direction){
         console.error("\nFAUCET VALIDATION FAILED: There is no Foundry placed");
@@ -65,4 +68,97 @@ function faucetValidation(block:Block, dimension: Dimension): boolean {
 
     // If no checks are valid
     return false;
-}
+};
+
+function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
+    const cardinal_direction = block.permutation.getState("minecraft:cardinal_direction") as string;
+    let layerCount = 0;
+    let pouredMaterial = 0;
+    let basinCurrentFill = 0;
+    let basinCurrentMaterial = 0;
+
+    const directions: Record<string, { foundryTopBlock: Block | undefined }> = {
+        "north": { foundryTopBlock: block.south()?.above() },
+        "east":  { foundryTopBlock: block.west()?.above()  },
+        "south": { foundryTopBlock: block.north()?.above() },
+        "west":  { foundryTopBlock: block.east()?.above()  },
+    };
+
+    const attachedFoundryData = directions[cardinal_direction];
+    if (!attachedFoundryData.foundryTopBlock) return;
+
+    const foundryLiquidEntities = dimension.getEntitiesAtBlockLocation(
+        attachedFoundryData.foundryTopBlock.location as Vector3
+    );
+
+    const basinBlock = block.below();
+    if (!basinBlock) return;
+
+    const basinLiquidEntities = dimension.getEntitiesAtBlockLocation(basinBlock.location);
+
+    // Read current basin state
+    basinLiquidEntities.forEach(entity => {
+        if (entity.typeId !== "foundry:basin") return;
+        basinCurrentFill = entity.getProperty("basin:layer") as number;
+        basinCurrentMaterial = entity.getProperty("basin:material_type") as number;
+    });
+
+    // Peek at the top filled foundry layer before draining anything
+    let incomingMaterial = 0;
+    foundryLiquidEntities.forEach(entity => {
+        if (entity.typeId !== "foundry:foundry_liquids") return;
+        for (let i = 16; i >= 1; i--) {
+            if (entity.getProperty(`foundry:layer${i}`) === false) continue;
+            incomingMaterial = entity.getProperty(`foundry:layer${i}_material`) as number;
+            break;
+        }
+    });
+
+    console.log(`Basin fill: ${basinCurrentFill}, Basin material: ${basinCurrentMaterial}, Incoming: ${incomingMaterial}`);
+
+    // Stop if basin already has a different material
+    if (basinCurrentFill > 0 && basinCurrentMaterial !== incomingMaterial) {
+        console.log("Pour blocked - different materials");
+        return;
+    }
+
+    // Stop if basin is already full
+    if (basinCurrentFill >= 9) {
+        console.log("Pour blocked - basin is full");
+        return;
+    }
+    // TODO: when the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
+    // Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
+
+    // Drain the foundry
+    foundryLiquidEntities.forEach(entity => {
+        if (entity.typeId !== "foundry:foundry_liquids") return;
+        for (let i = 16; i >= 1; i--) {
+            if (entity.getProperty(`foundry:layer${i}`) === false) continue;
+
+            const layerMaterial = entity.getProperty(`foundry:layer${i}_material`) as number;
+            if (layerCount > 0 && layerMaterial !== pouredMaterial) break;
+
+            entity.setProperty(`foundry:layer${i}`, false);
+            entity.setProperty(`foundry:layer${i}_material`, 0);
+            pouredMaterial = layerMaterial;
+            layerCount++;
+        }
+    });
+
+    // Fill the basin
+    if (layerCount > 0) {
+        basinLiquidEntities.forEach(entity => {
+            if (entity.typeId !== "foundry:basin") return;
+            entity.setProperty("basin:layer", basinCurrentFill + layerCount);
+            entity.setProperty("basin:material_type", pouredMaterial);
+            console.log(`Basin filled to ${basinCurrentFill + layerCount} with material ${pouredMaterial}`);
+        });
+    }
+};
+
+// TODO: 
+const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { state: string }> = new Map([
+    [1, { state: "minecraft:lava" }],
+    [2, { state: "minecraft:water" }],
+]);

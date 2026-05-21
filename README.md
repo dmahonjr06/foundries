@@ -47,6 +47,7 @@ Faucet will have an "on/off" state, which when turned on will check the first la
 # Optimise the "liquid_layers_database.ts" database.
 Could try make it under 1KB possibly.
 It's currently at 110KB...
+UPDATE: It is now at 1.2KB
 
 
 
@@ -80,7 +81,9 @@ It's currently at 110KB...
 17|0 - Redstone
 18|0 - Palladium
 19|0 - Adamantium
-20|0 - Lapis **NEED TO ADD**
+**BELOW ARE RESOURCES NEEDED TO ADD**
+20|0 - Lapis
+21|0 - Tungsten
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
@@ -93,3 +96,13 @@ It's currently at 110KB...
 8 - Battle-axe head,
 9 - Hammer head,
 10- Rods
+
+
+# TODO
+## Basin:
+- When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
+- Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
+- Faucet.ts 130
+
+- Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
+- Faucet.ts 162

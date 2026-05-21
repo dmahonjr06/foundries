@@ -2,17 +2,20 @@
     "format_version": "1.26.10",
     "minecraft:block": {
         "description": {
-            "identifier": "foundry:basin"
+            "identifier": "foundry:basin",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "basin:resource_types1": [
+                    ""
+                ]
+            }
         },
         "components": {
+            "foundry:spawn_foundry_block_entities": {},
             "minecraft:geometry": {
-                "identifier": "geometry.basin",
-                "bone_visibility": {
-                    "lava": false,
-                    "molten_steel": false,
-                    "molten_iron": false
-                    
-                }
+                "identifier": "geometry.basin"
             },
             "minecraft:material_instances": {
                 "*": {
@@ -20,15 +23,6 @@
                 },
                 "down": {
                     "texture": "cauldron_bottom"
-                },
-                "molten_steel": {
-                    "texture": "molten_steel"
-                },
-                "lava": {
-                    "texture": "still_lava"
-                },
-                "molten_iron": {
-                    "texture": "molten_iron"
                 }
             }
         }

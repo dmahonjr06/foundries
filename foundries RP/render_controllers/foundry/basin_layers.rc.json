@@ -1,0 +1,55 @@
+{
+    "format_version": "1.10.0",
+    "render_controllers": {
+        "controller.render.basin_layers": {
+            "geometry": "geometry.basin_layers",
+            "materials": [
+                {
+                    "*": "Material.default"
+                }
+            ],
+            "part_visibility": [
+                {
+                    "layer1": "query.property('basin:layer') == 1",
+                    "layer2": "query.property('basin:layer') == 2",
+                    "layer3": "query.property('basin:layer') == 3",
+                    "layer4": "query.property('basin:layer') == 4",
+                    "layer5": "query.property('basin:layer') == 5",
+                    "layer6": "query.property('basin:layer') == 6",
+                    "layer7": "query.property('basin:layer') == 7",
+                    "layer8": "query.property('basin:layer') == 8",
+                    "layer9": "query.property('basin:layer') == 9"
+                }
+            ],
+            "textures": [
+                "array.liquids[query.property('basin:material_type')]"
+            ],
+            "arrays": {
+                "textures": {
+                    "array.liquids": [
+                        "texture.empty",
+                        "texture.lava",
+                        "texture.liquid_iron",
+                        "texture.liquid_gold",
+                        "texture.liquid_copper",
+                        "texture.liquid_diamond",
+                        "texture.liquid_netherite",
+                        "texture.liquid_obsidian",
+                        "texture.liquid_aluminium",
+                        "texture.liquid_zinc",
+                        "texture.liquid_osmium",
+                        "texture.liquid_titanium",
+                        "texture.liquid_lead",
+                        "texture.liquid_silver",
+                        "texture.liquid_brass",
+                        "texture.liquid_steel",
+                        "texture.liquid_dragon_steel",
+                        "texture.liquid_redstone",
+                        "texture.liquid_palladium",
+                        "texture.liquid_adamantium"
+                    ]
+                }
+            }
+        }
+    }
+}

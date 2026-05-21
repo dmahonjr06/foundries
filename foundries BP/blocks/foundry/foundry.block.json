@@ -32,7 +32,7 @@
         },
         "components": {
             "foundry:player_interact_with_foundry": {},
-            "foundry:spawn_foundry_entity": {},
+            "foundry:spawn_foundry_block_entities": {},
             "foundry:lava_tank_interact": {},
             "minecraft:movable": {
                 "movement_type": "immovable"

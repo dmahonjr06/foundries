@@ -2,10 +2,10 @@
     "format_version": "1.26.0",
     "minecraft:client_entity": {
         "description": {
-            "identifier": "foundry:foundry_liquids",
+            "identifier": "foundry:basin",
             "textures": {
                 "empty": "textures/entity/foundry/empty",
-                "lava": "textures/blocks/liquid/lava_foundry",
+                "lava": "textures/entity/foundry/lava",
                 "liquid_iron": "textures/blocks/liquid/molten_iron",
                 "liquid_gold": "textures/blocks/liquid/molten_gold",
                 "liquid_copper": "textures/blocks/liquid/molten_copper",
@@ -26,28 +26,13 @@
                 "liquid_adamantium": "textures/blocks/liquid/molten_adamantium"
             },
             "materials": {
-                "default": "entity_alphatest" 
+                "default": "entity_alphatest"
             },
             "geometry": {
-                "foundry_layers": "geometry.foundry_layers"
+                "basin_layers": "geometry.basin_layers"
             },
             "render_controllers": [
-                "controller.render.liquid_layer1",
-                "controller.render.liquid_layer2",
-                "controller.render.liquid_layer3",
-                "controller.render.liquid_layer4",
-                "controller.render.liquid_layer5",
-                "controller.render.liquid_layer6",
-                "controller.render.liquid_layer7",
-                "controller.render.liquid_layer8",
-                "controller.render.liquid_layer9",
-                "controller.render.liquid_layer10",
-                "controller.render.liquid_layer11",
-                "controller.render.liquid_layer12",
-                "controller.render.liquid_layer13",
-                "controller.render.liquid_layer14",
-                "controller.render.liquid_layer15",
-                "controller.render.liquid_layer16"
+                "controller.render.basin_layers"
             ]
         }
     }

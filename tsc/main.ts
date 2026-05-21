@@ -1,11 +1,11 @@
 import { system, Vector3, world } from "@minecraft/server";
 import { lava_tank_component } from "./foundry/lava_tank";
-import { spawn_foundry_block_entity } from "./foundry/foundry_entities";
+import { spawn_foundry_block_entities } from "./foundry/foundry_entities";
 import { faucet_interaction } from "./foundry/faucet";
 import { adding_items_to_foundry } from "./foundry/liquid_layers"; 
 system.beforeEvents.startup.subscribe(({blockComponentRegistry}) => {
     blockComponentRegistry.registerCustomComponent("foundry:lava_tank_interact", lava_tank_component);
-    blockComponentRegistry.registerCustomComponent("foundry:spawn_foundry_entity", spawn_foundry_block_entity);
+    blockComponentRegistry.registerCustomComponent("foundry:spawn_foundry_block_entities", spawn_foundry_block_entities);
     blockComponentRegistry.registerCustomComponent("foundry:player_interact_with_foundry", adding_items_to_foundry);
     blockComponentRegistry.registerCustomComponent("foundry:faucet_pour", faucet_interaction)
 })
