@@ -1,3 +1,5 @@
+import { Block, BlockPermutation, Entity, system } from "@minecraft/server";
+
 // TODO: 
 const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { resource_types1: string, resource_types2: string }> = new Map([
     [1,  { resource_types1: "empty",                        resource_types2: "empty"}],
@@ -21,6 +23,17 @@ const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { resource_types1: str
     [19, { resource_types1: "foundry:adamantium_block",     resource_types2: "empty"}],
 ]);
 
-const turn_basin_solid: import("@minecraft/server").BlockCustomComponent = {
-    onTick({block: Block}){}
-}
+export function turn_basin_liquid_to_solid(basinBlock: Block, entity: Entity): void {
+    if (entity.typeId !== "foundry:basin") return;
+    const materialType = entity.getProperty("basin:material_type") as number;
+    const blockTypes = mapBasinLiquidToSolidBlockType.get(materialType);
+    if (!blockTypes) return;
+    console.log("BlockTypes: "+blockTypes.resource_types1+", "+blockTypes.resource_types2);
+    system.waitTicks(60).finally(() => {
+        basinBlock.setPermutation(
+            BlockPermutation.resolve(basinBlock.typeId, {
+                "basin:resource_types1": blockTypes.resource_types1
+            })
+        );
+    });
+};

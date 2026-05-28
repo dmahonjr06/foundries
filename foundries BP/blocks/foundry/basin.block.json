@@ -7,9 +7,6 @@
                 "category": "construction"
             },
             "states": {
-                "basin:solidify": [
-                    false, true
-                ],
                 "basin:resource_types1": [
                     "empty",
                     "minecraft:iron_block",
@@ -33,31 +30,96 @@
         "components": {
             "foundry:spawn_foundry_block_entities": {},
             "minecraft:geometry": {
-                "identifier": "geometry.basin"
+                "identifier": "geometry.basin",
+                "bone_visibility": {
+                    "basin": true,
+                    "iron": "query.block_state('basin:resource_types1') == 'minecraft:iron_block'",
+                    "gold": "query.block_state('basin:resource_types1') == 'minecraft:gold_block'",
+                    "copper": "query.block_state('basin:resource_types1') == 'minecraft:copper_block'",
+                    "diamond": "query.block_state('basin:resource_types1') == 'minecraft:diamond_block'",
+                    "netherite": "query.block_state('basin:resource_types1') == 'minecraft:netherite_block'",
+                    "obsidian": "query.block_state('basin:resource_types1') == 'minecraft:obsidian_block'",
+                    "aluminium": "query.block_state('basin:resource_types1') == 'foundry:aluminium_block'",
+                    "zinc": "query.block_state('basin:resource_types1') == 'foundry:zinc_block'",
+                    "osmium": "query.block_state('basin:resource_types1') == 'foundry:osmium_block'",
+                    "titanium": "query.block_state('basin:resource_types1') == 'foundry:titanium_block'",
+                    "lead": "query.block_state('basin:resource_types1') == 'foundry:lead_block'",
+                    "silver": "query.block_state('basin:resource_types1') == 'foundry:silver_block'",
+                    "brass": "query.block_state('basin:resource_types1') == 'foundry:brass_block'",
+                    "steel": "query.block_state('basin:resource_types1') == 'foundry:steel_block'",
+                    "dragon_steel": "query.block_state('basin:resource_types1') == 'foundry:dragon_steel_block'"
+                }
             },
             "minecraft:material_instances": {
-                "*": {
-                    "texture": "cauldron_side"
+                "basin": {
+                    "texture": "cauldron_side",
+                    "render_method": "alpha_test"
                 },
                 "down": {
-                    "texture": "cauldron_bottom"
+                    "texture": "cauldron_bottom",
+                    "render_method": "alpha_test"
+                },
+                "iron": {
+                    "texture": "iron_block",
+                    "render_method": "alpha_test"
+                },
+                "gold": {
+                    "texture": "gold_block",
+                    "render_method": "alpha_test"
+                },
+                "copper": {
+                    "texture": "copper_block",
+                    "render_method": "alpha_test"
+                },
+                "diamond": {
+                    "texture": "diamond_block",
+                    "render_method": "alpha_test"
+                },
+                "netherite": {
+                    "texture": "netherite_block",
+                    "render_method": "alpha_test"
+                },
+                "obsidian": {
+                    "texture": "obsidian",
+                    "render_method": "alpha_test"
+                },
+                "aluminium": {
+                    "texture": "aluminium_block",
+                    "render_method": "alpha_test"
+                },
+                "zinc": {
+                    "texture": "zinc_block",
+                    "render_method": "alpha_test"
+                },
+                "osmium": {
+                    "texture": "osmium_block",
+                    "render_method": "alpha_test"
+                },
+                "titanium": {
+                    "texture": "titanium_block",
+                    "render_method": "alpha_test"
+                },
+                "lead": {
+                    "texture": "lead_block",
+                    "render_method": "alpha_test"
+                },
+                "silver": {
+                    "texture": "silver_block",
+                    "render_method": "alpha_test"
+                },
+                "brass": {
+                    "texture": "brass_block",
+                    "render_method": "alpha_test"
+                },
+                "steel": {
+                    "texture": "steel_block",
+                    "render_method": "alpha_test"
+                },
+                "dragon_steel": {
+                    "texture": "dragon_steel_block",
+                    "render_method": "alpha_test"
                 }
             }
-        },
-        "permutations": [
-            {
-                "condition": "query.block_state('basin:solidify')",
-                "components": {
-                    "basin:turn_basin_solid": {},
-                    "minecraft:tick": {
-                        "interval_range": [
-                            30,30
-                        ],
-                        "looping": false
-                    }
-                    // Add Component to retrieve block from foundry
-                }
-            }
-        ]
+        }
     }
 }

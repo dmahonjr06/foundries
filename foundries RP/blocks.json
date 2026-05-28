@@ -4,6 +4,15 @@
         "textures": "titanium_ore_endstone"
     },
     "foundry:steel_block": {
-        "textures": "steel_block"
+        "textures": "steel_block",
+        "sound": "iron"
+    },
+    "foundry:aluminium_block": {
+        "textures": "aluminium_block",
+        "sound": "iron"
+    },
+    "foundry:raw_steel_block": {
+        "textures": "raw_steel_block",
+        "sound": "stone"
     }
 }

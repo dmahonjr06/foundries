@@ -1,4 +1,4 @@
-"use strict";
+import { BlockPermutation, system } from "@minecraft/server";
 // TODO: 
 const mapBasinLiquidToSolidBlockType = new Map([
     [1, { resource_types1: "empty", resource_types2: "empty" }],
@@ -21,6 +21,18 @@ const mapBasinLiquidToSolidBlockType = new Map([
     [18, { resource_types1: "foundry:palladium_block", resource_types2: "empty" }],
     [19, { resource_types1: "foundry:adamantium_block", resource_types2: "empty" }],
 ]);
-const turn_basin_solid = {
-    onTick({ block: Block }) { }
-};
+export function turn_basin_liquid_to_solid(basinBlock, entity) {
+    if (entity.typeId !== "foundry:basin")
+        return;
+    const materialType = entity.getProperty("basin:material_type");
+    const blockTypes = mapBasinLiquidToSolidBlockType.get(materialType);
+    if (!blockTypes)
+        return;
+    console.log("BlockTypes: " + blockTypes.resource_types1 + ", " + blockTypes.resource_types2);
+    system.waitTicks(60).finally(() => {
+        basinBlock.setPermutation(BlockPermutation.resolve(basinBlock.typeId, {
+            "basin:resource_types1": blockTypes.resource_types1
+        }));
+    });
+}
+;

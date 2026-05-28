@@ -2,6 +2,11 @@
     "texture_name": "atlas.terrain",
     "resource_pack_name": "foundries RP",
     "texture_data": {
+        // Root
+        "empty": {
+            "textures": "textures/blocks/empty"
+        },
+
         // Foundry
         "lava_tank": {
             "textures": "textures/blocks/foundry/lava_tank"
@@ -21,6 +26,9 @@
         },
 
         // Liquid
+        "lava_foundry": {
+            "textures": "textures/blocks/liquid/lava_foundry"
+        },
         "molten_adamantium": {
             "textures": "textures/blocks/liquid/molten_adamantium"
         },
@@ -110,6 +118,9 @@
         },
 
         // Ores / resource block
+        "aluminium_block": {
+            "textures": "textures/blocks/ores/resource_block/aluminium_block"
+        },
         "steel_block": {
             "textures": "textures/blocks/ores/resource_block/steel_block"
         },
