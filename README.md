@@ -137,9 +137,7 @@ UPDATE: It is now at 1.2KB
 
 ## Buckets:
 ### Make these buckets then put them into the 'maps.ts' database for usage within the foundry.
-REGULAR FULL BUCKETS
-- foundry:adamantium_bucket
-- foundry:aluminium_bucket
+REGULAR FULL:
 - foundry:brass_bucket
 - foundry:copper_bucket
 - foundry:diamond_bucket
@@ -233,6 +231,8 @@ OBSIDIAN FULL BUCKETS:
 - foundry:quarter_titanium_obsidian_bucket
 - foundry:quarter_zinc_obsidian_bucket
 
+
+## Provide Sound definitions and textures for all full blocks within blocks.json!
 
 
 

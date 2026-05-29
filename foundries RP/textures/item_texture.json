@@ -35,6 +35,16 @@
             "textures": "textures/items/buckets/obsidian_bucket"
         },
 
+        // Buckets / adamantium
+        "adamantium_bucket": {
+            "textures": "textures/items/buckets/adamantium/adamantium_bucket"
+        },
+
+        // Buckets / aluminium
+        "aluminium_bucket": {
+            "textures": "textures/items/buckets/aluminium/aluminium_bucket"
+        },
+
         // Buckets / lava
         "3quarter_lava_obsidian_bucket": {
             "textures": "textures/items/buckets/lava/3quarter_lava_obsidian_bucket"
