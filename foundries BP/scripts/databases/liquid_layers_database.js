@@ -20,11 +20,11 @@ export function FoundryCheckItemsPlayerInterractsWith(block, player) {
         // If the item is a bucket, set the player's main hand to the corresponding bucket
         const equippable = player.getComponent("equippable");
         if (itemID?.includes("bucket")) {
-            const bucketEntry = bucketMap.get(itemID);
-            if (bucketEntry) {
-                player.getComponent("equippable")?.setEquipment(EquipmentSlot.Mainhand, new ItemStack(bucketEntry.giveItem, 1));
+            const bucketEntry = bucketMap.has(itemID) ? itemID : undefined;
+            if (!bucketEntry)
                 return;
-            }
+            equippable?.setEquipment(EquipmentSlot.Mainhand, new ItemStack("minecraft:bucket", 1));
+            return;
         }
         if (equippable) {
             const slot = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);

@@ -133,15 +133,7 @@ UPDATE: It is now at 1.2KB
 
 ## Buckets:
 ### Make these buckets then put them into the 'maps.ts' database for usage within the foundry.
-REGULAR FULL:
-- foundry:obsidian_bucket
-- foundry:osmium_bucket
-- foundry:palladium_bucket
-- foundry:redstone_bucket
-- foundry:silver_bucket
-- foundry:steel_bucket
-- foundry:titanium_bucket
-- foundry:zinc_bucket
+Need to make buckets take the top-most liquid from the foundry and place it into the bucket when right-clicking on the foundry with an empty bucket.
 
 
 ## Provide Sound definitions and textures for all full blocks within blocks.json!
