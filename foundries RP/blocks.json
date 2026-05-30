@@ -11,8 +11,20 @@
         "textures": "aluminium_block",
         "sound": "iron"
     },
+    "foundry:adamantium_block": {
+        "textures": "adamantium_block",
+        "sound": "iron"
+    },
+    "foundry:brass_block": {
+        "textures": "brass_block",
+        "sound": "iron"
+    },
     "foundry:raw_steel_block": {
         "textures": "raw_steel_block",
         "sound": "stone"
+    },
+    "foundry:zinc_block": {
+        "textures": "zinc_block",
+        "sound": "iron"
     }
 }

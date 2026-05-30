@@ -14,7 +14,7 @@ const ITEM_NAMES = [
   "iron",
   "lead",
   "netherite",
-  "obsidian",
+  "empty_obsidian",
   "osmium",
   "palladium",
   "zinc",

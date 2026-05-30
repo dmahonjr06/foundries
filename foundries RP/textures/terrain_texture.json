@@ -118,11 +118,20 @@
         },
 
         // Ores / resource block
+        "adamantium_block": {
+            "textures": "textures/blocks/ores/resource_block/adamantium_block"
+        },
         "aluminium_block": {
             "textures": "textures/blocks/ores/resource_block/aluminium_block"
         },
+        "brass_block": {
+            "textures": "textures/blocks/ores/resource_block/brass_block"
+        },
         "steel_block": {
             "textures": "textures/blocks/ores/resource_block/steel_block"
+        },
+        "zinc_block": {
+            "textures": "textures/blocks/ores/resource_block/zinc_block"
         },
 
         // Smithing anvil

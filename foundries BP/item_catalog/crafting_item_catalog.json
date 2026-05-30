@@ -1,6 +1,5 @@
-// mc-disable behaviorpack.items.missing
 {
-    "format_version": "1.26.0",
+    "format_version": "1.26.10",
     "minecraft:crafting_items_catalog": {
         "categories": [
             {
@@ -8,10 +7,29 @@
                 "groups": [
                     {
                         "group_identifier": {
-                            "icon": "foundry:obsidian_bucket",
+                            "icon": "foundry:adamantium_bucket",
                             "name": "foundry:itemGroup.name.buckets"
                         },
                         "items": [
+                            "foundry:adamantium_bucket",
+                            "foundry:aluminium_bucket",
+                            "foundry:brass_bucket",
+                            "foundry:copper_bucket",
+                            "foundry:diamond_bucket",
+                            "foundry:dragon_steel_bucket",
+                            "foundry:gold_bucket",
+                            "foundry:iron_bucket",
+                            "foundry:lead_bucket",
+                            "foundry:netherite_bucket",
+                            "foundry:osmium_bucket",
+                            "foundry:palladium_bucket",
+                            "foundry:redstone_bucket",
+                            "foundry:silver_bucket",
+                            "foundry:steel_bucket",
+                            "foundry:titanium_bucket",
+                            "foundry:zinc_bucket"
+                            
+                            
                         ]
                     }
                 ]
