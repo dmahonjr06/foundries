@@ -131,6 +131,19 @@
 					]
 				},
 				{
+					"name": "redstone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "redstone"}
+							}
+						}
+					]
+				},
+				{
 					"name": "gold",
 					"pivot": [0, 0, 0],
 					"cubes": [

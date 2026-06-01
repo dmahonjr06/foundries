@@ -127,7 +127,7 @@ function faucetPourIntoBasin(block, dimension) {
     // Stop if basin is already full
     if (basinCurrentFill >= 9) {
         const basinEntity = block.dimension.getEntitiesAtBlockLocation(block.location);
-        if (block.permutation.getState("foundry:resource_types1") === "empty") {
+        if (block.permutation.getState("foundry:material_type1") === "empty") {
             basinEntity.forEach(entity => {
                 entity.setProperty("basin:layer", 0);
                 entity.setProperty("basin:material_type", 0);

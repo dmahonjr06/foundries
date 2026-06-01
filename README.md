@@ -61,8 +61,8 @@ UPDATE: It is now at 1.2KB
 
 # States and What some of them mean
 
-## Material Types and their block state "foundry:material_types1" & "foundry:material_types2" number
-1|0 - Lava
+## Material Types and their block state "foundry:material_type1" & "foundry:material_type2" number
+0|0 - Empty
 2|0 - Iron
 3|0 - Gold
 4|0 - Copper

@@ -2,26 +2,26 @@ import { Block, BlockPermutation, Entity, ItemStack, system } from "@minecraft/s
 import { BlockStateSuperset } from "@minecraft/vanilla-data";
 
 // TODO: 
-const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { resource_types1: string, resource_types2: string }> = new Map([
-    [1,  { resource_types1: "empty",                        resource_types2: "empty"}],
-    [2,  { resource_types1: "minecraft:iron_block",         resource_types2: "empty"}],
-    [3,  { resource_types1: "minecraft:gold_block",         resource_types2: "empty"}],
-    [4,  { resource_types1: "minecraft:copper_block",       resource_types2: "empty"}],
-    [5,  { resource_types1: "minecraft:diamond_block",      resource_types2: "empty"}],
-    [6,  { resource_types1: "minecraft:netherite_block",    resource_types2: "empty"}],
-    [7,  { resource_types1: "minecraft:obsidian_block",     resource_types2: "empty"}],
-    [8,  { resource_types1: "foundry:aluminium_block",      resource_types2: "empty"}],
-    [9,  { resource_types1: "foundry:zinc_block",           resource_types2: "empty"}],
-    [10, { resource_types1: "foundry:osmium_block",         resource_types2: "empty"}],
-    [11, { resource_types1: "foundry:titanium_block",       resource_types2: "empty"}],
-    [12, { resource_types1: "foundry:lead_block",           resource_types2: "empty"}],
-    [13, { resource_types1: "foundry:silver_block",         resource_types2: "empty"}],
-    [14, { resource_types1: "foundry:brass_block",          resource_types2: "empty"}],
-    [15, { resource_types1: "foundry:steel_block",          resource_types2: "empty"}],
-    [16, { resource_types1: "foundry:dragon_steel_block",   resource_types2: "empty"}],
-    [17, { resource_types1: "empty",                        resource_types2: "minecraft:redstone_block"}],
-    [18, { resource_types1: "foundry:palladium_block",      resource_types2: "empty"}],
-    [19, { resource_types1: "foundry:adamantium_block",     resource_types2: "empty"}],
+const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { material_type1: number, material_type2: number, itemToGive: string | undefined }> = new Map([
+    [1,  { material_type1: 0,   material_type2: 0,  itemToGive: undefined }], // empty
+    [2,  { material_type1: 1,   material_type2: 0,  itemToGive: "minecraft:iron_block" }], // iron
+    [3,  { material_type1: 2,   material_type2: 0,  itemToGive: "minecraft:gold_block" }], // gold
+    [4,  { material_type1: 3,   material_type2: 0,  itemToGive: "minecraft:copper_block" }], // copper
+    [5,  { material_type1: 4,   material_type2: 0,  itemToGive: "minecraft:diamond_block" }], // diamond
+    [6,  { material_type1: 5,   material_type2: 0,  itemToGive: "minecraft:netherite_block" }], // netherite
+    [7,  { material_type1: 6,   material_type2: 0,  itemToGive: "minecraft:obsidian" }], // obsidian
+    [8,  { material_type1: 7,   material_type2: 0,  itemToGive: "foundry:aluminium_block" }], // aluminium
+    [9,  { material_type1: 8,   material_type2: 0,  itemToGive: "foundry:zinc_block" }], // zinc
+    [10, { material_type1: 9,   material_type2: 0,  itemToGive: "foundry:osmium_block" }], // osmium
+    [11, { material_type1: 10,  material_type2: 0,  itemToGive: "foundry:titanium_block" }], // titanium
+    [12, { material_type1: 11,  material_type2: 0,  itemToGive: "foundry:lead_block" }], // lead
+    [13, { material_type1: 12,  material_type2: 0,  itemToGive: "foundry:silver_block" }], // silver
+    [14, { material_type1: 13,  material_type2: 0,  itemToGive: "foundry:brass_block" }], // brass
+    [15, { material_type1: 14,  material_type2: 0,  itemToGive: "foundry:steel_block" }], // steel
+    [16, { material_type1: 15,  material_type2: 0,  itemToGive: "foundry:dragon_steel_block" }], // dragon steel
+    [17, { material_type1: 0,   material_type2: 1,  itemToGive: "minecraft:redstone_block" }], // redstone
+    [18, { material_type1: 0,   material_type2: 2,  itemToGive: "foundry:palladium_block" }], // palladium
+    [19, { material_type1: 0,   material_type2: 3,  itemToGive: "foundry:adamantium_block" }], // adamantium
 ]);
 
 export function turn_basin_liquid_to_solid(basinBlock: Block, entity: Entity): void {
@@ -29,12 +29,12 @@ export function turn_basin_liquid_to_solid(basinBlock: Block, entity: Entity): v
     const materialType = entity.getProperty("basin:material_type") as number;
     const blockTypes = mapBasinLiquidToSolidBlockType.get(materialType);
     if (!blockTypes) return;
-    console.log("BlockTypes: "+blockTypes.resource_types1+", "+blockTypes.resource_types2);
+    console.log(`BlockTypes: ${blockTypes.material_type1}, ${blockTypes.material_type2}`);
     system.waitTicks(60).finally(() => {
         basinBlock.setPermutation(
             BlockPermutation.resolve(basinBlock.typeId, {
-                "basin:resource_types1": blockTypes.resource_types1,
-                "basin:resource_types2": blockTypes.resource_types2
+                "basin:material_type1": blockTypes.material_type1,
+                "basin:material_type2": blockTypes.material_type2
             })
         );
     });
@@ -44,25 +44,33 @@ export function turn_basin_liquid_to_solid(basinBlock: Block, entity: Entity): v
 export const retrieve_block_from_basin: import("@minecraft/server").BlockCustomComponent = {
     onPlayerInteract({block, player})
     {
-        // Player takes Block from the Basin
-        const resourceType1 = block.permutation.getState("basin:resource_types1" as keyof BlockStateSuperset);
-        const resourceType2 = block.permutation.getState("basin:resource_types2" as keyof BlockStateSuperset);
-        if (resourceType1 === "empty" && resourceType2 === "empty") return;
-        if (!resourceType1 || typeof resourceType1 !== 'string') return;
-        player?.addItem(new ItemStack(resourceType1, 1));
+        const entity = block.dimension.getEntitiesAtBlockLocation(block.location).find(e => e.typeId === "foundry:basin");
+        if (!entity) return;
+        const materialType = entity.getProperty("basin:material_type") as number;
+        const blockTypes = mapBasinLiquidToSolidBlockType.get(materialType)
+        if (!blockTypes) return;
+        if (!blockTypes.itemToGive) return;
+        // Player takes Block from Basin
+        const resourceType1 = block.permutation.getState("basin:material_type1" as keyof BlockStateSuperset);
+        const resourceType2 = block.permutation.getState("basin:material_type2" as keyof BlockStateSuperset);
+
+        if (resourceType1 === "0" && resourceType2 === "0") return;
+
+        // Change to correct item based on block state
+        player?.addItem(new ItemStack(blockTypes.itemToGive, 1));
         block.setPermutation(
             BlockPermutation.resolve(block.typeId, {
-                "basin:resource_types1": "empty",
-                "basin:resource_types2": "empty"
+                "basin:material_type1": 0,
+                "basin:material_type2": 0
             })
         );
 
         // Entity data reset
-        const entities = block.dimension.getEntitiesAtBlockLocation(block.location);
-        for (const entity of entities) {
+        block.dimension.getEntitiesAtBlockLocation(block.location).forEach(entity => {
             if (entity.typeId === "foundry:basin") {
+                entity.setProperty("basin:layer", 0);
                 entity.setProperty("basin:material_type", 0);
             }
-        }
+        });
     }
 }

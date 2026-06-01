@@ -7,28 +7,18 @@
                 "category": "construction"
             },
             "states": {
-                "basin:resource_types1": [
-                    "empty",
-                    "minecraft:iron_block",
-                    "minecraft:gold_block",     
-                    "minecraft:copper_block",   
-                    "minecraft:diamond_block",  
-                    "minecraft:netherite_block",
-                    "minecraft:obsidian_block", 
-                    "foundry:aluminium_block",  
-                    "foundry:zinc_block",       
-                    "foundry:osmium_block",     
-                    "foundry:titanium_block",   
-                    "foundry:lead_block",       
-                    "foundry:silver_block",     
-                    "foundry:brass_block",
-                    "foundry:steel_block",      
-                    "foundry:dragon_steel_block"
-                ],
-                "basin:resource_types2": [
-                    "empty",
-                    "minecraft:redstone_block"
-                ]
+                "basin:material_type1": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                },
+                "basin:material_type2": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                }
             }
         },
         "components": {
@@ -38,21 +28,22 @@
                 "identifier": "geometry.basin",
                 "bone_visibility": {
                     "basin": true,
-                    "iron": "query.block_state('basin:resource_types1') == 'minecraft:iron_block'",
-                    "gold": "query.block_state('basin:resource_types1') == 'minecraft:gold_block'",
-                    "copper": "query.block_state('basin:resource_types1') == 'minecraft:copper_block'",
-                    "diamond": "query.block_state('basin:resource_types1') == 'minecraft:diamond_block'",
-                    "netherite": "query.block_state('basin:resource_types1') == 'minecraft:netherite_block'",
-                    "obsidian": "query.block_state('basin:resource_types1') == 'minecraft:obsidian_block'",
-                    "aluminium": "query.block_state('basin:resource_types1') == 'foundry:aluminium_block'",
-                    "zinc": "query.block_state('basin:resource_types1') == 'foundry:zinc_block'",
-                    "osmium": "query.block_state('basin:resource_types1') == 'foundry:osmium_block'",
-                    "titanium": "query.block_state('basin:resource_types1') == 'foundry:titanium_block'",
-                    "lead": "query.block_state('basin:resource_types1') == 'foundry:lead_block'",
-                    "silver": "query.block_state('basin:resource_types1') == 'foundry:silver_block'",
-                    "brass": "query.block_state('basin:resource_types1') == 'foundry:brass_block'",
-                    "steel": "query.block_state('basin:resource_types1') == 'foundry:steel_block'",
-                    "dragon_steel": "query.block_state('basin:resource_types1') == 'foundry:dragon_steel_block'"
+                    "iron":         "query.block_state('basin:material_type1') == 1 && query.block_state('basin:material_type2') == 0",
+                    "gold":         "query.block_state('basin:material_type1') == 2 && query.block_state('basin:material_type2') == 0",
+                    "copper":       "query.block_state('basin:material_type1') == 3 && query.block_state('basin:material_type2') == 0",
+                    "diamond":      "query.block_state('basin:material_type1') == 4 && query.block_state('basin:material_type2') == 0",
+                    "netherite":    "query.block_state('basin:material_type1') == 5 && query.block_state('basin:material_type2') == 0",
+                    "obsidian":     "query.block_state('basin:material_type1') == 6 && query.block_state('basin:material_type2') == 0",
+                    "aluminium":    "query.block_state('basin:material_type1') == 7 && query.block_state('basin:material_type2') == 0",
+                    "zinc":         "query.block_state('basin:material_type1') == 8 && query.block_state('basin:material_type2') == 0",
+                    "osmium":       "query.block_state('basin:material_type1') == 9 && query.block_state('basin:material_type2') == 0",
+                    "titanium":     "query.block_state('basin:material_type1') == 10 && query.block_state('basin:material_type2') == 0",
+                    "lead":         "query.block_state('basin:material_type1') == 11 && query.block_state('basin:material_type2') == 0",
+                    "silver":       "query.block_state('basin:material_type1') == 12 && query.block_state('basin:material_type2') == 0",
+                    "brass":        "query.block_state('basin:material_type1') == 13 && query.block_state('basin:material_type2') == 0",
+                    "steel":        "query.block_state('basin:material_type1') == 14 && query.block_state('basin:material_type2') == 0",
+                    "dragon_steel": "query.block_state('basin:material_type1') == 15 && query.block_state('basin:material_type2') == 0",
+                    "redstone":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 1"
                 }
             },
             "minecraft:material_instances": {
@@ -122,6 +113,10 @@
                 },
                 "dragon_steel": {
                     "texture": "dragon_steel_block",
+                    "render_method": "alpha_test"
+                },
+                "redstone": {
+                    "texture": "redstone_block",
                     "render_method": "alpha_test"
                 }
             }
