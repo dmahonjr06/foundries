@@ -127,8 +127,20 @@
         "brass_block": {
             "textures": "textures/blocks/ores/resource_block/brass_block"
         },
+        "dragon_steel_block": {
+            "textures": "textures/blocks/ores/resource_block/dragon_steel_block"
+        },
+        "osmium_block": {
+            "textures": "textures/blocks/ores/resource_block/osmium_block"
+        },
         "steel_block": {
             "textures": "textures/blocks/ores/resource_block/steel_block"
+        },
+        "titanium_block": {
+            "textures": "textures/blocks/ores/resource_block/titanium_block"
+        },
+        "uranium_block": {
+            "textures": "textures/blocks/ores/resource_block/uranium_block"
         },
         "zinc_block": {
             "textures": "textures/blocks/ores/resource_block/zinc_block"

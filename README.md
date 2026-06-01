@@ -63,28 +63,28 @@ UPDATE: It is now at 1.2KB
 
 ## Material Types and their block state "foundry:material_type1" & "foundry:material_type2" number
 0|0 - Empty
-2|0 - Iron
-3|0 - Gold
-4|0 - Copper
-5|0 - Diamond
-6|0 - Netherite
-7|0 - Obsidian
-8|0 - Aluminium
-9|0 - Zinc
-10|0 - Osmium
-11|0 - Titanium
-12|0 - Lead
-13|0 - Silver
-14|0 - Brass
-15|0 - Steel
-16|0 - Dragon Steel (Dragon Scale and Steel mixture)
-17|0 - Redstone
-18|0 - Palladium
-19|0 - Adamantium
+1|0 - Iron
+2|0 - Gold
+3|0 - Copper
+4|0 - Diamond
+5|0 - Netherite
+6|0 - Obsidian
+7|0 - Aluminium
+8|0 - Zinc
+9|0 - Osmium
+10|0 - Titanium
+11|0 - Lead
+12|0 - Silver
+13|0 - Brass
+14|0 - Steel
+15|0 - Dragon Steel (Dragon Scale and Steel mixture)
+0|1 - Redstone
+0|2 - Palladium
+0|3 - Adamantium
 **BELOW ARE RESOURCES NEEDED TO ADD**
-20|0 - Emerald
-21|0 - Lapis
-22|0 - Tungsten
+0|4 - Emerald
+0|5 - Lapis
+0|6 - Tungsten
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
@@ -107,15 +107,31 @@ UPDATE: It is now at 1.2KB
 - Add Component to retrieve block from foundry
 - Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
 
+## Resource Ingots: 
+- 
+
+
+## Resource Ores:
+- 
+
+
+## Raw Resources:
+- 
+
+## Plates:
+- Titanium Plate
+- Palladium Plate
+- Lead Plate
+- Adamantium Plate
+- Dragon Steel Plate
+- Brass Plate
+
 ## Resource Blocks:
 - Make all the blocks into resource blocks.
-- foundry:dragon_steel_block
+- Make recipes
 - foundry:lead_block
-- foundry:osmium_block
 - foundry:palladium_block
 - foundry:silver_block
-- foundry:titanium_block
-- foundry:zinc_block
 
 ## Raw Resource Blocks:
 - foundry:raw_adamantium_block
@@ -123,8 +139,6 @@ UPDATE: It is now at 1.2KB
 - foundry:raw_brass_block
 - foundry:raw_dragon_steel_block
 - foundry:raw_lead_block
-- foundry:raw_netherite_block
-- foundry:raw_obsidian_block
 - foundry:raw_osmium_block
 - foundry:raw_palladium_block
 - foundry:raw_silver_block

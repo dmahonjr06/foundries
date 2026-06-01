@@ -1,12 +1,5 @@
 {
     "format_version": "1.21.40",
-    "foundry:titanium_end_ore": {
-        "textures": "titanium_ore_endstone"
-    },
-    "foundry:steel_block": {
-        "textures": "steel_block",
-        "sound": "iron"
-    },
     "foundry:aluminium_block": {
         "textures": "aluminium_block",
         "sound": "iron"
@@ -19,9 +12,28 @@
         "textures": "brass_block",
         "sound": "iron"
     },
+    "foundry:dragon_steel_block": {
+        "textures": "dragon_steel_block",
+        "sound": "netherite"
+    },
+    "foundry:osmium_block": {
+        "textures": "osmium_block",
+        "sound": "iron"
+    },
     "foundry:raw_steel_block": {
         "textures": "raw_steel_block",
         "sound": "stone"
+    },
+    "foundry:steel_block": {
+        "textures": "steel_block",
+        "sound": "iron"
+    },
+    "foundry:titanium_block": {
+        "textures": "titanium_block",
+        "sound": "iron"
+    },
+    "foundry:titanium_end_ore": {
+        "textures": "titanium_ore_endstone"
     },
     "foundry:zinc_block": {
         "textures": "zinc_block",
