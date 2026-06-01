@@ -1,6 +1,7 @@
 import { Block, BlockCustomComponent, Dimension, Entity, Vector3, system } from "@minecraft/server";
 import { faucet_validation } from "../definitions/typedef";
 import { turn_basin_liquid_to_solid } from "./basin";
+import { BlockStateSuperset } from "@minecraft/vanilla-data";
 
 let isPouring: boolean = false;
 
@@ -162,6 +163,26 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
         basinCurrentFill = entity.getProperty("basin:layer") as number;
         basinCurrentMaterial = entity.getProperty("basin:material_type") as number;
     });
+    
+    // Stop if basin is already full
+    if (basinCurrentFill >= 9) {
+        const basinEntity = block.dimension.getEntitiesAtBlockLocation(block.location)
+        if (block.permutation.getState("foundry:resource_types1" as keyof BlockStateSuperset) === "empty")
+        {
+            basinEntity.forEach(entity=>{
+                entity.setProperty("basin:layer", 0);
+                entity.setProperty("basin:material_type", 0);
+            });
+            return;
+        }
+
+        console.log("Pour blocked - basin is full");
+        basinEntity.forEach(entity=>{
+        turn_basin_liquid_to_solid(basinBlock, entity)
+        })
+        return;
+    }
+
 
     // Peek at the top filled foundry layer before draining anything
     let incomingMaterial = 0;
@@ -182,15 +203,7 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
         return;
     }
 
-    // Stop if basin is already full
-    if (basinCurrentFill >= 9) {
-        console.log("Pour blocked - basin is full");
-        const basinEntity = block.dimension.getEntitiesAtBlockLocation(block.location)
-        basinEntity.forEach(entity=>{
-        turn_basin_liquid_to_solid(basinBlock, entity)
-        })
-        return;
-    }
+    
 
     // Stop if foundry is empty
     if (incomingMaterial === 0) {

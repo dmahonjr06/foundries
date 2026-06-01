@@ -24,10 +24,15 @@
                     "foundry:brass_block",
                     "foundry:steel_block",      
                     "foundry:dragon_steel_block"
+                ],
+                "basin:resource_types2": [
+                    "empty",
+                    "minecraft:redstone_block"
                 ]
             }
         },
         "components": {
+            "foundry:retrieve_block_from_basin": {},
             "foundry:spawn_foundry_block_entities": {},
             "minecraft:geometry": {
                 "identifier": "geometry.basin",

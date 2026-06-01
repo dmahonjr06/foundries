@@ -1,4 +1,5 @@
-import { Block, BlockPermutation, Entity, system } from "@minecraft/server";
+import { Block, BlockPermutation, Entity, ItemStack, system } from "@minecraft/server";
+import { BlockStateSuperset } from "@minecraft/vanilla-data";
 
 // TODO: 
 const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { resource_types1: string, resource_types2: string }> = new Map([
@@ -18,7 +19,7 @@ const mapBasinLiquidToSolidBlockType: ReadonlyMap<number, { resource_types1: str
     [14, { resource_types1: "foundry:brass_block",          resource_types2: "empty"}],
     [15, { resource_types1: "foundry:steel_block",          resource_types2: "empty"}],
     [16, { resource_types1: "foundry:dragon_steel_block",   resource_types2: "empty"}],
-    [17, { resource_types1: "minecraft:redstone_block",     resource_types2: "empty"}],
+    [17, { resource_types1: "empty",                        resource_types2: "minecraft:redstone_block"}],
     [18, { resource_types1: "foundry:palladium_block",      resource_types2: "empty"}],
     [19, { resource_types1: "foundry:adamantium_block",     resource_types2: "empty"}],
 ]);
@@ -32,8 +33,36 @@ export function turn_basin_liquid_to_solid(basinBlock: Block, entity: Entity): v
     system.waitTicks(60).finally(() => {
         basinBlock.setPermutation(
             BlockPermutation.resolve(basinBlock.typeId, {
-                "basin:resource_types1": blockTypes.resource_types1
+                "basin:resource_types1": blockTypes.resource_types1,
+                "basin:resource_types2": blockTypes.resource_types2
             })
         );
     });
 };
+
+
+export const retrieve_block_from_basin: import("@minecraft/server").BlockCustomComponent = {
+    onPlayerInteract({block, player})
+    {
+        // Player takes Block from the Basin
+        const resourceType1 = block.permutation.getState("basin:resource_types1" as keyof BlockStateSuperset);
+        const resourceType2 = block.permutation.getState("basin:resource_types2" as keyof BlockStateSuperset);
+        if (resourceType1 === "empty" && resourceType2 === "empty") return;
+        if (!resourceType1 || typeof resourceType1 !== 'string') return;
+        player?.addItem(new ItemStack(resourceType1, 1));
+        block.setPermutation(
+            BlockPermutation.resolve(block.typeId, {
+                "basin:resource_types1": "empty",
+                "basin:resource_types2": "empty"
+            })
+        );
+
+        // Entity data reset
+        const entities = block.dimension.getEntitiesAtBlockLocation(block.location);
+        for (const entity of entities) {
+            if (entity.typeId === "foundry:basin") {
+                entity.setProperty("basin:material_type", 0);
+            }
+        }
+    }
+}

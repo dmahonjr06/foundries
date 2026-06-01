@@ -124,6 +124,22 @@ function faucetPourIntoBasin(block, dimension) {
         basinCurrentFill = entity.getProperty("basin:layer");
         basinCurrentMaterial = entity.getProperty("basin:material_type");
     });
+    // Stop if basin is already full
+    if (basinCurrentFill >= 9) {
+        const basinEntity = block.dimension.getEntitiesAtBlockLocation(block.location);
+        if (block.permutation.getState("foundry:resource_types1") === "empty") {
+            basinEntity.forEach(entity => {
+                entity.setProperty("basin:layer", 0);
+                entity.setProperty("basin:material_type", 0);
+            });
+            return;
+        }
+        console.log("Pour blocked - basin is full");
+        basinEntity.forEach(entity => {
+            turn_basin_liquid_to_solid(basinBlock, entity);
+        });
+        return;
+    }
     // Peek at the top filled foundry layer before draining anything
     let incomingMaterial = 0;
     foundryLiquidEntities.forEach(entity => {
@@ -140,15 +156,6 @@ function faucetPourIntoBasin(block, dimension) {
     // Stop if basin already has a different material
     if (basinCurrentFill > 0 && basinCurrentMaterial !== incomingMaterial) {
         console.log("Pour blocked - different materials");
-        return;
-    }
-    // Stop if basin is already full
-    if (basinCurrentFill >= 9) {
-        console.log("Pour blocked - basin is full");
-        const basinEntity = block.dimension.getEntitiesAtBlockLocation(block.location);
-        basinEntity.forEach(entity => {
-            turn_basin_liquid_to_solid(basinBlock, entity);
-        });
         return;
     }
     // Stop if foundry is empty
