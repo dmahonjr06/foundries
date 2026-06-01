@@ -3,9 +3,9 @@
 	"minecraft:block": {
 		"description": {
 			"identifier": "foundry:steel_block",
-			"menu_category": {
-				"category": "construction"
-			}
+            "menu_category": {
+                "category": "construction"
+            }
 		},
 		"components": {
 			"minecraft:tags": [

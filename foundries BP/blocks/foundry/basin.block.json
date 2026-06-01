@@ -109,6 +109,9 @@
                 "palladium": {
                     "texture": "palladium_block"
                 },
+                "adamantium": {
+                    "texture": "adamantium_block"
+                },
                 "emerald": {
                     "texture": "emerald_block"
                 },

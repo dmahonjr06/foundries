@@ -4,7 +4,8 @@
         "description": {
             "identifier": "foundry:titanium_axe",
             "menu_category": {
-                "category": "items"
+                "category": "equipment",
+                "group": "minecraft:itemGroup.name.axe"
             }
         },
         "components": {

@@ -85,6 +85,12 @@ UPDATE: It is now at 1.2KB
 0|4 - Emerald
 0|5 - Lapis
 0|6 - Tungsten
+0|7 - Tin
+0|8 - Nickel
+0|9 - Cobalt
+0|10 - Platinum
+0|11 - Quartz
+0|12 - Amethyst
 
 ## Part Types and their block state with "smithing_anvil:parts" number
 1 - Axe head
@@ -146,6 +152,15 @@ UPDATE: It is now at 1.2KB
 - foundry:raw_zinc_block
 
 ## Buckets:
+- foundry:amethyst_bucket
+- foundry:emerald_bucket
+- foundry:lapis_bucket
+- foundry:nickel_bucket
+- foundry:obsidian_bucket
+- foundry:platinum_bucket
+- foundry:quartz_bucket
+- foundry:tungsten_bucket
+
 ### Make these buckets then put them into the 'maps.ts' database for usage within the foundry.
 Need to make buckets take the top-most liquid from the foundry and place it into the bucket when right-clicking on the foundry with an empty bucket.
 

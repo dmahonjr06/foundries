@@ -1,31 +1,59 @@
 {
     "format_version": "1.21.40",
-    "foundry:aluminium_block": {
-        "textures": "aluminium_block",
-        "sound": "iron"
-    },
     "foundry:adamantium_block": {
         "textures": "adamantium_block",
+        "sound": "iron"
+    },
+    "foundry:aluminium_block": {
+        "textures": "aluminium_block",
         "sound": "iron"
     },
     "foundry:brass_block": {
         "textures": "brass_block",
         "sound": "iron"
     },
+    "foundry:cobalt_block": {
+        "textures": "cobalt_block",
+        "sound": "iron"
+    },
     "foundry:dragon_steel_block": {
         "textures": "dragon_steel_block",
         "sound": "netherite"
     },
+    "foundry:lead_block": {
+        "textures": "lead_block",
+        "sound": "iron"
+    },
+    "foundry:nickel_block": {
+        "textures": "nickel_block",
+        "sound": "iron"
+    },
     "foundry:osmium_block": {
         "textures": "osmium_block",
+        "sound": "iron"
+    },
+    "foundry:palladium_block": {
+        "textures": "palladium_block",
+        "sound": "iron"
+    },
+    "foundry:platinum_block": {
+        "textures": "platinum_block",
         "sound": "iron"
     },
     "foundry:raw_steel_block": {
         "textures": "raw_steel_block",
         "sound": "stone"
     },
+    "foundry:silver_block": {
+        "textures": "silver_block",
+        "sound": "iron"
+    },
     "foundry:steel_block": {
         "textures": "steel_block",
+        "sound": "iron"
+    },
+    "foundry:tin_block": {
+        "textures": "tin_block",
         "sound": "iron"
     },
     "foundry:titanium_block": {
@@ -34,6 +62,10 @@
     },
     "foundry:titanium_end_ore": {
         "textures": "titanium_ore_endstone"
+    },
+    "foundry:tungsten_block": {
+        "textures": "tungsten_block",
+        "sound": "iron"
     },
     "foundry:zinc_block": {
         "textures": "zinc_block",

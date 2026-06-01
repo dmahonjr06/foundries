@@ -2,7 +2,7 @@
     "format_version": "1.26.20",
     "minecraft:block": {
         "description": {
-            "identifier": "foundry:zinc_block",
+            "identifier": "foundry:tungsten_block",
             "menu_category": {
                 "category": "construction"
             }
@@ -12,10 +12,10 @@
 			"minecraft:collision_box": true,
 			"minecraft:selection_box": true,
 			"minecraft:destructible_by_mining": {
-				"seconds_to_destroy": 5
+				"seconds_to_destroy": 3
 			},
 			"minecraft:destructible_by_explosion": {
-				"explosion_resistance": 200
+				"explosion_resistance": 150
 			},
 			"minecraft:map_color": "#2b2b2b",
             "minecraft:tags": [
