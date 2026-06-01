@@ -131,19 +131,6 @@
 					]
 				},
 				{
-					"name": "redstone",
-					"pivot": [0, 0, 0],
-					"cubes": [
-						{
-							"origin": [-7.5, 16, -7.5],
-							"size": [15, 0, 15],
-							"uv": {
-								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "redstone"}
-							}
-						}
-					]
-				},
-				{
 					"name": "gold",
 					"pivot": [0, 0, 0],
 					"cubes": [
@@ -321,6 +308,84 @@
 							"size": [15, 0, 15],
 							"uv": {
 								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "dragon_steel"}
+							}
+						}
+					]
+				},
+				{
+					"name": "redstone",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "redstone"}
+							}
+						}
+					]
+				},
+				{
+					"name": "palladium",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "palladium"}
+							}
+						}
+					]
+				},
+				{
+					"name": "adamantium",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "adamantium"}
+							}
+						}
+					]
+				},
+				{
+					"name": "emerald",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "emerald"}
+							}
+						}
+					]
+				},
+				{
+					"name": "lapis",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "lapis"}
+							}
+						}
+					]
+				},
+				{
+					"name": "tungsten",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "tungsten"}
 							}
 						}
 					]

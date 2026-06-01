@@ -43,81 +43,80 @@
                     "brass":        "query.block_state('basin:material_type1') == 13 && query.block_state('basin:material_type2') == 0",
                     "steel":        "query.block_state('basin:material_type1') == 14 && query.block_state('basin:material_type2') == 0",
                     "dragon_steel": "query.block_state('basin:material_type1') == 15 && query.block_state('basin:material_type2') == 0",
-                    "redstone":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 1"
+                    "redstone":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 1",
+                    "palladium":    "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 2",
+                    "adamantium":   "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 3",
+                    "emerald":      "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 4",
+                    "lapis":        "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 5",
+                    "tungsten":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 6"
                 }
             },
             "minecraft:material_instances": {
                 "basin": {
-                    "texture": "cauldron_side",
-                    "render_method": "alpha_test"
+                    "texture": "cauldron_side"
                 },
                 "down": {
-                    "texture": "cauldron_bottom",
-                    "render_method": "alpha_test"
+                    "texture": "cauldron_bottom"
                 },
                 "iron": {
-                    "texture": "iron_block",
-                    "render_method": "alpha_test"
+                    "texture": "iron_block"
                 },
                 "gold": {
-                    "texture": "gold_block",
-                    "render_method": "alpha_test"
+                    "texture": "gold_block"
                 },
                 "copper": {
-                    "texture": "copper_block",
-                    "render_method": "alpha_test"
+                    "texture": "copper_block"
                 },
                 "diamond": {
-                    "texture": "diamond_block",
-                    "render_method": "alpha_test"
+                    "texture": "diamond_block"
                 },
                 "netherite": {
-                    "texture": "netherite_block",
-                    "render_method": "alpha_test"
+                    "texture": "netherite_block"
                 },
                 "obsidian": {
-                    "texture": "obsidian",
-                    "render_method": "alpha_test"
+                    "texture": "obsidian"
                 },
                 "aluminium": {
-                    "texture": "aluminium_block",
-                    "render_method": "alpha_test"
+                    "texture": "aluminium_block"
                 },
                 "zinc": {
-                    "texture": "zinc_block",
-                    "render_method": "alpha_test"
+                    "texture": "zinc_block"
                 },
                 "osmium": {
-                    "texture": "osmium_block",
-                    "render_method": "alpha_test"
+                    "texture": "osmium_block"
                 },
                 "titanium": {
-                    "texture": "titanium_block",
-                    "render_method": "alpha_test"
+                    "texture": "titanium_block"
                 },
                 "lead": {
-                    "texture": "lead_block",
-                    "render_method": "alpha_test"
+                    "texture": "lead_block"
                 },
                 "silver": {
-                    "texture": "silver_block",
-                    "render_method": "alpha_test"
+                    "texture": "silver_block"
                 },
                 "brass": {
-                    "texture": "brass_block",
-                    "render_method": "alpha_test"
+                    "texture": "brass_block"
                 },
                 "steel": {
-                    "texture": "steel_block",
-                    "render_method": "alpha_test"
+                    "texture": "steel_block"
                 },
                 "dragon_steel": {
-                    "texture": "dragon_steel_block",
-                    "render_method": "alpha_test"
+                    "texture": "dragon_steel_block"
                 },
                 "redstone": {
-                    "texture": "redstone_block",
-                    "render_method": "alpha_test"
+                    "texture": "redstone_block"
+                },
+                "palladium": {
+                    "texture": "palladium_block"
+                },
+                "emerald": {
+                    "texture": "emerald_block"
+                },
+                "lapis": {
+                    "texture": "lapis_block"
+                },
+                "tungsten": {
+                    "texture": "tungsten_block"
                 }
             }
         }
