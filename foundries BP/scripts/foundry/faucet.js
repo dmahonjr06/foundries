@@ -43,7 +43,7 @@ function faucetValidation(block) {
     }
     return false;
 }
-function pourNextLayer(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersRemaining, basinBlock) {
+function basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersRemaining, basinBlock) {
     if (layersRemaining <= 0 || basinCurrentFill >= 9) {
         isPouring = false;
         console.log("Pouring complete");
@@ -92,7 +92,7 @@ function pourNextLayer(foundryLiquidEntities, basinLiquidEntities, basinCurrentF
         return;
     // Schedule next layer after 10 ticks (0.5 seconds)
     system.runTimeout(() => {
-        pourNextLayer(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill + 1, incomingMaterial, layersRemaining - 1, basinBlock);
+        basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill + 1, incomingMaterial, layersRemaining - 1, basinBlock);
     }, 10);
 }
 function faucetPourIntoBasin(block, dimension) {
@@ -182,5 +182,5 @@ function faucetPourIntoBasin(block, dimension) {
         return;
     isPouring = true;
     console.log(`Pouring ${layersToPour} layers of material ${incomingMaterial}`);
-    pourNextLayer(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersToPour, basinBlock);
+    basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersToPour, basinBlock);
 }

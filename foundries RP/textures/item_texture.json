@@ -89,6 +89,14 @@
             "textures": "textures/items/buckets/zinc_bucket"
         },
 
+        // Casts
+        "axe_mold": {
+            "textures": "textures/items/casts/axe_mold"
+        },
+        "ingot_mold": {
+            "textures": "textures/items/casts/ingot_mold"
+        },
+
         // Hammers
         "dragon_scale_hammer": {
             "textures": "textures/items/hammers/dragon_scale_hammer"

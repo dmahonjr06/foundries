@@ -2,12 +2,12 @@
 
 ## 2 BLOCK MULTIBLOCK Furnace called a "Foundry"
 - The bottom block will be a directional based block with 2 output sides and 1 lava tank side.
-- The top block will be a glass tank where the the 16 liquid layers will be displayed through a property system with an entity inside the tank.
+- The top block will be a glass tank where the 16 liquid layers will be displayed through a property system with an entity inside the tank.
 - The output sides will be able to connect to a "tap" block that can pour
 
 
-## Using a custom anvil, interact with the anvil to place hot, unhammered pieces that need to be hammered into their correct shape.
-### Unhammered part types
+## Tools parts
+"foundry:part" state
 - Axe head,
 - Battle-axe head,
 - Spear head,
@@ -38,22 +38,13 @@
 
 
 ## CONCEPTS/TODO:
-# Using a faucet and basin
-When clicking on a faucet, the basin underneath is filled in 9 sections.
-Using an ore on the 
-Faucet will have an "on/off" state, which when turned on will check the first layer of the "foundry:foundry_liquids" entity. 
+
 
 
 # Optimise the "liquid_layers_database.ts" database.
 Could try make it under 1KB possibly.
 It's currently at 110KB...
 UPDATE: It is now at 1.2KB
-
-
-
-
-
-
 
 
 
@@ -92,7 +83,7 @@ UPDATE: It is now at 1.2KB
 0|11 - Quartz
 0|12 - Amethyst
 
-## Part Types and their block state with "smithing_anvil:parts" number
+## Part Types and their block state with "foundry:parts" number
 1 - Axe head
 2 - Pickaxe head
 3 - Shovel head
@@ -107,11 +98,7 @@ UPDATE: It is now at 1.2KB
 
 # TODO
 ## Basin:
-- When the basin is full but the incoming material is different, we should solidify the basin contents into a block.
-- Add an inventory of 1 slot to the entity (Use Minato's Inventory UI to make the inventory.) Make it a hopperable inventory.
-- Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
-- Add Component to retrieve block from foundry
-- Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
+- 
 
 ## Resource Ingots: 
 - 

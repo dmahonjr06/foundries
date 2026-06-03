@@ -16,8 +16,11 @@
         },
 
         // Foundry / casts
-        "ingot_cast": {
-            "textures": "textures/blocks/foundry/casts/ingot_cast"
+        "axe_mold": {
+            "textures": "textures/blocks/foundry/casts/axe_mold"
+        },
+        "ingot_mold": {
+            "textures": "textures/blocks/foundry/casts/ingot_mold"
         },
 
         // Kiln
@@ -138,6 +141,9 @@
         },
         "lead_block": {
             "textures": "textures/blocks/ores/resource_block/lead_block"
+        },
+        "nickel_block": {
+            "textures": "textures/blocks/ores/resource_block/nickel_block"
         },
         "osmium_block": {
             "textures": "textures/blocks/ores/resource_block/osmium_block"

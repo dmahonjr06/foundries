@@ -57,7 +57,7 @@ function faucetValidation(block: Block): boolean {
     return false;
 }
 
-function pourNextLayer(
+function basinPourNextLevel(
     foundryLiquidEntities: Entity[],
     basinLiquidEntities: Entity[],
     basinCurrentFill: number,
@@ -117,7 +117,7 @@ function pourNextLayer(
 
     // Schedule next layer after 10 ticks (0.5 seconds)
     system.runTimeout(() => {
-        pourNextLayer(
+        basinPourNextLevel(
             foundryLiquidEntities,
             basinLiquidEntities,
             basinCurrentFill + 1,
@@ -229,7 +229,7 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
     isPouring = true;
     console.log(`Pouring ${layersToPour} layers of material ${incomingMaterial}`);
 
-    pourNextLayer(
+    basinPourNextLevel(
         foundryLiquidEntities,
         basinLiquidEntities,
         basinCurrentFill,

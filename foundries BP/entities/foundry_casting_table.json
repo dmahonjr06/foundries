@@ -1,0 +1,70 @@
+{
+    "format_version": "1.26.10",
+    "minecraft:entity": {
+        "description": {
+            "identifier": "foundry:casting_table",
+            "is_spawnable": true,
+            "is_summonable": true,
+            "properties": {
+                "casting_table:pour_state": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0, 3]
+                },
+                "casting_table:material_type": {
+                    "client_sync": true,
+                    "type": "int",
+                    "default": 0,
+                    "range": [0, 63]
+                }
+            }
+        },
+        "component_groups": {
+            "foundry:despawn": {
+                "minecraft:instant_despawn": {
+                    "remove_child_entities": false
+                }
+            }
+        },
+        "components": {
+            "minecraft:inventory": {
+                "additional_slots_per_strength": 0,
+                "can_be_siphoned_from": true,
+                "container_type": "minecart_hopper",
+                "inventory_size": 1,
+                "private": true,
+                "restrict_to_owner": true
+            },
+            "minecraft:is_collidable": {},
+            "minecraft:collision_box": {
+                "height": 0.9,
+                "width": 0.8
+            },
+            "minecraft:body_rotation_blocked": {},
+            "minecraft:rotation_axis_aligned": {},
+            "minecraft:inside_block_notifier": {
+                "block_list": [
+                    {
+                        "block": {
+                            "name": "minecraft:air"
+                        },
+                        "entered_block_event": {
+                            "event": "foundry:despawn",
+                            "target": "self"
+                        }
+                    }
+                ]
+            }
+        },
+        "events": {
+            "foundry:despawn": {
+                "add": {
+                    "component_groups": [
+                        "foundry:despawn"
+                    ]
+                }
+            }
+        }
+    }
+}

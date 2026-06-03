@@ -1,5 +1,5 @@
 import { BlockPermutation, ItemStack, system } from "@minecraft/server";
-import { mapBasinLiquidToSolidBlockType } from "../databases/basin_input";
+import { mapBasinLiquidToSolidBlockType } from "../databases/basin_retrieve";
 export function turn_basin_liquid_to_solid(basinBlock, entity) {
     if (entity.typeId !== "foundry:basin")
         return;

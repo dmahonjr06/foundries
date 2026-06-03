@@ -1,10 +1,27 @@
 {
-    "format_version": "1.26.10",
+    "format_version": "1.26.20",
     "minecraft:block": {
         "description": {
             "identifier": "foundry:casting_table",
             "menu_category": {
                 "category": "construction"
+            },
+            "states": {
+                "foundry:part": [
+                    "empty",
+                    "arrow_head",
+                    "axe_mold",
+                    "battle_axe_head",
+                    "hammer_head",
+                    "ingot_mold",
+                    "pickaxe_head",
+                    "rod",
+                    "shovel_head",
+                    "spear_head",
+                    "sword_blade",
+                    "sword_guard",
+                    "sword_pommel"
+                ]
             },
             "traits": {
                 "minecraft:placement_direction": {
@@ -16,18 +33,23 @@
             }
         },
         "components": {
+            "foundry:input_mold_interact": {},
             "minecraft:geometry": {
                 "identifier": "geometry.casting_table",
                 "bone_visibility": {
-                    "ingot_cast": false
+                    "ingot_mold": "q.block_state('foundry:part') == 'ingot_mold'",
+                    "axe_mold": "q.block_state('foundry:part') == 'axe_mold'"
                 }
             },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "deepslate_bricks"
                 },
-                "ingot_cast": {
-                    "texture": "ingot_cast"
+                "ingot_mold": {
+                    "texture": "ingot_mold"
+                },
+                "axe_mold": {
+                    "texture": "axe_mold"
                 }
             }
         },
