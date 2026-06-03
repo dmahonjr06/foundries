@@ -38,6 +38,9 @@
         "molten_brass": {
             "textures": "textures/blocks/liquid/molten_brass"
         },
+        "molten_cobalt": {
+            "textures": "textures/blocks/liquid/molten_cobalt"
+        },
         "molten_copper": {
             "textures": "textures/blocks/liquid/molten_copper"
         },
@@ -127,11 +130,23 @@
         "brass_block": {
             "textures": "textures/blocks/ores/resource_block/brass_block"
         },
+        "cobalt_block": {
+            "textures": "textures/blocks/ores/resource_block/cobalt_block"
+        },
         "dragon_steel_block": {
             "textures": "textures/blocks/ores/resource_block/dragon_steel_block"
         },
+        "lead_block": {
+            "textures": "textures/blocks/ores/resource_block/lead_block"
+        },
         "osmium_block": {
             "textures": "textures/blocks/ores/resource_block/osmium_block"
+        },
+        "palladium_block": {
+            "textures": "textures/blocks/ores/resource_block/palladium_block"
+        },
+        "silver_block": {
+            "textures": "textures/blocks/ores/resource_block/silver_block"
         },
         "steel_block": {
             "textures": "textures/blocks/ores/resource_block/steel_block"

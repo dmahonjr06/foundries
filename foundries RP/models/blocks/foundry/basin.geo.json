@@ -389,6 +389,84 @@
 							}
 						}
 					]
+				},
+				{
+					"name": "tin",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "tin"}
+							}
+						}
+					]
+				},
+				{
+					"name": "nickel",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "nickel"}
+							}
+						}
+					]
+				},
+				{
+					"name": "cobalt",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "cobalt"}
+							}
+						}
+					]
+				},
+				{
+					"name": "platinum",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "platinum"}
+							}
+						}
+					]
+				},
+				{
+					"name": "quartz",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "quartz"}
+							}
+						}
+					]
+				},
+				{
+					"name": "amethyst",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{
+							"origin": [-7.5, 16, -7.5],
+							"size": [15, 0, 15],
+							"uv": {
+								"up": {"uv": [16, 16], "uv_size": [-16, -16], "material_instance": "amethyst"}
+							}
+						}
+					]
 				}
 			]
 		}

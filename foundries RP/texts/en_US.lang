@@ -34,12 +34,18 @@ foundry:itemGroup.name.resource_block=Resource Blocks
 tile.foundry:adamantium_block.name=Adamantium Block
 tile.foundry:aluminium_block.name=Aluminium Block
 tile.foundry:brass_block.name=Brass Block
+tile.foundry:cobalt_block.name=Cobalt Block
+
 tile.foundry:dragon_steel_block.name=Dragonsteel Block
+tile.foundry:lead_block.name=Lead Block
 tile.foundry:osmium_block.name=Osmium Block
 tile.foundry:palladium_block.name=Palladium Block
 tile.foundry:platinum_block.name=Platinum Block
+tile.foundry:silver_block.name=Silver Block
 tile.foundry:steel_block.name=Steel Block
 tile.foundry:titanium_block.name=Titanium Block
+tile.foundry:tungsten_block.name=Tungsten Block
+tile.foundry:tin_block.name=Tin Block
 tile.foundry:zinc_block.name=Zinc Block
 
 ## Raw Resource Blocks
@@ -47,6 +53,8 @@ foundry:itemGroup.name.raw_resource_block=Raw Resource Blocks
 tile.foundry:raw_adamantium_block.name=Raw Adamantium Block
 tile.foundry:raw_aluminium_block.name=Raw Aluminium Block
 tile.foundry:raw_brass_block.name=Raw Brass Block
+tile.foundry:raw_cobalt_block.name=Raw Cobalt Block
+tile.foundry:raw_rose_gold_block.name=Raw Rose Gold Block
 tile.foundry:raw_osmium_block.name=Raw Osmium Block
 tile.foundry:raw_titanium_block.name=Raw Titanium Block
 tile.foundry:raw_zinc_block.name=Raw Zinc Block

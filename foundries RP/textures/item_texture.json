@@ -40,6 +40,9 @@
         "brass_bucket": {
             "textures": "textures/items/buckets/brass_bucket"
         },
+        "cobalt_bucket": {
+            "textures": "textures/items/buckets/cobalt_bucket"
+        },
         "copper_bucket": {
             "textures": "textures/items/buckets/copper_bucket"
         },

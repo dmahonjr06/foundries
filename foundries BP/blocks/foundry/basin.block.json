@@ -1,5 +1,5 @@
 {
-    "format_version": "1.26.10",
+    "format_version": "1.26.20",
     "minecraft:block": {
         "description": {
             "identifier": "foundry:basin",
@@ -27,7 +27,6 @@
             "minecraft:geometry": {
                 "identifier": "geometry.basin",
                 "bone_visibility": {
-                    "basin": true,
                     "iron":         "query.block_state('basin:material_type1') == 1 && query.block_state('basin:material_type2') == 0",
                     "gold":         "query.block_state('basin:material_type1') == 2 && query.block_state('basin:material_type2') == 0",
                     "copper":       "query.block_state('basin:material_type1') == 3 && query.block_state('basin:material_type2') == 0",
@@ -48,7 +47,13 @@
                     "adamantium":   "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 3",
                     "emerald":      "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 4",
                     "lapis":        "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 5",
-                    "tungsten":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 6"
+                    "tungsten":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 6",
+                    "tin":          "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 7",
+                    "nickel":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 8",
+                    "cobalt":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 9",
+                    "platinum":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 10",
+                    "quartz":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 11",
+                    "amethyst":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 12"
                 }
             },
             "minecraft:material_instances": {
@@ -120,6 +125,24 @@
                 },
                 "tungsten": {
                     "texture": "tungsten_block"
+                },
+                "tin": {
+                    "texture": "tin_block"
+                },
+                "nickel": {
+                    "texture": "nickel_block"
+                },
+                "cobalt": {
+                    "texture": "cobalt_block"
+                },
+                "platinum": {
+                    "texture": "platinum_block"
+                },
+                "quartz": {
+                    "texture": "quartz_block_top"
+                },
+                "amethyst": {
+                    "texture": "amethyst_block"
                 }
             }
         }

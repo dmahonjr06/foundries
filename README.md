@@ -135,9 +135,10 @@ UPDATE: It is now at 1.2KB
 ## Resource Blocks:
 - Make all the blocks into resource blocks.
 - Make recipes
-- foundry:lead_block
-- foundry:palladium_block
-- foundry:silver_block
+- foundry:nickel_block
+- foundry:platium_block
+- foundry:tungsten_block
+- foundry:tin_block
 
 ## Raw Resource Blocks:
 - foundry:raw_adamantium_block
@@ -161,8 +162,10 @@ UPDATE: It is now at 1.2KB
 - foundry:quartz_bucket
 - foundry:tungsten_bucket
 
+
 ### Make these buckets then put them into the 'maps.ts' database for usage within the foundry.
 Need to make buckets take the top-most liquid from the foundry and place it into the bucket when right-clicking on the foundry with an empty bucket.
+
 
 
 ## Provide Sound definitions and textures for all full blocks within blocks.json!
