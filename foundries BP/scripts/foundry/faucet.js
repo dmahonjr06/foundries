@@ -1,6 +1,8 @@
 import { system } from "@minecraft/server";
 import { turn_basin_liquid_to_solid } from "./basin";
-let isPouring = false;
+import { faucetPourIntoCastingTable } from "./casting_table";
+import { getIsPouring, setIsPouring } from "../definitions/consts";
+export let isPouring = false;
 export const faucet_interaction = {
     onPlayerInteract({ block, dimension }) {
         if (!faucetValidation(block))
@@ -8,7 +10,7 @@ export const faucet_interaction = {
         console.log("Interaction Successful");
         const blockBelow = block.below()?.typeId;
         if (blockBelow === "foundry:casting_table") {
-            // #TODO: Function for spawning casting table handler entity
+            faucetPourIntoCastingTable(block, dimension);
         }
         if (blockBelow === "foundry:basin") {
             faucetPourIntoBasin(block, dimension);
@@ -45,7 +47,7 @@ function faucetValidation(block) {
 }
 function basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersRemaining, basinBlock) {
     if (layersRemaining <= 0 || basinCurrentFill >= 9) {
-        isPouring = false;
+        setIsPouring(false);
         console.log("Pouring complete");
         return;
     }
@@ -70,7 +72,7 @@ function basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCur
     });
     // If nothing was poured (foundry ran dry mid-pour), stop
     if (!pouredThisTick) {
-        isPouring = false;
+        setIsPouring(false);
         console.log("Pouring stopped - foundry ran dry");
         return;
     }
@@ -84,11 +86,11 @@ function basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCur
         console.log(`Poured 1 layer, basin now at ${newFill}`);
         if (newFill >= 9) {
             turn_basin_liquid_to_solid(basinBlock, entity);
-            isPouring = false;
+            setIsPouring(false);
         }
     });
     // Only schedule next layer if still pouring
-    if (!isPouring)
+    if (!getIsPouring())
         return;
     // Schedule next layer after 10 ticks (0.5 seconds)
     system.runTimeout(() => {
@@ -96,7 +98,7 @@ function basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCur
     }, 10);
 }
 function faucetPourIntoBasin(block, dimension) {
-    if (isPouring) {
+    if (getIsPouring()) {
         console.log("Pour blocked - already pouring");
         return;
     }
@@ -180,7 +182,7 @@ function faucetPourIntoBasin(block, dimension) {
     const layersToPour = Math.min(availableLayers, 9 - basinCurrentFill);
     if (layersToPour <= 0)
         return;
-    isPouring = true;
+    setIsPouring(true);
     console.log(`Pouring ${layersToPour} layers of material ${incomingMaterial}`);
     basinPourNextLevel(foundryLiquidEntities, basinLiquidEntities, basinCurrentFill, incomingMaterial, layersToPour, basinBlock);
 }

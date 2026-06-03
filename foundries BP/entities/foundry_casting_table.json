@@ -10,7 +10,7 @@
                     "client_sync": true,
                     "type": "int",
                     "default": 0,
-                    "range": [0, 3]
+                    "range": [0, 16]
                 },
                 "casting_table:material_type": {
                     "client_sync": true,

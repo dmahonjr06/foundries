@@ -7,13 +7,13 @@
                 "category": "construction"
             },
             "states": {
-                "basin:material_type1": {
+                "foundry:material_type1": {
                     "values": {
                         "min": 0,
                         "max": 15
                     }
                 },
-                "basin:material_type2": {
+                "foundry:material_type2": {
                     "values": {
                         "min": 0,
                         "max": 15
@@ -27,33 +27,33 @@
             "minecraft:geometry": {
                 "identifier": "geometry.basin",
                 "bone_visibility": {
-                    "iron":         "query.block_state('basin:material_type1') == 1 && query.block_state('basin:material_type2') == 0",
-                    "gold":         "query.block_state('basin:material_type1') == 2 && query.block_state('basin:material_type2') == 0",
-                    "copper":       "query.block_state('basin:material_type1') == 3 && query.block_state('basin:material_type2') == 0",
-                    "diamond":      "query.block_state('basin:material_type1') == 4 && query.block_state('basin:material_type2') == 0",
-                    "netherite":    "query.block_state('basin:material_type1') == 5 && query.block_state('basin:material_type2') == 0",
-                    "obsidian":     "query.block_state('basin:material_type1') == 6 && query.block_state('basin:material_type2') == 0",
-                    "aluminium":    "query.block_state('basin:material_type1') == 7 && query.block_state('basin:material_type2') == 0",
-                    "zinc":         "query.block_state('basin:material_type1') == 8 && query.block_state('basin:material_type2') == 0",
-                    "osmium":       "query.block_state('basin:material_type1') == 9 && query.block_state('basin:material_type2') == 0",
-                    "titanium":     "query.block_state('basin:material_type1') == 10 && query.block_state('basin:material_type2') == 0",
-                    "lead":         "query.block_state('basin:material_type1') == 11 && query.block_state('basin:material_type2') == 0",
-                    "silver":       "query.block_state('basin:material_type1') == 12 && query.block_state('basin:material_type2') == 0",
-                    "brass":        "query.block_state('basin:material_type1') == 13 && query.block_state('basin:material_type2') == 0",
-                    "steel":        "query.block_state('basin:material_type1') == 14 && query.block_state('basin:material_type2') == 0",
-                    "dragon_steel": "query.block_state('basin:material_type1') == 15 && query.block_state('basin:material_type2') == 0",
-                    "redstone":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 1",
-                    "palladium":    "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 2",
-                    "adamantium":   "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 3",
-                    "emerald":      "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 4",
-                    "lapis":        "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 5",
-                    "tungsten":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 6",
-                    "tin":          "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 7",
-                    "nickel":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 8",
-                    "cobalt":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 9",
-                    "platinum":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 10",
-                    "quartz":       "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 11",
-                    "amethyst":     "query.block_state('basin:material_type1') == 0 && query.block_state('basin:material_type2') == 12"
+                    "iron":         "query.block_state('foundry:material_type1') == 1 && query.block_state('foundry:material_type2') == 0",
+                    "gold":         "query.block_state('foundry:material_type1') == 2 && query.block_state('foundry:material_type2') == 0",
+                    "copper":       "query.block_state('foundry:material_type1') == 3 && query.block_state('foundry:material_type2') == 0",
+                    "diamond":      "query.block_state('foundry:material_type1') == 4 && query.block_state('foundry:material_type2') == 0",
+                    "netherite":    "query.block_state('foundry:material_type1') == 5 && query.block_state('foundry:material_type2') == 0",
+                    "obsidian":     "query.block_state('foundry:material_type1') == 6 && query.block_state('foundry:material_type2') == 0",
+                    "aluminium":    "query.block_state('foundry:material_type1') == 7 && query.block_state('foundry:material_type2') == 0",
+                    "zinc":         "query.block_state('foundry:material_type1') == 8 && query.block_state('foundry:material_type2') == 0",
+                    "osmium":       "query.block_state('foundry:material_type1') == 9 && query.block_state('foundry:material_type2') == 0",
+                    "titanium":     "query.block_state('foundry:material_type1') == 10 && query.block_state('foundry:material_type2') == 0",
+                    "lead":         "query.block_state('foundry:material_type1') == 11 && query.block_state('foundry:material_type2') == 0",
+                    "silver":       "query.block_state('foundry:material_type1') == 12 && query.block_state('foundry:material_type2') == 0",
+                    "brass":        "query.block_state('foundry:material_type1') == 13 && query.block_state('foundry:material_type2') == 0",
+                    "steel":        "query.block_state('foundry:material_type1') == 14 && query.block_state('foundry:material_type2') == 0",
+                    "dragon_steel": "query.block_state('foundry:material_type1') == 15 && query.block_state('foundry:material_type2') == 0",
+                    "redstone":     "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 1",
+                    "palladium":    "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 2",
+                    "adamantium":   "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 3",
+                    "emerald":      "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 4",
+                    "lapis":        "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 5",
+                    "tungsten":     "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 6",
+                    "tin":          "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 7",
+                    "nickel":       "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 8",
+                    "cobalt":       "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 9",
+                    "platinum":     "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 10",
+                    "quartz":       "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 11",
+                    "amethyst":     "query.block_state('foundry:material_type1') == 0 && query.block_state('foundry:material_type2') == 12"
                 }
             },
             "minecraft:material_instances": {

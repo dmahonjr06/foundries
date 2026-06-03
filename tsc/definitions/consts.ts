@@ -16,3 +16,12 @@ export const layer13 = "foundry:layer13";
 export const layer14 = "foundry:layer14";
 export const layer15 = "foundry:layer15";
 export const layer16 = "foundry:layer16";
+
+
+let isPouring: boolean = false;
+export function getIsPouring(): boolean {
+    return isPouring;
+};
+export function setIsPouring(value: boolean): void {
+    isPouring = value;
+};

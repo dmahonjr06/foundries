@@ -11,17 +11,29 @@
                     "empty",
                     "arrow_head",
                     "axe_mold",
-                    "battle_axe_head",
-                    "hammer_head",
+                    "battle_axe_mold",
+                    "hammer_mold",
                     "ingot_mold",
-                    "pickaxe_head",
-                    "rod",
-                    "shovel_head",
-                    "spear_head",
-                    "sword_blade",
-                    "sword_guard",
-                    "sword_pommel"
-                ]
+                    "pickaxe_mold",
+                    "rod_mold",
+                    "shovel_mold",
+                    "spear_mold",
+                    "sword_blade_mold",
+                    "sword_guard_mold",
+                    "sword_pommel_mold"
+                ],
+                "foundry:material_type1": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                },
+                "foundry:material_type2": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                }
             },
             "traits": {
                 "minecraft:placement_direction": {
@@ -33,6 +45,7 @@
             }
         },
         "components": {
+            "foundry:spawn_foundry_block_entities": {},
             "foundry:input_mold_interact": {},
             "minecraft:geometry": {
                 "identifier": "geometry.casting_table",

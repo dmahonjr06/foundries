@@ -2,8 +2,10 @@ import { Block, BlockCustomComponent, Dimension, Entity, Vector3, system } from 
 import { faucet_validation } from "../definitions/typedef";
 import { turn_basin_liquid_to_solid } from "./basin";
 import { BlockStateSuperset } from "@minecraft/vanilla-data";
+import { faucetPourIntoCastingTable } from "./casting_table";
+import { getIsPouring, setIsPouring } from "../definitions/consts";
 
-let isPouring: boolean = false;
+export let isPouring: boolean = false;
 
 export const faucet_interaction: BlockCustomComponent = {
     onPlayerInteract({block, dimension})
@@ -14,7 +16,7 @@ export const faucet_interaction: BlockCustomComponent = {
         const blockBelow = block.below()?.typeId;
         if (blockBelow === "foundry:casting_table")
         {
-            // #TODO: Function for spawning casting table handler entity
+            faucetPourIntoCastingTable(block, dimension);
         }
         
         if (blockBelow === "foundry:basin")
@@ -66,7 +68,7 @@ function basinPourNextLevel(
     basinBlock: Block
 ): void {
     if (layersRemaining <= 0 || basinCurrentFill >= 9) {
-        isPouring = false;
+        setIsPouring(false);
         console.log("Pouring complete");
         return;
     }
@@ -93,7 +95,7 @@ function basinPourNextLevel(
 
     // If nothing was poured (foundry ran dry mid-pour), stop
     if (!pouredThisTick) {
-        isPouring = false;
+        setIsPouring(false);
         console.log("Pouring stopped - foundry ran dry");
         return;
     }
@@ -108,12 +110,12 @@ function basinPourNextLevel(
 
         if (newFill >= 9) {
             turn_basin_liquid_to_solid(basinBlock, entity);
-            isPouring = false;
+            setIsPouring(false);
         }
     });
 
     // Only schedule next layer if still pouring
-    if (!isPouring) return;
+    if (!getIsPouring()) return;
 
     // Schedule next layer after 10 ticks (0.5 seconds)
     system.runTimeout(() => {
@@ -129,7 +131,7 @@ function basinPourNextLevel(
 }
 
 function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
-    if (isPouring) {
+    if (getIsPouring()) {
         console.log("Pour blocked - already pouring");
         return;
     }
@@ -226,7 +228,7 @@ function faucetPourIntoBasin(block: Block, dimension: Dimension): void {
     const layersToPour = Math.min(availableLayers, 9 - basinCurrentFill);
     if (layersToPour <= 0) return;
 
-    isPouring = true;
+    setIsPouring(true);
     console.log(`Pouring ${layersToPour} layers of material ${incomingMaterial}`);
 
     basinPourNextLevel(
