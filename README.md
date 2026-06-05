@@ -84,16 +84,17 @@ UPDATE: It is now at 1.2KB
 0|12 - Amethyst
 
 ## Part Types and their block state with "foundry:parts" number
-1 - Axe head
-2 - Pickaxe head
-3 - Shovel head
-4 - Sword blade
-5 - Sword guard
-6 - Sword pommel
-7 - spear head
-8 - Battle-axe head,
-9 - Hammer head,
-10- Rods
+1 - ingot
+2 - Axe head
+3 - Pickaxe head
+4 - Shovel head
+5 - Sword blade
+6 - Sword guard
+7 - Sword pommel
+8 - spear head
+9 - Battle-axe head,
+10 - Hammer head,
+11- Rods
 
 
 # TODO

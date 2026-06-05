@@ -12,7 +12,7 @@ export const castingTableDatabase = new Map([
                 [4, "minecraft:copper_ingot"],
                 [5, "minecraft:diamond"],
                 [6, "minecraft:netherite_ingot"],
-                [7, "minecraft:obsidian"],
+                // [7,  "minecraft:obsidian"],
                 [8, "foundry:aluminium_ingot"],
                 [9, "foundry:zinc_ingot"],
                 [10, "foundry:osmium_ingot"],
