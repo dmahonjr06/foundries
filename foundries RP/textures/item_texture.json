@@ -31,36 +31,70 @@
         },
 
         // Buckets
+        "adamantium_bucket": {
+            "textures": "textures/items/buckets/adamantium_bucket"
+        },
+        "aluminium_bucket": {
+            "textures": "textures/items/buckets/aluminium_bucket"
+        },
+        "brass_bucket": {
+            "textures": "textures/items/buckets/brass_bucket"
+        },
+        "cobalt_bucket": {
+            "textures": "textures/items/buckets/cobalt_bucket"
+        },
+        "copper_bucket": {
+            "textures": "textures/items/buckets/copper_bucket"
+        },
+        "diamond_bucket": {
+            "textures": "textures/items/buckets/diamond_bucket"
+        },
+        "dragon_steel_bucket": {
+            "textures": "textures/items/buckets/dragon_steel_bucket"
+        },
+        "gold_bucket": {
+            "textures": "textures/items/buckets/gold_bucket"
+        },
+        "iron_bucket": {
+            "textures": "textures/items/buckets/iron_bucket"
+        },
+        "lead_bucket": {
+            "textures": "textures/items/buckets/lead_bucket"
+        },
+        "netherite_bucket": {
+            "textures": "textures/items/buckets/netherite_bucket"
+        },
         "obsidian_bucket": {
             "textures": "textures/items/buckets/obsidian_bucket"
         },
+        "osmium_bucket": {
+            "textures": "textures/items/buckets/osmium_bucket"
+        },
+        "palladium_bucket": {
+            "textures": "textures/items/buckets/palladium_bucket"
+        },
+        "redstone_bucket": {
+            "textures": "textures/items/buckets/redstone_bucket"
+        },
+        "silver_bucket": {
+            "textures": "textures/items/buckets/silver_bucket"
+        },
+        "steel_bucket": {
+            "textures": "textures/items/buckets/steel_bucket"
+        },
+        "titanium_bucket": {
+            "textures": "textures/items/buckets/titanium_bucket"
+        },
+        "zinc_bucket": {
+            "textures": "textures/items/buckets/zinc_bucket"
+        },
 
-        // Buckets / lava
-        "3quarter_lava_obsidian_bucket": {
-            "textures": "textures/items/buckets/lava/3quarter_lava_obsidian_bucket"
+        // Casts
+        "axe_mold": {
+            "textures": "textures/items/casts/axe_mold"
         },
-        "half_lava_obsidian_bucket": {
-            "textures": "textures/items/buckets/lava/half_lava_obsidian_bucket"
-        },
-        "lava_obsidian_bucket": {
-            "textures": "textures/items/buckets/lava/lava_obsidian_bucket"
-        },
-        "quarter_lava_obsidian_bucket": {
-            "textures": "textures/items/buckets/lava/quarter_lava_obsidian_bucket"
-        },
-
-        // Buckets / molten steel
-        "3_quarter_molten_steel_obsidian_bucket": {
-            "textures": "textures/items/buckets/molten_steel/3_quarter_molten_steel_obsidian_bucket"
-        },
-        "half_molten_steel_obsidian_bucket": {
-            "textures": "textures/items/buckets/molten_steel/half_molten_steel_obsidian_bucket"
-        },
-        "molten_steel_obsidian_bucket": {
-            "textures": "textures/items/buckets/molten_steel/molten_steel_obsidian_bucket"
-        },
-        "quarter_molten_steel_obsidian_bucket": {
-            "textures": "textures/items/buckets/molten_steel/quarter_molten_steel_obsidian_bucket"
+        "ingot_mold": {
+            "textures": "textures/items/casts/ingot_mold"
         },
 
         // Hammers

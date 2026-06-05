@@ -1,6 +1,5 @@
-// mc-disable behaviorpack.items.missing
 {
-    "format_version": "1.26.0",
+    "format_version": "1.26.20",
     "minecraft:crafting_items_catalog": {
         "categories": [
             {
@@ -8,10 +7,70 @@
                 "groups": [
                     {
                         "group_identifier": {
-                            "icon": "foundry:obsidian_bucket",
-                            "name": "foundry:itemGroup.name.buckets"
+                            "icon": "foundry:adamantium_bucket",
+                            "name": "foundry:itemGroup.name.bucket"
                         },
                         "items": [
+                            "foundry:adamantium_bucket",
+                            "foundry:aluminium_bucket",
+                            "foundry:brass_bucket",
+                            "foundry:cobalt_bucket",
+                            "foundry:copper_bucket",
+                            "foundry:diamond_bucket",
+                            "foundry:dragon_steel_bucket",
+                            "foundry:gold_bucket",
+                            "foundry:iron_bucket",
+                            "foundry:lead_bucket",
+                            "foundry:netherite_bucket",
+                            "foundry:obsidian_bucket",
+                            "foundry:osmium_bucket",
+                            "foundry:palladium_bucket",
+                            "foundry:redstone_bucket",
+                            "foundry:silver_bucket",
+                            "foundry:steel_bucket",
+                            "foundry:titanium_bucket",
+                            "foundry:zinc_bucket"
+                            
+                            
+                        ]
+                    }
+                ]
+            },
+            {
+                "category_name": "construction",
+                "groups": [
+                    {
+                        "group_identifier": {
+                            "icon": "foundry:adamantium_block",
+                            "name": "foundry:itemGroup.name.resource_block"
+                        },
+                        "items": [
+                            "foundry:adamantium_block",
+                            "foundry:aluminium_block",
+                            "foundry:brass_block",
+                            "foundry:cobalt_block",
+                            "foundry:dragon_steel_block",
+                            "foundry:lead_block",
+                            "foundry:nickel_block",
+                            "foundry:osmium_block",
+                            "foundry:palladium_block",
+                            "foundry:platinum_block",
+                            "foundry:silver_block",
+                            "foundry:steel_block",
+                            "foundry:tin_block",
+                            "foundry:titanium_block",
+                            "foundry:tungsten_block",
+                            "foundry:zinc_block"
+                        ]
+                    },
+                    {
+                        "group_identifier": {
+                            "name": "foundry:itemGroup.name.raw_resource_block",
+                            "icon": "foundry:raw_steel_block"
+                        },
+                        "items": [
+                            "foundry:raw_rose_gold_block",
+                            "foundry:raw_steel_block"
                         ]
                     }
                 ]

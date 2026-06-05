@@ -2,6 +2,11 @@
     "texture_name": "atlas.terrain",
     "resource_pack_name": "foundries RP",
     "texture_data": {
+        // Root
+        "empty": {
+            "textures": "textures/blocks/empty"
+        },
+
         // Foundry
         "lava_tank": {
             "textures": "textures/blocks/foundry/lava_tank"
@@ -11,8 +16,11 @@
         },
 
         // Foundry / casts
-        "ingot_cast": {
-            "textures": "textures/blocks/foundry/casts/ingot_cast"
+        "axe_mold": {
+            "textures": "textures/blocks/foundry/casts/axe_mold"
+        },
+        "ingot_mold": {
+            "textures": "textures/blocks/foundry/casts/ingot_mold"
         },
 
         // Kiln
@@ -21,6 +29,9 @@
         },
 
         // Liquid
+        "lava_foundry": {
+            "textures": "textures/blocks/liquid/lava_foundry"
+        },
         "molten_adamantium": {
             "textures": "textures/blocks/liquid/molten_adamantium"
         },
@@ -29,6 +40,9 @@
         },
         "molten_brass": {
             "textures": "textures/blocks/liquid/molten_brass"
+        },
+        "molten_cobalt": {
+            "textures": "textures/blocks/liquid/molten_cobalt"
         },
         "molten_copper": {
             "textures": "textures/blocks/liquid/molten_copper"
@@ -110,8 +124,47 @@
         },
 
         // Ores / resource block
+        "adamantium_block": {
+            "textures": "textures/blocks/ores/resource_block/adamantium_block"
+        },
+        "aluminium_block": {
+            "textures": "textures/blocks/ores/resource_block/aluminium_block"
+        },
+        "brass_block": {
+            "textures": "textures/blocks/ores/resource_block/brass_block"
+        },
+        "cobalt_block": {
+            "textures": "textures/blocks/ores/resource_block/cobalt_block"
+        },
+        "dragon_steel_block": {
+            "textures": "textures/blocks/ores/resource_block/dragon_steel_block"
+        },
+        "lead_block": {
+            "textures": "textures/blocks/ores/resource_block/lead_block"
+        },
+        "nickel_block": {
+            "textures": "textures/blocks/ores/resource_block/nickel_block"
+        },
+        "osmium_block": {
+            "textures": "textures/blocks/ores/resource_block/osmium_block"
+        },
+        "palladium_block": {
+            "textures": "textures/blocks/ores/resource_block/palladium_block"
+        },
+        "silver_block": {
+            "textures": "textures/blocks/ores/resource_block/silver_block"
+        },
         "steel_block": {
             "textures": "textures/blocks/ores/resource_block/steel_block"
+        },
+        "titanium_block": {
+            "textures": "textures/blocks/ores/resource_block/titanium_block"
+        },
+        "uranium_block": {
+            "textures": "textures/blocks/ores/resource_block/uranium_block"
+        },
+        "zinc_block": {
+            "textures": "textures/blocks/ores/resource_block/zinc_block"
         },
 
         // Smithing anvil

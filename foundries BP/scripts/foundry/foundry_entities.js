@@ -15,10 +15,13 @@ export const spawn_foundry_block_entities = {
         }
         ;
         // Spawns the Basin entity
-        {
-            if (block.typeId === "foundry:basin") {
-                dimension.spawnEntity("foundry:basin", entitySummonLocation);
-            }
+        if (block.typeId === "foundry:basin") {
+            console.log("test1");
+            dimension.spawnEntity("foundry:basin", entitySummonLocation);
+        }
+        if (block.typeId === "foundry:casting_table") {
+            console.log("test");
+            dimension.spawnEntity("foundry:casting_table", entitySummonLocation);
         }
         return;
     }

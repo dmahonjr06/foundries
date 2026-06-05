@@ -1,3 +1,60 @@
 pack.name=Foundries And Forges RP
 pack.description=pack.description
-foundry:itemGroup.name.buckets=Buckets
+
+## Buckets
+foundry:itemGroup.name.bucket=Buckets
+item.foundry:adamantium_bucket=Adamantium Bucket
+item.foundry:aluminium_bucket=Aluminium Bucket
+item.foundry:brass_bucket=Brass Bucket
+item.foundry:copper_bucket=Copper Bucket
+item.foundry:diamond_bucket=Diamond Bucket
+item.foundry:dragon_steel_bucket=Dragonsteel Bucket
+    
+item.foundry:emerald_bucket=Emerald Bucket
+item.foundry:lapis_bucket=Lapis Bucket
+item.foundry:gold_bucket=Gold Bucket
+item.foundry:iron_bucket=Iron Bucket
+item.foundry:lead_bucket=Lead Bucket
+item.foundry:netherite_bucket=Netherite Bucket
+item.foundry:nickel_bucket=Nickel Bucket
+item.foundry:osmium_bucket=Osmium Bucket
+item.foundry:obsidian_bucket=Obsidian Bucket
+item.foundry:palladium_bucket=Palladium Bucket
+item.foundry:platinum_bucket=Platinum Bucket
+item.foundry:redstone_bucket=Redstone Bucket
+item.foundry:silver_bucket=Silver Bucket
+item.foundry:steel_bucket=Steel Bucket
+item.foundry:tungsten_bucket=Tungsten Bucket
+item.foundry:tin_bucket=Tin Bucket
+item.foundry:titanium_bucket=Titanium Bucket
+item.foundry:zinc_bucket=Zinc Bucket
+
+##Resource Blocks
+foundry:itemGroup.name.resource_block=Resource Blocks
+tile.foundry:adamantium_block.name=Adamantium Block
+tile.foundry:aluminium_block.name=Aluminium Block
+tile.foundry:brass_block.name=Brass Block
+tile.foundry:cobalt_block.name=Cobalt Block
+
+tile.foundry:dragon_steel_block.name=Dragonsteel Block
+tile.foundry:lead_block.name=Lead Block
+tile.foundry:osmium_block.name=Osmium Block
+tile.foundry:palladium_block.name=Palladium Block
+tile.foundry:platinum_block.name=Platinum Block
+tile.foundry:silver_block.name=Silver Block
+tile.foundry:steel_block.name=Steel Block
+tile.foundry:titanium_block.name=Titanium Block
+tile.foundry:tungsten_block.name=Tungsten Block
+tile.foundry:tin_block.name=Tin Block
+tile.foundry:zinc_block.name=Zinc Block
+
+## Raw Resource Blocks
+foundry:itemGroup.name.raw_resource_block=Raw Resource Blocks
+tile.foundry:raw_adamantium_block.name=Raw Adamantium Block
+tile.foundry:raw_aluminium_block.name=Raw Aluminium Block
+tile.foundry:raw_brass_block.name=Raw Brass Block
+tile.foundry:raw_cobalt_block.name=Raw Cobalt Block
+tile.foundry:raw_rose_gold_block.name=Raw Rose Gold Block
+tile.foundry:raw_osmium_block.name=Raw Osmium Block
+tile.foundry:raw_titanium_block.name=Raw Titanium Block
+tile.foundry:raw_zinc_block.name=Raw Zinc Block

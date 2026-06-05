@@ -1,8 +1,40 @@
 {
-    "format_version": "1.26.10",
+    "format_version": "1.26.20",
     "minecraft:block": {
         "description": {
             "identifier": "foundry:casting_table",
+            "menu_category": {
+                "category": "construction"
+            },
+            "states": {
+                "foundry:part": [
+                    "empty",
+                    "arrow_head",
+                    "axe_mold",
+                    "battle_axe_mold",
+                    "hammer_mold",
+                    "ingot_mold",
+                    "pickaxe_mold",
+                    "rod_mold",
+                    "shovel_mold",
+                    "spear_mold",
+                    "sword_blade_mold",
+                    "sword_guard_mold",
+                    "sword_pommel_mold"
+                ],
+                "foundry:material_type1": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                },
+                "foundry:material_type2": {
+                    "values": {
+                        "min": 0,
+                        "max": 15
+                    }
+                }
+            },
             "traits": {
                 "minecraft:placement_direction": {
                     "y_rotation_offset": 180,
@@ -13,18 +45,24 @@
             }
         },
         "components": {
+            "foundry:spawn_foundry_block_entities": {},
+            "foundry:input_mold_interact": {},
             "minecraft:geometry": {
                 "identifier": "geometry.casting_table",
                 "bone_visibility": {
-                    "ingot_cast": false
+                    "ingot_mold": "q.block_state('foundry:part') == 'ingot_mold'",
+                    "axe_mold": "q.block_state('foundry:part') == 'axe_mold'"
                 }
             },
             "minecraft:material_instances": {
                 "*": {
                     "texture": "deepslate_bricks"
                 },
-                "ingot_cast": {
-                    "texture": "ingot_cast"
+                "ingot_mold": {
+                    "texture": "ingot_mold"
+                },
+                "axe_mold": {
+                    "texture": "axe_mold"
                 }
             }
         },

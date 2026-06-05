@@ -1,0 +1,30 @@
+{
+    "format_version": "1.26.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:dragon_steel_block",
+            "menu_category": {
+                "category": "construction"
+            }
+        },
+        "components": {
+            "minecraft:light_dampening": 15,
+			"minecraft:collision_box": true,
+			"minecraft:selection_box": true,
+			"minecraft:destructible_by_mining": {
+				"seconds_to_destroy": 10
+			},
+			"minecraft:destructible_by_explosion": {
+				"explosion_resistance": 250
+			},
+			"minecraft:map_color": "#2b2b2b",
+            "minecraft:tags": [
+                "minecraft:is_pickaxe_item_destructible",
+                "minecraft:netherite_tier_destructible"
+            ],
+			"minecraft:redstone_conductivity": {
+				"redstone_conductor": true
+			}
+        }
+    }
+}

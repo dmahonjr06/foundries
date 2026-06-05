@@ -2,12 +2,12 @@
 
 ## 2 BLOCK MULTIBLOCK Furnace called a "Foundry"
 - The bottom block will be a directional based block with 2 output sides and 1 lava tank side.
-- The top block will be a glass tank where the the 16 liquid layers will be displayed through a property system with an entity inside the tank.
+- The top block will be a glass tank where the 16 liquid layers will be displayed through a property system with an entity inside the tank.
 - The output sides will be able to connect to a "tap" block that can pour
 
 
-## Using a custom anvil, interact with the anvil to place hot, unhammered pieces that need to be hammered into their correct shape.
-### Unhammered part types
+## Tools parts
+"foundry:part" state
 - Axe head,
 - Battle-axe head,
 - Spear head,
@@ -38,10 +38,7 @@
 
 
 ## CONCEPTS/TODO:
-# Using a faucet and basin
-When clicking on a faucet, the basin underneath is filled in 9 sections.
-Using an ore on the 
-Faucet will have an "on/off" state, which when turned on will check the first layer of the "foundry:foundry_liquids" entity. 
+
 
 
 # Optimise the "liquid_layers_database.ts" database.
@@ -53,62 +50,116 @@ UPDATE: It is now at 1.2KB
 
 
 
-
-
-
-
-
-
 # States and What some of them mean
 
-## Material Types and their block state "foundry:material_types1" & "foundry:material_types2" number
-1|0 - Lava
-2|0 - Iron
-3|0 - Gold
-4|0 - Copper
-5|0 - Diamond
-6|0 - Netherite
-7|0 - Obsidian
-8|0 - Aluminium
-9|0 - Zinc
-10|0 - Osmium
-11|0 - Titanium
-12|0 - Lead
-13|0 - Silver
-14|0 - Brass
-15|0 - Steel
-16|0 - Dragon Steel (Dragon Scale and Steel mixture)
-17|0 - Redstone
-18|0 - Palladium
-19|0 - Adamantium
+## Material Types and their block state "foundry:material_type1" & "foundry:material_type2" number
+0|0 - Empty
+1|0 - Iron
+2|0 - Gold
+3|0 - Copper
+4|0 - Diamond
+5|0 - Netherite
+6|0 - Obsidian
+7|0 - Aluminium
+8|0 - Zinc
+9|0 - Osmium
+10|0 - Titanium
+11|0 - Lead
+12|0 - Silver
+13|0 - Brass
+14|0 - Steel
+15|0 - Dragon Steel (Dragon Scale and Steel mixture)
+0|1 - Redstone
+0|2 - Palladium
+0|3 - Adamantium
 **BELOW ARE RESOURCES NEEDED TO ADD**
-20|0 - Emerald
-21|0 - Lapis
-22|0 - Tungsten
+0|4 - Emerald
+0|5 - Lapis
+0|6 - Tungsten
+0|7 - Tin
+0|8 - Nickel
+0|9 - Cobalt
+0|10 - Platinum
+0|11 - Quartz
+0|12 - Amethyst
 
-## Part Types and their block state with "smithing_anvil:parts" number
-1 - Axe head
-2 - Pickaxe head
-3 - Shovel head
-4 - Sword blade
-5 - Sword guard
-6 - Sword pommel
-7 - spear head
-8 - Battle-axe head,
-9 - Hammer head,
-10- Rods
+## Part Types and their block state with "foundry:parts" number
+1 - ingot
+2 - Axe head
+3 - Pickaxe head
+4 - Shovel head
+5 - Sword blade
+6 - Sword guard
+7 - Sword pommel
+8 - spear head
+9 - Battle-axe head,
+10 - Hammer head,
+11- Rods
 
 
 # TODO
 ## Basin:
-- When the basin is full but the incoming material is different, we should solidify the basin contents into a block and then start filling again with the new material, instead of just blocking the pour.
-- Potentially also a hopper could be used to automate the removal of the solidified block from the basin to allow continuous pouring of different materials?
-- Add Component to retrieve block from foundry
-- basin.ts
-- basin.block.json permutation.
+- 
 
-- Map the different materials of the foundry:basin block to their corresponding material type when the basin entity is filled up.
-- Faucet.ts 162
+## Resource Ingots: 
+- 
+
+
+## Resource Ores:
+- 
+
+
+## Raw Resources:
+- 
+
+## Plates:
+- Titanium Plate
+- Palladium Plate
+- Lead Plate
+- Adamantium Plate
+- Dragon Steel Plate
+- Brass Plate
+
+## Resource Blocks:
+- Make all the blocks into resource blocks.
+- Make recipes
+- foundry:nickel_block
+- foundry:platium_block
+- foundry:tungsten_block
+- foundry:tin_block
+
+## Raw Resource Blocks:
+- foundry:raw_adamantium_block
+- foundry:raw_aluminium_block
+- foundry:raw_brass_block
+- foundry:raw_dragon_steel_block
+- foundry:raw_lead_block
+- foundry:raw_osmium_block
+- foundry:raw_palladium_block
+- foundry:raw_silver_block
+- foundry:raw_titanium_block
+- foundry:raw_zinc_block
+
+## Buckets:
+- foundry:amethyst_bucket
+- foundry:emerald_bucket
+- foundry:lapis_bucket
+- foundry:nickel_bucket
+- foundry:obsidian_bucket
+- foundry:platinum_bucket
+- foundry:quartz_bucket
+- foundry:tungsten_bucket
+
+
+### Make these buckets then put them into the 'maps.ts' database for usage within the foundry.
+Need to make buckets take the top-most liquid from the foundry and place it into the bucket when right-clicking on the foundry with an empty bucket.
+
+
+
+## Provide Sound definitions and textures for all full blocks within blocks.json!
+
+
+
 
 ## MAKE BLOCKS WITH ENTITIES **UNMOVABLE**
 - Make them unmovable so pistons don't mess up the entities within the blocks.

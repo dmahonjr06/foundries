@@ -1,29 +1,5 @@
-import { EquipmentSlot } from "@minecraft/server";
-const playerInputItemsIntoFoundry = new Map([
-    ["minecraft:lava_bucket", { materialNumber: 1, layersToFill: 1 }],
-    ["minecraft:iron_ingot", { materialNumber: 2, layersToFill: 1 }],
-    ["minecraft:gold_ingot", { materialNumber: 3, layersToFill: 1 }],
-    ["minecraft:copper_ingot", { materialNumber: 4, layersToFill: 1 }],
-    ["minecraft:diamond", { materialNumber: 5, layersToFill: 1 }],
-    ["minecraft:netherite_ingot", { materialNumber: 6, layersToFill: 1 }],
-    ["minecraft:obsidian", { materialNumber: 7, layersToFill: 1 }],
-    ["foundry:aluminium_ingot", { materialNumber: 8, layersToFill: 1 }],
-    ["foundry:zinc_ingot", { materialNumber: 9, layersToFill: 1 }],
-    ["foundry:osmium_ingot", { materialNumber: 10, layersToFill: 1 }],
-    ["foundry:titanium_ingot", { materialNumber: 11, layersToFill: 1 }],
-    ["foundry:lead_ingot", { materialNumber: 12, layersToFill: 1 }],
-    ["foundry:silver_ingot", { materialNumber: 13, layersToFill: 1 }],
-    ["foundry:brass_ingot", { materialNumber: 14, layersToFill: 1 }],
-    ["foundry:steel_ingot", { materialNumber: 15, layersToFill: 1 }],
-    ["foundry:dragon_steel_ingot", { materialNumber: 16, layersToFill: 1 }],
-    ["minecraft:redstone", { materialNumber: 17, layersToFill: 1 }],
-    ["foundry:palladium_ingot", { materialNumber: 18, layersToFill: 1 }],
-    ["foundry:adamantium_ingot", { materialNumber: 19, layersToFill: 1 }],
-    // Raw ores fill 2 layers
-    ["minecraft:raw_iron", { materialNumber: 2, layersToFill: 2 }],
-    ["minecraft:raw_gold", { materialNumber: 3, layersToFill: 2 }],
-    ["minecraft:raw_copper", { materialNumber: 4, layersToFill: 2 }],
-]);
+import { EquipmentSlot, ItemStack } from "@minecraft/server";
+import { playerInputItemsIntoFoundry, bucketMap } from "../definitions/maps";
 export function FoundryCheckItemsPlayerInterractsWith(block, player) {
     const itemID = player?.getComponent("equippable")?.getEquipment(EquipmentSlot.Mainhand)?.typeId;
     block.dimension.getEntitiesAtBlockLocation(block.location).forEach(foundryEntity => {
@@ -41,7 +17,15 @@ export function FoundryCheckItemsPlayerInterractsWith(block, player) {
             foundryEntity.setProperty(`foundry:layer${layerToPlace}`, true);
             foundryEntity.setProperty(`foundry:layer${layerToPlace}_material`, entry.materialNumber);
         }
+        // If the item is a bucket, set the player's main hand to the corresponding bucket
         const equippable = player.getComponent("equippable");
+        if (itemID?.includes("bucket")) {
+            const bucketEntry = bucketMap.has(itemID) ? itemID : undefined;
+            if (!bucketEntry)
+                return;
+            equippable?.setEquipment(EquipmentSlot.Mainhand, new ItemStack("minecraft:bucket", 1));
+            return;
+        }
         if (equippable) {
             const slot = equippable.getEquipmentSlot(EquipmentSlot.Mainhand);
             if (slot && slot.amount > 1) {
