@@ -1,5 +1,5 @@
 {
-	"format_version": "1.26.10",
+	"format_version": "1.26.20",
 	"minecraft:block": {
 		"description": {
 			"identifier": "foundry:smithing_anvil",
@@ -8,34 +8,22 @@
 				"group": "minecraft:itemGroup.name.anvil"
 			},
 			"states": {
-				"smithing_anvil:hammered_times": {
-					"values": {
-						"min": 0,
-						"max": 2
-					}
-				},
-				"smithing_anvil:parts1": {
+				"smithing_anvil:tool_parts1": {
 					"values": {
 						"min": 0,
 						"max": 15
 					}
 				},
-				"smithing_anvil:parts2": {
-					"values": {
-						"min": 0,
-						"max": 1
-					}
-				},
-				"foundry:material_types1": {
+				"smithing_anvil:tool_parts2": {
 					"values": {
 						"min": 0,
 						"max": 15
 					}
 				},
-				"foundry:material_types2": {
+				"smithing_anvil:tool_parts3": {
 					"values": {
 						"min": 0,
-						"max": 1
+						"max": 15
 					}
 				}
 			},
@@ -57,17 +45,15 @@
 			"minecraft:geometry": {
 				"identifier": "geometry.smithing_anvil",
 				"bone_visibility": {
-					"anvil": true,
-					"steel_ingot": false,
-					"steel_plate": false,
-					"smelted_titanium": false,
-					"titanium_ingot": false,
-					"hot_axe_head_hammered_0": "q.block_state('smithing_anvil:parts1') == 1 && q.block_state('smithing_anvil:parts2') == 0 && q.block_state('smithing_anvil:hammered_times') == 0",
-					"hot_axe_head_hammered_1": "q.block_state('smithing_anvil:parts1') == 1 && q.block_state('smithing_anvil:parts2') == 0 && q.block_state('smithing_anvil:hammered_times') == 1",
-					"diamond_axe_head": true,
-					"iron_axe_head": false,
-					"gold_axe_head": false,
-					"copper_axe_head": false
+					"anvil":" true",
+					"steel_ingot": "false",
+					"steel_plate": "false",
+					"smelted_titanium": "false",
+					"titanium_ingot": "false",
+					"diamond_axe_head": "false",
+					"iron_axe_head": "false",
+					"gold_axe_head": "false",
+					"copper_axe_head": "false"
 				}
 			},
 			"minecraft:material_instances": {
@@ -76,8 +62,10 @@
 				}
 			},
 			"minecraft:map_color": "#303030",
-			"tag:minecraft:is_pickaxe_item_destructible": {},
-			"tag:minecraft:iron_tier_destructible": {}
+			"minecraft:tags": [
+				"minecraft:is_pickaxe_item_destructible",
+				"minecraft:iron_tier_destructible"
+			]
 		},
 		"permutations": [
 			{

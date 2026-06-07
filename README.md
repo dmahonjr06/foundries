@@ -1,10 +1,8 @@
 # A blacksmithing add-on.
 
 ## 2 BLOCK MULTIBLOCK Furnace called a "Foundry"
-- The bottom block will be a directional based block with 2 output sides and 1 lava tank side.
-- The top block will be a glass tank where the 16 liquid layers will be displayed through a property system with an entity inside the tank.
-- The output sides will be able to connect to a "tap" block that can pour
-
+- Can make molds and ingots,
+- These molds can be used on a smithing anvil to create tools
 
 ## Tools parts
 "foundry:part" state
@@ -43,7 +41,7 @@
 
 # Optimise the "liquid_layers_database.ts" database.
 Could try make it under 1KB possibly.
-It's currently at 110KB...
+It was originally at 110KB...
 UPDATE: It is now at 1.2KB
 
 

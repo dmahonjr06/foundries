@@ -1,0 +1,10 @@
+{
+    "format_version": "1.26.20",
+    "minecraft:block": {
+        "description": {
+            "identifier": "foundry:ingot_heater_main"
+        },
+        "components": {
+        }
+    }
+}

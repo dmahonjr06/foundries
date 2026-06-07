@@ -3,6 +3,9 @@
     "resource_pack_name": "foundries RP",
     "texture_data": {
         // Root
+        "chunk_analyser": {
+            "textures": "textures/items/chunk_analyser"
+        },
         "dragon_scale": {
             "textures": "textures/items/dragon_scale"
         },
@@ -20,14 +23,6 @@
         },
         "smelted_titanium": {
             "textures": "textures/items/smelted_titanium"
-        },
-
-        // Axes
-        "lead_axe": {
-            "textures": "textures/items/axes/lead_axe"
-        },
-        "titanium_axe": {
-            "textures": "textures/items/axes/titanium_axe"
         },
 
         // Buckets
@@ -97,14 +92,6 @@
             "textures": "textures/items/casts/ingot_mold"
         },
 
-        // Hammers
-        "dragon_scale_hammer": {
-            "textures": "textures/items/hammers/dragon_scale_hammer"
-        },
-        "hammer": {
-            "textures": "textures/items/hammers/hammer"
-        },
-
         // Ingots
         "steel_ingot": {
             "textures": "textures/items/ingots/steel_ingot"
@@ -114,14 +101,6 @@
         },
         "uranium_ingot": {
             "textures": "textures/items/ingots/uranium_ingot"
-        },
-
-        // Pickaxes
-        "lead_pickaxe": {
-            "textures": "textures/items/pickaxes/lead_pickaxe"
-        },
-        "titanium_pickaxe": {
-            "textures": "textures/items/pickaxes/titanium_pickaxe"
         },
 
         // Plates
@@ -134,9 +113,38 @@
             "textures": "textures/items/powder/steel_powder"
         },
 
-        // Rods
+        // Tool parts / axe heads
+        "titanium_axe_head": {
+            "textures": "textures/items/tool_parts/axe_heads/titanium_axe_head"
+        },
+
+        // Tool parts / rods
         "steel_rod": {
-            "textures": "textures/items/rods/steel_rod"
+            "textures": "textures/items/tool_parts/rods/steel_rod"
+        },
+
+        // Tools / axes
+        "lead_axe": {
+            "textures": "textures/items/tools/axes/lead_axe"
+        },
+        "titanium_axe": {
+            "textures": "textures/items/tools/axes/titanium_axe"
+        },
+
+        // Tools / hammers
+        "dragon_scale_hammer": {
+            "textures": "textures/items/tools/hammers/dragon_scale_hammer"
+        },
+        "hammer": {
+            "textures": "textures/items/tools/hammers/hammer"
+        },
+
+        // Tools / pickaxes
+        "lead_pickaxe": {
+            "textures": "textures/items/tools/pickaxes/lead_pickaxe"
+        },
+        "titanium_pickaxe": {
+            "textures": "textures/items/tools/pickaxes/titanium_pickaxe"
         }
     }
 }
